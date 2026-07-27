@@ -42,7 +42,8 @@
 - 真实动态验证：2026-07-27，精简版成功建立 4 文档、36 个非空页的索引；询盘 `EPON Resin 8280 heat deflection temperature MPDA cure schedule` 的第 1 名为 `TDS - Hexion EPON Resin 8280 - Rev 2016.pdf` 第 3 页。
 - Git 提交：阶段一实现提交 `62e6c9a`（`feat: complete phase one retrieval validation`）。
 - Git 推送：2026-07-27，已成功创建并推送远程 `origin/main`；本状态更新作为同轮交付收尾提交，最终哈希以 Git 历史为准。
-- 云端验证：GitHub 远程 `main` 已建立；最终文档提交推送后再次核对远程引用。
+- 交接提交：2026-07-28，`e169881`（`docs: add phase one handoff and refresh baseline`）已推送；其后的状态收尾提交以 Git 历史为准。
+- 云端验证：交接提交已到达 GitHub `main`；状态收尾提交后再次核对本地与远程 HEAD。
 
 ## 当前风险与非阻塞问题
 
