@@ -69,3 +69,36 @@ def test_long_page_is_chunked_without_losing_page_metadata(tmp_path: Path) -> No
     result = index.query("temperature", limit=1)[0]
     assert result.page_number == 3
     assert result.source_file == "TDS - EPON Resin 8280.pdf"
+    assert result.page_text == long_page.text
+
+
+def test_query_can_limit_evidence_to_tds_pages(tmp_path: Path) -> None:
+    embedder = KeywordEmbedder()
+    index = PageIndex(tmp_path / "chroma", embedder=embedder)
+    index.replace(
+        [
+            _page("general coating use", 1),
+            _page("safety information", 2, "SDS"),
+        ]
+    )
+
+    results = index.query("safety", limit=2, doc_types=("TDS",))
+
+    assert results
+    assert all(result.doc_type == "TDS" for result in results)
+
+
+def test_pages_returns_each_full_physical_page_once(tmp_path: Path) -> None:
+    embedder = KeywordEmbedder()
+    index = PageIndex(tmp_path / "chroma", embedder=embedder)
+    long_page = _page(
+        ("general coating information " * 100)
+        + "heat deflection temperature 156 C",
+        3,
+    )
+    index.replace([long_page, _page("safety information", 1, "SDS")])
+
+    pages = index.pages(doc_types=("TDS",))
+
+    assert len(pages) == 1
+    assert pages[0] == long_page

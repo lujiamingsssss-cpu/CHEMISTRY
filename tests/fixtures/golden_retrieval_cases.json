@@ -1,0 +1,56 @@
+[
+  {
+    "id": "epon_high_solids_en",
+    "inquiry": "A coatings customer needs an epoxy resin for a high solids coating and also asks for MOQ and a CFR quote. Which product fits technically, and which commercial facts still need confirmation?",
+    "expected_targets": [
+      {
+        "product": "EPON Resin 8280",
+        "source_file": "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
+        "page_number": 1
+      }
+    ],
+    "requires_insufficient_evidence": false
+  },
+  {
+    "id": "epon_mpda_hdt_en",
+    "inquiry": "For an EPON Resin 8280 system cured with MPDA, confirm the heat deflection temperature, mix ratio, cure schedule and test method. The customer also asks whether stock is available in Brazil.",
+    "expected_targets": [
+      {
+        "product": "EPON Resin 8280",
+        "source_file": "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
+        "page_number": 3
+      }
+    ],
+    "requires_insufficient_evidence": false
+  },
+  {
+    "id": "der_protective_coatings_zh",
+    "inquiry": "越南客户需要用于汽车、船舶及工业防护涂料的液体环氧树脂，首单约 5 吨。D.E.R. 331 是否适合？哪些技术结论有资料支持，哪些商务信息仍需确认？",
+    "expected_targets": [
+      {
+        "product": "D.E.R. 331",
+        "source_file": "TDS - DOW D.E.R. 331 - 2009.pdf",
+        "page_number": 1
+      }
+    ],
+    "requires_insufficient_evidence": false
+  },
+  {
+    "id": "der_formulated_hdt_zh",
+    "inquiry": "客户询问 D.E.R. 331 使用 D.E.H. 24、1,2-二氨基环己烷和聚酰胺三种配方时的热变形温度；请保留配比和测试条件，不要把数据归因于未固化树脂。",
+    "expected_targets": [
+      {
+        "product": "D.E.R. 331",
+        "source_file": "TDS - DOW D.E.R. 331 - 2009.pdf",
+        "page_number": 2
+      }
+    ],
+    "requires_insufficient_evidence": false
+  },
+  {
+    "id": "unsupported_continuous_service_temperature_zh",
+    "inquiry": "请推荐可在 200°C 连续使用的食品接触环氧涂层，并给出认证和长期寿命数据。",
+    "expected_targets": [],
+    "requires_insufficient_evidence": true
+  }
+]

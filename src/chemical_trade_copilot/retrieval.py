@@ -1,11 +1,13 @@
 from dataclasses import dataclass
 from hashlib import sha256
 from pathlib import Path
+from typing import cast
 
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 from .embeddings import Embedder, MultilingualE5Embedder
+from .materials import DocumentType
 from .pdf_pages import PageRecord
 
 
@@ -18,6 +20,7 @@ class SearchResult:
     source_path: Path
     page_number: int
     distance: float
+    page_text: str = ""
 
 
 @dataclass(frozen=True, slots=True)
@@ -69,22 +72,33 @@ class PageIndex:
                     "source_path": str(chunk.page.source_path),
                     "page_number": chunk.page.page_number,
                     "chunk_number": chunk.chunk_number,
+                    "page_text": chunk.page.text,
                 }
                 for chunk in chunks
             ],
         )
 
-    def query(self, inquiry: str, *, limit: int = 5) -> list[SearchResult]:
+    def query(
+        self,
+        inquiry: str,
+        *,
+        limit: int = 5,
+        doc_types: tuple[DocumentType, ...] | None = None,
+    ) -> list[SearchResult]:
         if not inquiry.strip():
             raise ValueError("Inquiry must not be empty")
         if limit < 1:
             raise ValueError("Limit must be at least 1")
+        if doc_types is not None and not doc_types:
+            raise ValueError("Document type filter must not be empty")
         if self._collection.count() == 0:
             return []
 
+        where = _document_type_filter(doc_types)
         result = self._collection.query(
             query_embeddings=self._embedder.encode([f"query: {inquiry.strip()}"]),
             n_results=min(limit * 4, self._collection.count()),
+            where=where,
             include=["documents", "metadatas", "distances"],
         )
         documents = result["documents"][0]
@@ -106,11 +120,40 @@ class PageIndex:
                     source_path=Path(str(metadata["source_path"])),
                     page_number=int(metadata["page_number"]),
                     distance=float(distance),
+                    page_text=str(metadata.get("page_text", document)),
                 )
             )
             if len(results) == limit:
                 break
         return results
+
+    def pages(
+        self, *, doc_types: tuple[DocumentType, ...] | None = None
+    ) -> list[PageRecord]:
+        if doc_types is not None and not doc_types:
+            raise ValueError("Document type filter must not be empty")
+        stored = self._collection.get(
+            where=_document_type_filter(doc_types),
+            include=["metadatas"],
+        )
+        pages: dict[tuple[str, int], PageRecord] = {}
+        for metadata in stored["metadatas"] or []:
+            page_text = metadata.get("page_text")
+            if not page_text:
+                raise ValueError("Index must be rebuilt with full-page evidence metadata")
+            key = (str(metadata["source_path"]), int(metadata["page_number"]))
+            pages[key] = PageRecord(
+                text=str(page_text),
+                product=str(metadata["product"]),
+                doc_type=cast(DocumentType, str(metadata["doc_type"])),
+                source_file=str(metadata["source_file"]),
+                source_path=Path(str(metadata["source_path"])),
+                page_number=int(metadata["page_number"]),
+            )
+        return sorted(
+            pages.values(),
+            key=lambda page: (page.product, page.source_file, page.page_number),
+        )
 
     def _chunks(self, pages: list[PageRecord]) -> list[_PageChunk]:
         return [
@@ -125,3 +168,13 @@ class PageIndex:
             f"{chunk.page.source_path}|{chunk.page.page_number}|{chunk.chunk_number}"
         ).encode("utf-8")
         return sha256(identity).hexdigest()
+
+
+def _document_type_filter(
+    doc_types: tuple[DocumentType, ...] | None,
+) -> dict[str, object] | None:
+    if not doc_types:
+        return None
+    if len(doc_types) == 1:
+        return {"doc_type": doc_types[0]}
+    return {"doc_type": {"$in": list(doc_types)}}
