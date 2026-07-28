@@ -11,9 +11,9 @@ from .inquiry_analysis import (
     DeepSeekInquiryAnalyzer,
     DeepSeekJsonClient,
     InquiryRetrievalPlanner,
-    merge_ranked_with_corpus,
 )
 from .retrieval import PageIndex, SearchResult
+from .workflow import analyze_inquiry
 
 def _result_dict(result: SearchResult) -> dict[str, Any]:
     value = asdict(result)
@@ -81,16 +81,13 @@ def main() -> None:
         model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-pro"),
     )
     index = PageIndex(args.database)
-    plan = InquiryRetrievalPlanner(client).plan(args.inquiry)
-    ranked = index.query(
-        plan.search_query,
+    analysis = analyze_inquiry(
+        args.inquiry,
+        index=index,
+        planner=InquiryRetrievalPlanner(client),
+        analyzer=DeepSeekInquiryAnalyzer(client),
         limit=args.limit,
-        doc_types=plan.document_types,
     )
-    evidence = merge_ranked_with_corpus(
-        ranked, index.pages(doc_types=plan.document_types)
-    )
-    analysis = DeepSeekInquiryAnalyzer(client).analyze(args.inquiry, evidence)
     print(analysis.model_dump_json(indent=2))
 
 
