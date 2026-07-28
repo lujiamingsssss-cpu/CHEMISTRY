@@ -10,6 +10,7 @@ def test_streamlit_theme_matches_mineral_ink_style_contract() -> None:
         config = tomllib.load(stream)
 
     assert config["client"]["toolbarMode"] == "minimal"
+    assert config["server"]["fileWatcherType"] == "none"
     assert config["theme"]["primaryColor"] == "#316A5D"
     assert config["theme"]["backgroundColor"] == "#F2EFE7"
     assert config["theme"]["secondaryBackgroundColor"] == "#FBFAF6"

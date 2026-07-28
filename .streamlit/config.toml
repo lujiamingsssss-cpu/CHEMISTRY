@@ -1,6 +1,9 @@
 [client]
 toolbarMode = "minimal"
 
+[server]
+fileWatcherType = "none"
+
 [theme]
 base = "light"
 primaryColor = "#316A5D"

@@ -31,4 +31,5 @@ packages = ["src/chemical_trade_copilot"]
 
 [tool.pytest.ini_options]
 addopts = "-q"
+pythonpath = ["src"]
 testpaths = ["tests"]
