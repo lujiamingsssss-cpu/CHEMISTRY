@@ -438,6 +438,110 @@ def test_analyzer_retries_once_with_grounding_validation_feedback() -> None:
     assert "temperature values are allowed only" in client.calls[1][1]
 
 
+def test_safe_fallback_preserves_explicit_compliance_request() -> None:
+    invalid = {
+        "summary_zh": "客户要求 200°C，但当前产品最高仅 156°C。",
+        "recommendation_status": "insufficient_evidence",
+        "recommended_product": None,
+        "recommendation_reasons": ["当前检索证据不足。"],
+        "requirements": [],
+        "key_parameters": [],
+        "evidence_gaps": ["资料只显示 156°C。"],
+        "source_limitations": ["资料较旧。"],
+        "follow_up_questions": [],
+        "next_action": "insufficient_product_evidence",
+    }
+
+    result = DeepSeekInquiryAnalyzer(StubJsonClient(invalid)).analyze(
+        "请推荐可在 200°C 连续使用的食品接触环氧涂层，并给出认证和长期寿命数据。",
+        [_evidence()],
+    )
+
+    requirements = {item.category: item for item in result.requirements}
+    assert set(requirements) == {"technical", "compliance"}
+    assert requirements["technical"].status == "insufficient_evidence"
+    assert requirements["compliance"].status == "needs_confirmation"
+
+
+def test_safe_fallback_preserves_all_explicit_request_categories() -> None:
+    invalid = {
+        "summary_zh": "invalid",
+        "recommendation_status": "supported",
+        "recommended_product": None,
+        "recommendation_reasons": [],
+        "requirements": [],
+        "key_parameters": [],
+        "evidence_gaps": [],
+        "source_limitations": [],
+        "follow_up_questions": [],
+        "next_action": "ready_to_reply",
+    }
+
+    result = DeepSeekInquiryAnalyzer(StubJsonClient(invalid)).analyze(
+        "Confirm continuous-use performance, FDA certification, stock and MOQ, "
+        "then quote CFR Santos.",
+        [_evidence()],
+    )
+
+    requirements = {item.category: item for item in result.requirements}
+    assert set(requirements) == {
+        "technical",
+        "compliance",
+        "commercial",
+        "logistics",
+    }
+    assert requirements["technical"].status == "insufficient_evidence"
+    assert all(
+        requirements[category].status == "needs_confirmation"
+        for category in ("compliance", "commercial", "logistics")
+    )
+
+
+@pytest.mark.parametrize(
+    ("inquiry", "expected_categories"),
+    [
+        (
+            "Is this product compliant with EU 10/2011? Quote DDP Hamburg.",
+            {"technical", "compliance", "commercial", "logistics"},
+        ),
+        (
+            "Can the coating reach 200 C? Provide technical support and a "
+            "specification.",
+            {"technical"},
+        ),
+        (
+            "Does this product comply with FDA 21 CFR 175.300?",
+            {"technical", "compliance"},
+        ),
+        (
+            "Please confirm lead time.",
+            {"technical", "commercial"},
+        ),
+    ],
+)
+def test_safe_fallback_uses_explicit_words_without_substring_false_positives(
+    inquiry: str, expected_categories: set[str]
+) -> None:
+    invalid = {
+        "summary_zh": "invalid",
+        "recommendation_status": "supported",
+        "recommended_product": None,
+        "recommendation_reasons": [],
+        "requirements": [],
+        "key_parameters": [],
+        "evidence_gaps": [],
+        "source_limitations": [],
+        "follow_up_questions": [],
+        "next_action": "ready_to_reply",
+    }
+
+    result = DeepSeekInquiryAnalyzer(StubJsonClient(invalid)).analyze(
+        inquiry, [_evidence()]
+    )
+
+    assert {item.category for item in result.requirements} == expected_categories
+
+
 def test_analyzer_fails_closed_for_thermal_parameter_without_context() -> None:
     payload = _supported_payload()
     parameter = payload["key_parameters"][0]  # type: ignore[index]

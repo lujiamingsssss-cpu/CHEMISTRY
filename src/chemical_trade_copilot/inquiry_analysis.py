@@ -270,19 +270,65 @@ def _safe_insufficient_analysis(
 ) -> InquiryAnalysis:
     source_files = sorted({item.source_file for item in evidence})
     evidence_scope = "、".join(source_files) if source_files else "无可用资料"
+    normalized_inquiry = inquiry.casefold()
+    category_markers = {
+        "compliance": (
+            (
+                r"\bcertif(?:icate|ication|ied|y)\w*\b",
+                r"\b(?:compliance|compliant|comply|complies|complied)\b",
+                r"\bfood[\s-]+contact\b",
+                r"\bregulat(?:ion|ions|ory)\b",
+                r"\bfda\b",
+                r"\brohs\b",
+                r"\breach\s+(?:compliance|regulation|registration|requirement)\b",
+                r"\b\d+\s+cfr\b",
+            ),
+            ("认证", "证书", "食品接触", "法规", "合规"),
+        ),
+        "commercial": (
+            (
+                r"\b(?:price|pricing|quote|quotation|moq|stock|availability|quantity|payment)\b",
+                r"\blead[\s-]+time\b",
+            ),
+            ("价格", "报价", "库存", "起订", "数量", "付款"),
+        ),
+        "logistics": (
+            (
+                r"\b(?:incoterms?|cif|fob|exw|dap|ddp|fas|fca|cpt|cip|dpu)\b",
+                r"\bcfr\b(?!\s*(?:§|part)?\s*\d)",
+                r"\b(?:port|freight|shipping|shipment|delivery|destination)\b",
+            ),
+            ("目的港", "运费", "物流", "交期", "发运"),
+        ),
+    }
+    requirements = [
+        RequirementAssessment(
+            category="technical",
+            requirement=inquiry.strip(),
+            status="insufficient_evidence",
+            evidence=(),
+        )
+    ]
+    requirements.extend(
+        RequirementAssessment(
+            category=category,
+            requirement=inquiry.strip(),
+            status="needs_confirmation",
+            evidence=(),
+        )
+        for category, (patterns, phrases) in category_markers.items()
+        if (
+            any(re.search(pattern, normalized_inquiry) for pattern in patterns)
+            or any(phrase in normalized_inquiry for phrase in phrases)
+            or (category == "compliance" and re.search(r"\bREACH\b", inquiry))
+        )
+    )
     return InquiryAnalysis(
         summary_zh="当前检索证据不足，系统已停止生成产品推荐。",
         recommendation_status="insufficient_evidence",
         recommended_product=None,
         recommendation_reasons=("模型输出未通过本地证据校验，未采用其结论。",),
-        requirements=(
-            RequirementAssessment(
-                category="technical",
-                requirement=inquiry.strip(),
-                status="insufficient_evidence",
-                evidence=(),
-            ),
-        ),
+        requirements=tuple(requirements),
         key_parameters=(),
         evidence_gaps=(
             "模型输出未通过本地证据校验；未采用其中任何产品结论或技术数值。",
