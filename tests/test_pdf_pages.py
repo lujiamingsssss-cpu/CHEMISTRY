@@ -20,7 +20,16 @@ def _write_pdf(path: Path) -> None:
 def test_extract_pages_preserves_physical_page_and_source_metadata(tmp_path: Path) -> None:
     path = tmp_path / "TDS - EPON Resin 8280.pdf"
     _write_pdf(path)
-    source = SourceDocument(path=path, product="EPON Resin 8280", doc_type="TDS")
+    source = SourceDocument(
+        path=path,
+        product="EPON Resin 8280",
+        doc_type="TDS",
+        date_revision="2016",
+        jurisdiction="Technical data sheet · jurisdiction not stated",
+        sha256="0" * 64,
+        source_url="https://manufacturer.example/tds.pdf",
+        acquired_on="2026-07-28",
+    )
 
     pages = extract_pages(source)
 

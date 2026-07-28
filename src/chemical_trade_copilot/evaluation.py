@@ -2,8 +2,9 @@ import json
 from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Protocol
+from typing import Protocol, cast
 
+from .materials import DocumentType
 from .retrieval import SearchResult
 
 
@@ -20,10 +21,18 @@ class GoldenRetrievalCase:
     inquiry: str
     expected_targets: tuple[RetrievalTarget, ...]
     requires_insufficient_evidence: bool
+    retrieval_query: str | None = None
+    document_types: tuple[DocumentType, ...] | None = None
 
 
 class Retriever(Protocol):
-    def query(self, inquiry: str, *, limit: int) -> list[SearchResult]: ...
+    def query(
+        self,
+        inquiry: str,
+        *,
+        limit: int,
+        doc_types: tuple[DocumentType, ...] | None = None,
+    ) -> list[SearchResult]: ...
 
 
 @dataclass(frozen=True, slots=True)
@@ -68,6 +77,12 @@ def load_golden_cases(path: Path) -> tuple[GoldenRetrievalCase, ...]:
                 inquiry=str(raw_case["inquiry"]),
                 expected_targets=targets,
                 requires_insufficient_evidence=requires_insufficient_evidence,
+                retrieval_query=(
+                    str(raw_case["retrieval_query"])
+                    if raw_case.get("retrieval_query")
+                    else None
+                ),
+                document_types=_load_document_types(raw_case.get("document_types")),
             )
         )
     return tuple(cases)
@@ -85,7 +100,11 @@ def evaluate_retrieval(
     answerable = [case for case in cases if case.expected_targets]
     case_results: list[CaseRetrievalResult] = []
     for case in answerable:
-        results = retriever.query(case.inquiry, limit=max(k_values))
+        results = retriever.query(
+            case.retrieval_query or case.inquiry,
+            limit=max(k_values),
+            doc_types=case.document_types,
+        )
         rank = next(
             (
                 position
@@ -116,6 +135,50 @@ def evaluate_retrieval(
     )
 
 
+def validate_golden_gate(
+    cases: Sequence[GoldenRetrievalCase],
+    retriever: Retriever,
+    *,
+    enabled_products: set[str],
+    maximum_rank: int = 3,
+) -> RetrievalEvaluation:
+    applicable = tuple(case for case in cases if case.expected_targets)
+    target_products = {
+        target.product for case in applicable for target in case.expected_targets
+    }
+    disabled_targets = sorted(target_products - enabled_products)
+    if disabled_targets:
+        raise ValueError(
+            "Positive golden target products are not enabled: "
+            + ", ".join(disabled_targets)
+        )
+    covered_products = {
+        target.product for case in applicable for target in case.expected_targets
+    }
+    missing = sorted(enabled_products - covered_products)
+    if missing:
+        raise ValueError(
+            "Enabled products without a positive golden retrieval case: "
+            + ", ".join(missing)
+        )
+    evaluation = evaluate_retrieval(
+        applicable,
+        retriever,
+        k_values=(maximum_rank,),
+    )
+    failures = [
+        result.case_id
+        for result in evaluation.cases
+        if result.first_target_rank is None or result.first_target_rank > maximum_rank
+    ]
+    if failures:
+        raise ValueError(
+            f"Golden retrieval cases missed within top {maximum_rank}: "
+            + ", ".join(failures)
+        )
+    return evaluation
+
+
 def _matches_any_target(
     result: SearchResult, targets: tuple[RetrievalTarget, ...]
 ) -> bool:
@@ -125,3 +188,14 @@ def _matches_any_target(
         and result.page_number == target.page_number
         for target in targets
     )
+
+
+def _load_document_types(raw: object) -> tuple[DocumentType, ...] | None:
+    if raw is None:
+        return None
+    if not isinstance(raw, list) or not raw:
+        raise ValueError("document_types must be a non-empty JSON list")
+    values = tuple(str(value).upper() for value in raw)
+    if any(value not in {"TDS", "SDS"} for value in values):
+        raise ValueError("document_types may contain only TDS or SDS")
+    return cast(tuple[DocumentType, ...], values)

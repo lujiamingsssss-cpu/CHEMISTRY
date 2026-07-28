@@ -5,6 +5,11 @@ __pycache__/
 .coverage
 .env
 .chroma/
+.chroma.backup/
+.chroma.staging/
+.chroma.rollback/
+.chroma.recovery/
 .playwright-cli/
 artifacts/
+dist/
 .worktrees/

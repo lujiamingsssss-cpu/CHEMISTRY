@@ -1,3 +1,5 @@
+import hashlib
+import json
 from pathlib import Path
 
 import fitz
@@ -15,28 +17,60 @@ def _write_pdf(path: Path, pages: int = 1) -> None:
     with fitz.open() as document:
         for number in range(1, pages + 1):
             page = document.new_page()
-            page.insert_text((72, 72), f"Physical page {number}")
+            page.insert_text((72, 72), f"EPON Resin 8280 physical page {number}")
         document.save(path)
 
 
-def _materials(tmp_path: Path) -> Path:
+def _materials(tmp_path: Path) -> tuple[Path, Path]:
     product = tmp_path / "EPON Resin 8280"
-    _write_pdf(product / "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf", pages=3)
-    _write_pdf(product / "SDS - Westlake EPON Resin 8280 - US EN - 2022.pdf", pages=1)
-    return tmp_path
+    tds = product / "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf"
+    sds = product / "SDS - Westlake EPON Resin 8280 - US EN - 2022.pdf"
+    _write_pdf(tds, pages=3)
+    _write_pdf(sds, pages=1)
+    catalog = tmp_path / "catalog.json"
+    catalog.write_text(
+        json.dumps(
+            [
+                {
+                    "product": "EPON Resin 8280",
+                    "relative_path": "EPON Resin 8280/TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
+                    "document_type": "TDS",
+                    "date_revision": "Reissued 2005 · footer revision 2016",
+                    "jurisdiction": "Technical data sheet · jurisdiction not stated",
+                    "enabled": True,
+                    "sha256": hashlib.sha256(tds.read_bytes()).hexdigest(),
+                    "source_url": "https://manufacturer.example/tds.pdf",
+                    "acquired_on": "2026-07-28",
+                },
+                {
+                    "product": "EPON Resin 8280",
+                    "relative_path": "EPON Resin 8280/SDS - Westlake EPON Resin 8280 - US EN - 2022.pdf",
+                    "document_type": "SDS",
+                    "date_revision": "2022",
+                    "jurisdiction": "United States · English SDS",
+                    "enabled": True,
+                    "sha256": hashlib.sha256(sds.read_bytes()).hexdigest(),
+                    "source_url": "https://manufacturer.example/sds.pdf",
+                    "acquired_on": "2026-07-28",
+                },
+            ]
+        ),
+        encoding="utf-8",
+    )
+    return tmp_path, catalog
 
 
 def test_render_citation_page_uses_only_exact_approved_product_document(
     tmp_path: Path,
 ) -> None:
-    root = _materials(tmp_path)
+    root, catalog = _materials(tmp_path)
     citation = SourceCitation(
         product="EPON Resin 8280",
         source_file="TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
         page_number=3,
     )
 
-    rendered = render_citation_page(citation, root)
+    rendered = render_citation_page(citation, root, catalog)
 
     assert rendered.product == "EPON Resin 8280"
     assert rendered.source_file == "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf"
@@ -47,7 +81,7 @@ def test_render_citation_page_uses_only_exact_approved_product_document(
 
 
 def test_render_citation_page_rejects_unknown_file(tmp_path: Path) -> None:
-    root = _materials(tmp_path)
+    root, catalog = _materials(tmp_path)
     citation = SourceCitation(
         product="EPON Resin 8280",
         source_file="TDS - Not Approved.pdf",
@@ -55,11 +89,25 @@ def test_render_citation_page_rejects_unknown_file(tmp_path: Path) -> None:
     )
 
     with pytest.raises(ValueError, match="not an approved source document"):
-        render_citation_page(citation, root)
+        render_citation_page(citation, root, catalog)
+
+
+def test_render_citation_page_rejects_wrong_product_for_valid_file(
+    tmp_path: Path,
+) -> None:
+    root, catalog = _materials(tmp_path)
+    citation = SourceCitation(
+        product="Different Product",
+        source_file="TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
+        page_number=1,
+    )
+
+    with pytest.raises(ValueError, match="not an approved source document"):
+        render_citation_page(citation, root, catalog)
 
 
 def test_render_citation_page_rejects_page_outside_pdf(tmp_path: Path) -> None:
-    root = _materials(tmp_path)
+    root, catalog = _materials(tmp_path)
     citation = SourceCitation(
         product="EPON Resin 8280",
         source_file="TDS - Hexion EPON Resin 8280 - Rev 2016.pdf",
@@ -67,7 +115,7 @@ def test_render_citation_page_rejects_page_outside_pdf(tmp_path: Path) -> None:
     )
 
     with pytest.raises(ValueError, match="outside the source PDF"):
-        render_citation_page(citation, root)
+        render_citation_page(citation, root, catalog)
 
 
 def test_zoomable_html_has_click_and_bounded_zoom_controls() -> None:

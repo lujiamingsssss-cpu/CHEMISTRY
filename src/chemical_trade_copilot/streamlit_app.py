@@ -1,5 +1,6 @@
 import html
 import os
+from collections.abc import Sequence
 from pathlib import Path
 
 import streamlit as st
@@ -14,6 +15,11 @@ from chemical_trade_copilot.inquiry_analysis import (
     InquiryAnalysis,
     InquiryRetrievalPlanner,
 )
+from chemical_trade_copilot.materials import (
+    evidence_scope_caption,
+    load_material_catalog,
+    material_catalog_fingerprint,
+)
 from chemical_trade_copilot.retrieval import PageIndex
 from chemical_trade_copilot.ui_components import APP_CSS, build_copy_button_html
 from chemical_trade_copilot.ui_presenter import (
@@ -25,9 +31,35 @@ from chemical_trade_copilot.workflow import analyze_inquiry
 
 DEFAULT_MATERIALS_ROOT = Path(r"G:\桌面\化工")
 DEFAULT_DATABASE = Path(".chroma")
+DEFAULT_MATERIAL_CATALOG = Path("materials_catalog.json")
 
 
-def _run_analysis(inquiry: str) -> InquiryAnalysis:
+class _MetadataOnlyEmbedder:
+    def encode(self, texts: Sequence[str]) -> list[list[float]]:
+        raise RuntimeError("Evidence generation checks must not calculate embeddings")
+
+
+def _material_catalog_path() -> Path:
+    return Path(
+        os.environ.get(
+            "CHEMICAL_TRADE_MATERIAL_CATALOG", str(DEFAULT_MATERIAL_CATALOG)
+        )
+    )
+
+
+def _current_evidence_fingerprint() -> str:
+    expected = material_catalog_fingerprint(
+        load_material_catalog(_material_catalog_path())
+    )
+    with PageIndex(
+        Path(os.environ.get("CHEMICAL_TRADE_DATABASE", str(DEFAULT_DATABASE))),
+        embedder=_MetadataOnlyEmbedder(),
+    ) as index:
+        index.assert_catalog_fingerprint(expected)
+    return expected
+
+
+def _run_analysis(inquiry: str) -> tuple[InquiryAnalysis, str]:
     api_key = os.environ.get("DEEPSEEK_API_KEY")
     if not api_key:
         raise ValueError("DEEPSEEK_API_KEY is not available in this process")
@@ -36,16 +68,21 @@ def _run_analysis(inquiry: str) -> InquiryAnalysis:
         base_url=os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
         model=os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-pro"),
     )
-    index = PageIndex(
+    expected_fingerprint = material_catalog_fingerprint(
+        load_material_catalog(_material_catalog_path())
+    )
+    with PageIndex(
         Path(os.environ.get("CHEMICAL_TRADE_DATABASE", str(DEFAULT_DATABASE)))
-    )
-    return analyze_inquiry(
-        inquiry,
-        index=index,
-        planner=InquiryRetrievalPlanner(client),
-        analyzer=DeepSeekInquiryAnalyzer(client),
-        limit=3,
-    )
+    ) as index:
+        index.assert_catalog_fingerprint(expected_fingerprint)
+        analysis = analyze_inquiry(
+            inquiry,
+            index=index,
+            planner=InquiryRetrievalPlanner(client),
+            analyzer=DeepSeekInquiryAnalyzer(client),
+            limit=3,
+        )
+    return analysis, expected_fingerprint
 
 
 def _render_decision_line(analysis: InquiryAnalysis) -> None:
@@ -118,9 +155,10 @@ def _render_sources(analysis: InquiryAnalysis) -> None:
     materials_root = Path(
         os.environ.get("CHEMICAL_TRADE_MATERIALS_ROOT", str(DEFAULT_MATERIALS_ROOT))
     )
+    catalog_path = _material_catalog_path()
     for citation in view.citations:
         try:
-            rendered = render_citation_page(citation, materials_root)
+            rendered = render_citation_page(citation, materials_root, catalog_path)
         except (FileNotFoundError, ValueError) as error:
             st.warning(f"The approved source page could not be rendered: {error}")
             continue
@@ -272,7 +310,7 @@ def _render_entry() -> None:
             return
         try:
             with st.spinner("Validating technical documents and evidence guardrails..."):
-                analysis = _run_analysis(inquiry)
+                analysis, fingerprint = _run_analysis(inquiry)
         except Exception:
             st.error(
                 "The analysis could not be completed safely. Check the local API and "
@@ -280,6 +318,7 @@ def _render_entry() -> None:
             )
             return
         st.session_state["analysis_json"] = analysis.model_dump_json()
+        st.session_state["analysis_catalog_fingerprint"] = fingerprint
         for key in tuple(st.session_state):
             if str(key).startswith("email_draft_"):
                 del st.session_state[key]
@@ -296,14 +335,37 @@ def main() -> None:
     st.html(APP_CSS)
     st.caption("CHEMICAL TRADE COPILOT · APPROVED TDS/SDS EVIDENCE")
     payload = st.session_state.get("analysis_json")
+    if payload:
+        try:
+            current_fingerprint = _current_evidence_fingerprint()
+        except (FileNotFoundError, ValueError):
+            st.session_state.pop("analysis_json", None)
+            st.session_state.pop("analysis_catalog_fingerprint", None)
+            st.error(
+                "The approved catalog and evidence index are not synchronized. "
+                "The cached result was cleared."
+            )
+            _render_entry()
+            return
+        if st.session_state.get("analysis_catalog_fingerprint") != current_fingerprint:
+            st.session_state.pop("analysis_json", None)
+            st.session_state.pop("analysis_catalog_fingerprint", None)
+            st.warning(
+                "This result no longer matches the approved evidence generation and "
+                "was cleared. Analyze the inquiry again."
+            )
+            _render_entry()
+            return
     if not payload:
         _render_entry()
         st.caption(
-            "Private Demo · Two approved epoxy products · No automatic email sending"
+            f"Private Demo · {evidence_scope_caption(_material_catalog_path())} · "
+            "No automatic email sending"
         )
         return
     if st.button("Start a new inquiry"):
         st.session_state.pop("analysis_json", None)
+        st.session_state.pop("analysis_catalog_fingerprint", None)
         st.session_state["inquiry"] = ""
         for key in tuple(st.session_state):
             if str(key).startswith("email_draft_"):
@@ -315,10 +377,7 @@ def main() -> None:
     else:
         _render_insufficient(analysis)
     st.divider()
-    st.caption(
-        "Evidence scope: approved D.E.R. 331 and EPON Resin 8280 documents only. "
-        "Document dates and jurisdictions remain limitations."
-    )
+    st.caption(evidence_scope_caption(_material_catalog_path()))
 
 
 main()

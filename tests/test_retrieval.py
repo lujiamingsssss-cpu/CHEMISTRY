@@ -1,6 +1,8 @@
 from collections.abc import Sequence
 from pathlib import Path
 
+import pytest
+
 from chemical_trade_copilot.pdf_pages import PageRecord
 from chemical_trade_copilot.retrieval import PageIndex
 
@@ -102,3 +104,54 @@ def test_pages_returns_each_full_physical_page_once(tmp_path: Path) -> None:
 
     assert len(pages) == 1
     assert pages[0] == long_page
+
+
+def test_close_releases_persistent_database_for_directory_switch(tmp_path: Path) -> None:
+    database = tmp_path / "chroma"
+    index = PageIndex(database, embedder=KeywordEmbedder())
+    index.replace([_page("general coating use", 1)])
+
+    index.close()
+    switched = tmp_path / "chroma.backup"
+    database.rename(switched)
+
+    assert switched.is_dir()
+
+
+def test_close_releases_database_after_reopen_for_validation(tmp_path: Path) -> None:
+    database = tmp_path / "chroma"
+    writer = PageIndex(database, embedder=KeywordEmbedder())
+    writer.replace([_page("general coating use", 1)])
+    writer.close()
+    validator = PageIndex(database, embedder=KeywordEmbedder())
+    assert validator.pages()
+    assert validator.query("coating", limit=1)
+    validator.close()
+
+    database.rename(tmp_path / "chroma.validated")
+
+    assert (tmp_path / "chroma.validated").is_dir()
+
+
+def test_closing_one_index_does_not_stop_another_client(tmp_path: Path) -> None:
+    first = PageIndex(tmp_path / "first", embedder=KeywordEmbedder())
+    second = PageIndex(tmp_path / "second", embedder=KeywordEmbedder())
+    first.replace([_page("first coating evidence", 1)])
+    second.replace([_page("second coating evidence", 1)])
+
+    first.close()
+
+    assert second.pages()[0].text == "second coating evidence"
+    second.close()
+
+
+def test_index_persists_and_checks_catalog_fingerprint(tmp_path: Path) -> None:
+    database = tmp_path / "chroma"
+    with PageIndex(database, embedder=KeywordEmbedder()) as index:
+        index.replace([_page("approved evidence", 1)], catalog_fingerprint="abc123")
+
+    with PageIndex(database, embedder=KeywordEmbedder()) as reopened:
+        assert reopened.catalog_fingerprint == "abc123"
+        reopened.assert_catalog_fingerprint("abc123")
+        with pytest.raises(ValueError, match="catalog fingerprint"):
+            reopened.assert_catalog_fingerprint("different")

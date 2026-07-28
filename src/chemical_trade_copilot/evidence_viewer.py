@@ -7,27 +7,7 @@ from pathlib import Path
 import fitz
 
 from .inquiry_analysis import SourceCitation
-from .materials import discover_documents
-
-
-APPROVED_SOURCE_METADATA = {
-    "TDS - DOW D.E.R. 331 - 2009.pdf": (
-        "2009",
-        "Technical data sheet · jurisdiction not stated",
-    ),
-    "SDS - Olin D.E.R. 331 - Canada EN - 2020.pdf": (
-        "2020",
-        "Canada · English SDS",
-    ),
-    "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf": (
-        "Reissued 2005 · footer revision 2016",
-        "Technical data sheet · jurisdiction not stated",
-    ),
-    "SDS - Westlake EPON Resin 8280 - US EN - 2022.pdf": (
-        "2022",
-        "United States · English SDS",
-    ),
-}
+from .materials import discover_documents, load_material_catalog
 
 
 @dataclass(frozen=True, slots=True)
@@ -43,22 +23,24 @@ class RenderedSourcePage:
 def render_citation_page(
     citation: SourceCitation,
     materials_root: Path,
+    catalog_path: Path,
     *,
     scale: float = 1.5,
 ) -> RenderedSourcePage:
-    sources = discover_documents(materials_root, [citation.product])
-    matches = [source for source in sources if source.path.name == citation.source_file]
+    sources = discover_documents(
+        materials_root,
+        load_material_catalog(catalog_path),
+    )
+    matches = [
+        source
+        for source in sources
+        if source.product == citation.product and source.path.name == citation.source_file
+    ]
     if len(matches) != 1:
         raise ValueError(
             f"Citation is not an approved source document: {citation.source_file}"
         )
     source = matches[0]
-    try:
-        date_revision, jurisdiction = APPROVED_SOURCE_METADATA[source.path.name]
-    except KeyError as error:
-        raise ValueError(
-            f"Source metadata is not approved: {source.path.name}"
-        ) from error
     with fitz.open(source.path) as document:
         if citation.page_number < 1 or citation.page_number > document.page_count:
             raise ValueError(
@@ -71,11 +53,11 @@ def render_citation_page(
         )
         png_bytes = pixmap.tobytes("png")
     return RenderedSourcePage(
-        product=citation.product,
+        product=source.product,
         source_file=citation.source_file,
         page_number=citation.page_number,
-        date_revision=date_revision,
-        jurisdiction=jurisdiction,
+        date_revision=source.date_revision,
+        jurisdiction=source.jurisdiction,
         png_bytes=png_bytes,
     )
 

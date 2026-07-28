@@ -356,6 +356,69 @@ def test_analyzer_does_not_treat_hdt_as_same_value_continuous_service_temperatur
     assert result.key_parameters == ()
 
 
+def test_baer_negative_golden_rejects_flash_point_as_service_temperature() -> None:
+    cases = json.loads(
+        (Path(__file__).parent / "fixtures" / "golden_retrieval_cases.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    inquiry = next(
+        case["inquiry"]
+        for case in cases
+        if case["id"]
+        == "baer_xp9500_unsupported_continuous_service_temperature_en"
+    )
+    citation = {
+        "product": "BAER XP9500",
+        "source_file": "TDS - ACS BAER XP9500.pdf",
+        "page_number": 1,
+    }
+    payload = {
+        "summary_zh": "该闪点证明产品可以连续高温使用。",
+        "recommendation_status": "supported",
+        "recommended_product": "BAER XP9500",
+        "recommendation_reasons": ["TDS reports a 315 C flash point."],
+        "requirements": [
+            {
+                "category": "technical",
+                "requirement": "continuous service temperature 315 C",
+                "status": "supported",
+                "evidence": [citation],
+            }
+        ],
+        "key_parameters": [
+            {
+                "name": "Continuous service temperature",
+                "value": "315",
+                "unit": "C",
+                "conditions": "Not stated",
+                "test_method": "Not stated",
+                "citation": citation,
+            }
+        ],
+        "evidence_gaps": [],
+        "source_limitations": ["Under Product Development"],
+        "follow_up_questions": [],
+        "next_action": "ready_to_reply",
+    }
+    evidence = SearchResult(
+        text="Flash point: 315 C",
+        product="BAER XP9500",
+        doc_type="TDS",
+        source_file="TDS - ACS BAER XP9500.pdf",
+        source_path=Path("C:/BAER-XP9500.pdf"),
+        page_number=1,
+        distance=0.1,
+        page_text="BAER XP-9500. Flash point: 315 C. Under Product Development.",
+    )
+
+    result = DeepSeekInquiryAnalyzer(StubJsonClient(payload)).analyze(inquiry, [evidence])
+
+    assert result.recommendation_status == "insufficient_evidence"
+    assert result.recommended_product is None
+    assert result.key_parameters == ()
+
+
 @pytest.mark.parametrize(
     ("summary", "reason"),
     [

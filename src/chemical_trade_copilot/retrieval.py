@@ -41,6 +41,7 @@ class PageIndex:
         database_path.mkdir(parents=True, exist_ok=True)
         self._client = chromadb.PersistentClient(path=str(database_path))
         self._collection = self._client.get_or_create_collection(collection_name)
+        self._closed = False
         self._embedder = embedder or MultilingualE5Embedder()
         self._splitter = RecursiveCharacterTextSplitter(
             chunk_size=1200,
@@ -48,7 +49,9 @@ class PageIndex:
             separators=["\n\n", "\n", ". ", " ", ""],
         )
 
-    def replace(self, pages: list[PageRecord]) -> None:
+    def replace(
+        self, pages: list[PageRecord], *, catalog_fingerprint: str | None = None
+    ) -> None:
         chunks = self._chunks(pages)
         embeddings = (
             self._embedder.encode([f"passage: {chunk.text}" for chunk in chunks])
@@ -77,6 +80,18 @@ class PageIndex:
                 for chunk in chunks
             ],
         )
+        if catalog_fingerprint is not None:
+            self._collection.modify(metadata={"catalog_fingerprint": catalog_fingerprint})
+
+    @property
+    def catalog_fingerprint(self) -> str | None:
+        metadata = self._collection.metadata or {}
+        value = metadata.get("catalog_fingerprint")
+        return str(value) if value else None
+
+    def assert_catalog_fingerprint(self, expected: str) -> None:
+        if self.catalog_fingerprint != expected:
+            raise ValueError("Index catalog fingerprint does not match approved catalog")
 
     def query(
         self,
@@ -154,6 +169,19 @@ class PageIndex:
             pages.values(),
             key=lambda page: (page.product, page.source_file, page.page_number),
         )
+
+    def close(self) -> None:
+        """Release Chroma resources before a Windows directory switch."""
+        if self._closed:
+            return
+        self._client.close()
+        self._closed = True
+
+    def __enter__(self) -> "PageIndex":
+        return self
+
+    def __exit__(self, *args: object) -> None:
+        self.close()
 
     def _chunks(self, pages: list[PageRecord]) -> list[_PageChunk]:
         return [
