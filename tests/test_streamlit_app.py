@@ -80,3 +80,28 @@ def test_supported_analysis_renders_product_readiness_and_editable_email() -> No
         for area in app.text_area
     )
     assert all("156" not in area.value for area in app.text_area if "email" in area.label.lower())
+
+
+def test_ready_to_reply_result_does_not_invent_a_quotation_workflow() -> None:
+    analysis = InquiryAnalysis.model_validate_json(_supported_json())
+    analysis = analysis.model_copy(
+        update={
+            "requirements": (analysis.requirements[0],),
+            "next_action": "ready_to_reply",
+        }
+    )
+    app = AppTest.from_file(str(APP)).run(timeout=30)
+    app.session_state["analysis_json"] = analysis.model_dump_json()
+    app.session_state["inquiry"] = "EPON Resin 8280 MPDA technical conditions"
+
+    app.run(timeout=30)
+
+    assert not app.exception
+    assert all(
+        item.value != "What is still needed before a quotation"
+        for item in app.subheader
+    )
+    assert any(
+        "Next action: Prepare the evidence-grounded technical reply" in item.value
+        for item in app.caption
+    )

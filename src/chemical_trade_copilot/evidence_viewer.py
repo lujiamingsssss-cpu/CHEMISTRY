@@ -10,11 +10,33 @@ from .inquiry_analysis import SourceCitation
 from .materials import discover_documents
 
 
+APPROVED_SOURCE_METADATA = {
+    "TDS - DOW D.E.R. 331 - 2009.pdf": (
+        "2009",
+        "Technical data sheet · jurisdiction not stated",
+    ),
+    "SDS - Olin D.E.R. 331 - Canada EN - 2020.pdf": (
+        "2020",
+        "Canada · English SDS",
+    ),
+    "TDS - Hexion EPON Resin 8280 - Rev 2016.pdf": (
+        "Reissued 2005 · footer revision 2016",
+        "Technical data sheet · jurisdiction not stated",
+    ),
+    "SDS - Westlake EPON Resin 8280 - US EN - 2022.pdf": (
+        "2022",
+        "United States · English SDS",
+    ),
+}
+
+
 @dataclass(frozen=True, slots=True)
 class RenderedSourcePage:
     product: str
     source_file: str
     page_number: int
+    date_revision: str
+    jurisdiction: str
     png_bytes: bytes
 
 
@@ -31,6 +53,12 @@ def render_citation_page(
             f"Citation is not an approved source document: {citation.source_file}"
         )
     source = matches[0]
+    try:
+        date_revision, jurisdiction = APPROVED_SOURCE_METADATA[source.path.name]
+    except KeyError as error:
+        raise ValueError(
+            f"Source metadata is not approved: {source.path.name}"
+        ) from error
     with fitz.open(source.path) as document:
         if citation.page_number < 1 or citation.page_number > document.page_count:
             raise ValueError(
@@ -46,13 +74,18 @@ def render_citation_page(
         product=citation.product,
         source_file=citation.source_file,
         page_number=citation.page_number,
+        date_revision=date_revision,
+        jurisdiction=jurisdiction,
         png_bytes=png_bytes,
     )
 
 
-def build_zoomable_page_html(png_bytes: bytes, *, alt_text: str) -> str:
+def build_zoomable_page_html(
+    png_bytes: bytes, *, alt_text: str, source_metadata: str
+) -> str:
     encoded = base64.b64encode(png_bytes).decode("ascii")
     safe_alt = html.escape(alt_text, quote=True)
+    safe_metadata = html.escape(source_metadata)
     viewer_id = hashlib.sha256(png_bytes + alt_text.encode("utf-8")).hexdigest()[:12]
     return f"""
 <div class="ctc-source-viewer" data-viewer-id="{viewer_id}"
@@ -65,8 +98,9 @@ def build_zoomable_page_html(png_bytes: bytes, *, alt_text: str) -> str:
   <div class="ctc-source-overlay" role="dialog" aria-modal="true"
        aria-label="Source PDF page viewer" hidden>
     <div class="ctc-source-toolbar">
-      <span class="ctc-zoom-status" aria-live="polite">100%</span>
+      <span class="ctc-source-identity">{safe_metadata}</span>
       <div>
+        <span class="ctc-zoom-status" aria-live="polite">100%</span>
         <button type="button" data-action="zoom-out" aria-label="Zoom out">−</button>
         <button type="button" data-action="reset" aria-label="Reset zoom">Reset</button>
         <button type="button" data-action="zoom-in" aria-label="Zoom in">+</button>
@@ -88,13 +122,15 @@ def build_zoomable_page_html(png_bytes: bytes, *, alt_text: str) -> str:
 .ctc-source-overlay {{ position:fixed; inset:0; z-index:999999; background:rgba(16,43,39,.88);
   padding:24px; }}
 .ctc-source-overlay[hidden] {{ display:none; }}
-.ctc-source-toolbar {{ height:58px; display:flex; align-items:center; justify-content:space-between;
+.ctc-source-toolbar {{ min-height:70px; display:flex; align-items:center; justify-content:space-between;
   background:#FBFAF6; padding:0 16px; border-radius:12px 12px 0 0; color:#102B27;
   font:600 13px Inter,Segoe UI,sans-serif; }}
+.ctc-source-identity {{ max-width:62%; line-height:1.45; padding:8px 12px 8px 0; }}
+.ctc-zoom-status {{ margin-right:8px; font-variant-numeric:tabular-nums; }}
 .ctc-source-toolbar button {{ border:1px solid #BFB8AB; background:#F2EFE7; color:#102B27;
   border-radius:7px; padding:8px 11px; margin-left:5px; cursor:pointer; }}
 .ctc-source-toolbar button[data-action="close"] {{ background:#102B27; color:white; border-color:#102B27; }}
-.ctc-source-canvas {{ height:calc(100vh - 106px); overflow:auto; background:#C7C4BC;
+.ctc-source-canvas {{ height:calc(100vh - 118px); overflow:auto; background:#C7C4BC;
   text-align:center; border-radius:0 0 12px 12px; padding:24px; }}
 .ctc-source-canvas img {{ display:block; width:100%; height:auto; max-width:none; margin:0 auto;
   cursor:zoom-in; box-shadow:0 12px 35px rgba(0,0,0,.25); }}

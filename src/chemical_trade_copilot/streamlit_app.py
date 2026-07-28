@@ -119,36 +119,45 @@ def _render_sources(analysis: InquiryAnalysis) -> None:
         os.environ.get("CHEMICAL_TRADE_MATERIALS_ROOT", str(DEFAULT_MATERIALS_ROOT))
     )
     for citation in view.citations:
-        st.markdown(
-            f"**{citation.source_file}**  \n"
-            f"{citation.product} · Physical page {citation.page_number}"
-        )
         try:
             rendered = render_citation_page(citation, materials_root)
         except (FileNotFoundError, ValueError) as error:
             st.warning(f"The approved source page could not be rendered: {error}")
             continue
+        st.markdown(
+            f"**{rendered.source_file}**  \n"
+            f"{rendered.product} · Physical page {rendered.page_number} · "
+            f"{rendered.date_revision} · {rendered.jurisdiction}"
+        )
         alt_text = (
             f"{rendered.product}, {rendered.source_file}, "
             f"physical page {rendered.page_number}"
         )
+        source_metadata = (
+            f"{rendered.product} · {rendered.source_file} · Physical page "
+            f"{rendered.page_number} · {rendered.date_revision} · "
+            f"{rendered.jurisdiction}"
+        )
         st.html(
-            build_zoomable_page_html(rendered.png_bytes, alt_text=alt_text),
+            build_zoomable_page_html(
+                rendered.png_bytes,
+                alt_text=alt_text,
+                source_metadata=source_metadata,
+            ),
             unsafe_allow_javascript=True,
         )
 
 
-def _render_readiness() -> None:
+def _render_readiness(analysis: InquiryAnalysis) -> None:
+    view = build_analysis_view(analysis)
     st.subheader("What is still needed before a quotation")
     customer, internal = st.columns(2, gap="large")
     with customer:
         st.markdown("**Confirm with the customer**")
-        st.html(
-            '<ul class="ctc-checklist"><li>Required quantity and delivery window</li>'
-            "<li>Destination port and named Incoterm place</li>"
-            "<li>Final application and target-market requirements</li>"
-            "<li>Packaging preference</li></ul>"
+        items = "".join(
+            f"<li>{html.escape(question)}</li>" for question in view.customer_questions
         )
+        st.html(f'<ul class="ctc-checklist">{items}</ul>')
     with internal:
         st.markdown("**Confirm internally**")
         st.html(
@@ -191,10 +200,14 @@ def _render_supported(analysis: InquiryAnalysis) -> None:
         "compliance, and logistics facts still require separate confirmation."
     )
     _render_decision_line(analysis)
+    if view.open_items:
+        st.caption(f"Open items: {' · '.join(view.open_items)}")
+    st.caption(f"Next action: {view.next_action}")
     st.divider()
     _render_verified_parameters(analysis)
-    st.divider()
-    _render_readiness()
+    if analysis.next_action == "needs_commercial_input":
+        st.divider()
+        _render_readiness(analysis)
     st.divider()
     _render_sources(analysis)
     st.divider()
@@ -217,15 +230,15 @@ def _render_insufficient(analysis: InquiryAnalysis) -> None:
         "conditions needed for this request. No product or unverified value is shown."
     )
     _render_decision_line(analysis)
+    if view.open_items:
+        st.caption(f"Open items: {' · '.join(view.open_items)}")
+    st.caption(f"Next action: {view.next_action}")
     st.divider()
     st.subheader("Collect the information that changes the decision")
-    st.markdown(
-        "- What is the final application and target country?\n"
-        "- Is the operating condition continuous, intermittent, or a short peak?\n"
-        "- What medium, duration, and failure criterion apply?\n"
-        "- Which regulation, certification, or customer standard must be met?\n"
-        "- Can the supplier technical team evaluate the application first?"
+    questions = view.customer_questions or (
+        "Which additional approved technical evidence can be supplied?",
     )
+    st.markdown("\n".join(f"- {question}" for question in questions))
     st.divider()
     _render_email(analysis)
 
