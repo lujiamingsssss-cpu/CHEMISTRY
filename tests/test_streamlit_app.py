@@ -1,5 +1,7 @@
+from collections.abc import Sequence
 from pathlib import Path
 
+import pytest
 from streamlit.testing.v1 import AppTest
 
 from chemical_trade_copilot.inquiry_analysis import (
@@ -13,10 +15,38 @@ from chemical_trade_copilot.materials import (
     load_material_catalog,
     material_catalog_fingerprint,
 )
+from chemical_trade_copilot.pdf_pages import PageRecord
+from chemical_trade_copilot.retrieval import PageIndex
 
 
 APP = Path(__file__).parents[1] / "src" / "chemical_trade_copilot" / "streamlit_app.py"
 CATALOG = Path(__file__).parents[1] / "materials_catalog.json"
+
+
+class _FixtureEmbedder:
+    def encode(self, texts: Sequence[str]) -> list[list[float]]:
+        return [[1.0, 0.0] for _ in texts]
+
+
+@pytest.fixture(autouse=True)
+def isolated_catalog_generation(tmp_path: Path, monkeypatch: pytest.MonkeyPatch):
+    database = tmp_path / "chroma"
+    with PageIndex(database, embedder=_FixtureEmbedder()) as index:
+        index.replace(
+            [
+                PageRecord(
+                    text="fixture evidence",
+                    product="EPON Resin 8280",
+                    doc_type="TDS",
+                    source_file="fixture.pdf",
+                    source_path=tmp_path / "fixture.pdf",
+                    page_number=1,
+                )
+            ],
+            catalog_fingerprint=_current_fingerprint(),
+        )
+    monkeypatch.setenv("CHEMICAL_TRADE_DATABASE", str(database))
+    monkeypatch.setenv("CHEMICAL_TRADE_MATERIAL_CATALOG", str(CATALOG))
 
 
 def _current_fingerprint() -> str:
