@@ -332,3 +332,69 @@ Streamlit 不属于本 TWINKLE 设计的功能开发范围；TWINKLE 不修改�
 - 低清候选若需要改相机、灯光、材质、对象范围或时间才能通过，必须停止并回到设计/人工批准，不得在返修预算内擅自扩大范围。
 - 格式实验失败只触发已批准的无损 PNG 回退，不阻塞阶段；缺少 Chrome 151、Chrome for Testing 150 或 Edge 151 任一目标浏览器二进制、低清第二候选仍失败、正式参数偏离已批低清或原子发布无法安全完成时，必须停止并请求决定。Edge 150 不属于当前硬前置，但必须保留 `not-tested` 限制。
 - 步骤 7 完成后停止；阶段 4 仍需独立授权，不自动提交、推送、发布或部署。
+
+### 8.6 阶段 4：360° 总览、有限聚焦路线与关闭契约
+
+#### 8.6.1 权威、范围与非目标
+
+阶段 4 只处理阶段 1 已批准的“双通道采集光学舱”和“聚光镜组件”，并复用阶段 3 r2 的机械展开、闭合、暂停恢复、检查灯和静态回退。阶段 2 的绿色/红色滤片路线保持取消，不得恢复其 generator、test、候选、资产、热点或讲解逻辑。
+
+阶段 4 采用 Blender 原生相机、Track To、有限 Curve/Follow Path、仓库投影模块、逐帧资格和无损 PNG 序列。它不实现任意实时 WebGL、第二状态机、通用寻路、生产详情面板、正式产品讲解、生产页面写入、发布或部署。
+
+所有人工批准只约束本阶段已审核的候选。机器通过、历史证据或测试不得代签人工选择；阶段 4 关闭不授权阶段 5。
+
+#### 8.6.2 360° 总览与入口
+
+总览使用 `C360-F96`：96 个 `[0°, 360°)`、端点不重复的实体/逻辑帧，8,000 ms，3.75° 步进，640×450、64 samples、无损 PNG。闭环必须验证末帧到首帧的位置、朝向和像素连续性；任一帧加载失败时进入 error，不得跳帧或用其他媒体冒充完整加载。
+
+模型热点只有在当前帧满足正深度、安全投影、表面朝向、无遮挡和完整装配可识别门禁时可见可用；非 `visible` 状态必须同步关闭 pointer 与 aria。两个固定中文名称按钮在任意总览帧始终显示可点。
+
+入口帧语义为 `overview-exit-only`，只表示离开总览的获批出口，不是详情终点或机械状态。最终入口集合固定为：
+
+- 双通道采集光学舱：`[6, 65]`
+- 聚光镜组件：`[87, 8]`
+
+名称按钮点击后沿 cyclic 最短方向转向最近获批入口，使用 250 ms 加速、250 ms 减速和 100 ms 稳定态，峰值角速度不超过约 90°/s，总转向不超过 2,000 ms；到达且速度归零后才可进入聚焦路线。
+
+#### 8.6.3 C1/C2 路线与返回
+
+每个入口只比较 A/B 两条聚焦曲线。两者除空间曲线形状外，共享起终点、target、焦距、shift、时长、缓动、停稳、朝向约束和机械启动时刻。聚焦停稳后才播放阶段 3 r2；r2 完全闭合后才返回总览。
+
+完整进入与返回固定为：
+
+```text
+fullFocusTrace = orbitPrefixIndices + curveFrameIndices
+overviewReturn = reverse(fullFocusTrace)
+```
+
+返回不得重新选择入口、重算路径或分段重拼；完成后必须回到捕获帧并进入 `global/paused`。减少动态、资源失败或超时时保留捕获帧，使用静态回退并记录失败原因，不得伪造路线完成。
+
+C2 必须绑定关闭的阶段 3 r2、获批 C360 manifest、机器通过的 C1 路线集合、worker contract SHA、每帧 provenance 和完整库存 SHA。八条 C2 路线各有 25 张 focus PNG：每条复用 3 张 C1 端点/中点证据并新生成 22 张，总计 200 张 focus PNG，其中 176 张为 C2 新渲染、24 张为获批 C1 复用。
+
+#### 8.6.4 最终人工选择与关闭状态
+
+2026-08-31 的最终四项人工选择固定为：
+
+- 双通道采集光学舱入口 `006`：路线 `A`
+- 双通道采集光学舱入口 `065`：路线 `B`
+- 聚光镜组件入口 `087`：路线 `A`
+- 聚光镜组件入口 `008`：路线 `A`
+
+`routeByUnit` 必须逐项记录上述入口、variant 和稳定 route ID；最终 `entryFrameSet` 必须保持光学舱 `[6, 65]`、聚光镜 `[87, 8]`。只有 production C2 validator、浏览器机器证据和四项人工选择全部匹配时，关闭事务才可写入：
+
+```text
+focusRouteGenerated = true
+humanVisualApproved = true
+stage4Closed = true
+authorizesStage5 = false
+```
+
+关闭记录范围固定为 `stage4-step9-selection-record-and-closure-only`。它替换阶段 3 的 focus stub，但不授权阶段 5、生产页面、push、PR、发布或部署。
+
+#### 8.6.5 验证、事务与回滚
+
+正式 C2 机器门禁覆盖八条路线、200 张 focus PNG、r2/C1/C360 provenance、review 依赖本地化、桌面/移动 Chromium 路线覆盖、资源失败和有界超时探针。浏览器成功证据必须绑定 review inventory/page SHA；成功场景不得有 console、page 或 request error。
+
+C2 builder 拒绝覆盖既有目标，只能在同级隔离 staging 生成并原子发布。浏览器证据记录、审核页刷新、陈旧浏览器门禁重开和 step9 关闭都必须保留不可变渲染资产，并在最终验证、rename 或写入失败时恢复原 manifest、review 和 browser-results。任何事务残留、SHA 漂移、未批准选择、生产写入或 `authorizesStage5 != false` 都必须失败关闭。
+
+历史真实 Blender/Chromium 证据记录已执行事实；clean-checkout 自动回归使用最小上游 fixture 和 synthetic renderer 调用同一 production builder/validator、证据记录、关闭和回滚函数。合成回归不得代替历史视觉裁决，也不得提交正式 output。
