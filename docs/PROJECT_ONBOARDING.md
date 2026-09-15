@@ -185,13 +185,13 @@ git status --short
 - `twinkle-entry.css`、`twinkle-entry.js`：TWINKLE 入口、悬停序列、全屏 iframe、关闭和减少动态策略；
 - `assets/vendor/` 与 `catalog/assets/vendor/`：本地化前端依赖，避免正式演示依赖公共 CDN。
 
-静态页面必须通过 HTTP 服务访问，不能依赖 `file://` 的偶然行为。使用仓库内脚本，它固定以仓库根为服务根目录并打印可直接打开的 URL：
+静态页面必须通过 HTTP 服务访问，不能依赖 `file://` 的偶然行为。使用仓库内脚本：它以仓库根为服务根目录、打印可访问的 URL，并**自动在默认浏览器中打开**首页（`--no-open` 可关闭）。
 
 ```powershell
 .\.venv\Scripts\python.exe scripts\dev_preview.py
 ```
 
-然后访问 `http://127.0.0.1:8000/showcase/homepage/index.html`（加 `--print-only` 只打印 URL 不起服务，`--port` / `--bind` 可改）。是否具备完整 TWINKLE iframe 依赖，必须结合打包产物、正式运行资产和当前验证目标判断；不能仅凭首页能打开就宣称 H2 完整。
+首页地址为 `http://127.0.0.1:8000/showcase/homepage/index.html`（`--port` / `--bind` 可改，`--print-only` 只打印 URL 不起服务也不开浏览器）。服务会一直运行到按 Ctrl+C；窗口里出现"服务根目录 … 按 Ctrl+C 停止"即表示已在监听，此时若无浏览器弹出，按打印出的 URL 手动访问或检查默认浏览器关联。是否具备完整 TWINKLE iframe 依赖，必须结合打包产物、正式运行资产和当前验证目标判断；不能仅凭首页能打开就宣称 H2 完整。
 
 `scripts\dev_preview.bat` 与 `scripts\release_verify.bat` 是**双击入口**，供不想开终端时使用。它们从**自身所在位置**解析仓库根、显式使用 `.venv\Scripts\python.exe`（PATH 上的 `python` 是系统解释器，依赖不全）、透传参数、传播退出码，并在结束时 `pause` 以便阅读输出。二者**不含任何绝对路径**；需要可脚本化调用时直接用对应的 `.py`。
 
