@@ -78,3 +78,51 @@ def test_cli_reports_targets_without_starting_a_server(capsys):
     captured = capsys.readouterr()
     assert exit_code == 0
     assert HOMEPAGE in captured.out
+
+
+def test_open_target_prefers_the_first_available_page():
+    module = _module()
+    missing = module.PreviewTarget(label="missing", url_path="/missing.html", available=False)
+    ready = module.PreviewTarget(label="ready", url_path="/ready.html", available=True)
+
+    assert module.choose_open_target((missing, ready)).url_path == "/ready.html"
+
+
+def test_open_target_is_none_when_no_page_exists(tmp_path):
+    module = _module()
+
+    assert module.choose_open_target(module.resolve_preview_targets(tmp_path)) is None
+
+
+def test_serving_opens_the_available_page_in_a_browser(monkeypatch):
+    module = _module()
+    opened = []
+    monkeypatch.setattr(module, "open_in_browser", lambda url: opened.append(url) or True)
+    monkeypatch.setattr(module, "serve_until_interrupted", lambda server: None)
+
+    exit_code = module.main(["--port", "0"])
+
+    assert exit_code == 0
+    assert len(opened) == 1
+    assert opened[0].endswith(HOMEPAGE)
+
+
+def test_no_open_flag_suppresses_the_browser(monkeypatch):
+    module = _module()
+    opened = []
+    monkeypatch.setattr(module, "open_in_browser", lambda url: opened.append(url) or True)
+    monkeypatch.setattr(module, "serve_until_interrupted", lambda server: None)
+
+    exit_code = module.main(["--port", "0", "--no-open"])
+
+    assert exit_code == 0
+    assert opened == []
+
+
+def test_print_only_never_opens_a_browser(monkeypatch):
+    module = _module()
+    opened = []
+    monkeypatch.setattr(module, "open_in_browser", lambda url: opened.append(url) or True)
+
+    assert module.main(["--print-only"]) == 0
+    assert opened == []
