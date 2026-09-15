@@ -185,13 +185,13 @@ git status --short
 - `twinkle-entry.css`、`twinkle-entry.js`：TWINKLE 入口、悬停序列、全屏 iframe、关闭和减少动态策略；
 - `assets/vendor/` 与 `catalog/assets/vendor/`：本地化前端依赖，避免正式演示依赖公共 CDN。
 
-静态页面必须通过 HTTP 服务访问，不能依赖 `file://` 的偶然行为。例如：
+静态页面必须通过 HTTP 服务访问，不能依赖 `file://` 的偶然行为。使用仓库内脚本，它固定以仓库根为服务根目录并打印可直接打开的 URL：
 
 ```powershell
-.\.venv\Scripts\python.exe -m http.server 8000
+.\.venv\Scripts\python.exe scripts\dev_preview.py
 ```
 
-然后访问 `http://127.0.0.1:8000/showcase/homepage/index.html`。是否具备完整 TWINKLE iframe 依赖，必须结合打包产物、正式运行资产和当前验证目标判断；不能仅凭首页能打开就宣称 H2 完整。
+然后访问 `http://127.0.0.1:8000/showcase/homepage/index.html`（加 `--print-only` 只打印 URL 不起服务，`--port` / `--bind` 可改）。是否具备完整 TWINKLE iframe 依赖，必须结合打包产物、正式运行资产和当前验证目标判断；不能仅凭首页能打开就宣称 H2 完整。
 
 ### 4.3 TWINKLE 工具链
 
@@ -315,6 +315,8 @@ TWINKLE Stage 5 H2 审核链**刻意绑定本机产物**。这是设计，不是
 常用基础验证：
 
 ```powershell
+.\.venv\Scripts\python.exe scripts\release_verify.py
+.\.venv\Scripts\python.exe scripts\release_verify.py --with-tests
 .\.venv\Scripts\python.exe -m pytest -q
 .\.venv\Scripts\python.exe -m pytest -q tests\test_twinkle_stage5_homepage.py tests\test_twinkle_stage5_packaging.py
 .\.venv\Scripts\python.exe -m pytest -q tests\test_twinkle_stage5_h2_portability.py
@@ -322,6 +324,8 @@ git diff --check
 git status --short
 git lfs status
 ```
+
+`scripts/release_verify.py` 是只读的发布前校验电池（LFS 物化、收集等价性、receipt 自洽、`scripts/` SHA pin、待合并差异卫生），有失败项即非零退出；无法运行的检查会**明确报告 SKIP 原因**而非静默通过。默认不跑全量 pytest，需显式 `--with-tests`。
 
 严格 H2 外部证据验证使用显式 evidence root；具体参数以脚本当前 `--help`、测试和 receipt 为准：
 
