@@ -193,6 +193,17 @@ git status --short
 
 然后访问 `http://127.0.0.1:8000/showcase/homepage/index.html`（加 `--print-only` 只打印 URL 不起服务，`--port` / `--bind` 可改）。是否具备完整 TWINKLE iframe 依赖，必须结合打包产物、正式运行资产和当前验证目标判断；不能仅凭首页能打开就宣称 H2 完整。
 
+`scripts\dev_preview.bat` 与 `scripts\release_verify.bat` 是**双击入口**，供不想开终端时使用。它们从**自身所在位置**解析仓库根、显式使用 `.venv\Scripts\python.exe`（PATH 上的 `python` 是系统解释器，依赖不全）、透传参数、传播退出码，并在结束时 `pause` 以便阅读输出。二者**不含任何绝对路径**；需要可脚本化调用时直接用对应的 `.py`。
+
+要在桌面加图标，新建一个只含两行的 BAT 指向仓库内脚本即可（`<仓库路径>` 按本机实际填写）：
+
+```bat
+@echo off
+call "<仓库路径>\scripts\release_verify.bat" %*
+```
+
+桌面包装是机器本地文件，**不入 Git**；换机时按上面方式重建。
+
 ### 4.3 TWINKLE 工具链
 
 TWINKLE 使用 Python 生成器与校验器、原生 JavaScript、Playwright/Chromium、Blender 渲染结果、PNG 序列和 JSON manifest。核心入口包括：
