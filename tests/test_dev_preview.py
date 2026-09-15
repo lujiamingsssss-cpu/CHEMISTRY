@@ -126,3 +126,38 @@ def test_print_only_never_opens_a_browser(monkeypatch):
 
     assert module.main(["--print-only"]) == 0
     assert opened == []
+
+
+def test_resolve_root_defaults_to_this_checkout():
+    module = _module()
+
+    assert module.resolve_root(None) == REPO
+
+
+def test_resolve_root_uses_the_given_directory(tmp_path):
+    module = _module()
+
+    assert module.resolve_root(str(tmp_path)) == tmp_path
+
+
+def test_root_option_is_honoured_when_choosing_what_to_open(monkeypatch, tmp_path):
+    """A root without the showcase page must stay silent even though this checkout has one."""
+
+    module = _module()
+    opened = []
+    monkeypatch.setattr(module, "open_in_browser", lambda url: opened.append(url) or True)
+    monkeypatch.setattr(module, "serve_until_interrupted", lambda server: None)
+
+    assert module.main(["--root", str(tmp_path), "--port", "0"]) == 0
+    assert opened == []
+
+
+def test_missing_root_is_rejected(tmp_path, capsys):
+    module = _module()
+
+    with pytest.raises(SystemExit):
+        module.main(["--root", str(tmp_path / "does-not-exist"), "--print-only"])
+
+    # Guard against a vacuous pass: rejecting an unknown option would also exit,
+    # so require the message only a real missing-directory check produces.
+    assert "not a directory" in capsys.readouterr().err

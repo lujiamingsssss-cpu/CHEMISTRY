@@ -55,6 +55,19 @@ def repository_root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
+def resolve_root(value: str | None) -> Path:
+    """Resolve the directory to serve: an explicit path, else this checkout.
+
+    Serving another checkout matters because some previewable artifacts are
+    deliberately kept out of Git and therefore only exist in the worktree that
+    produced them.
+    """
+
+    if value is None:
+        return repository_root()
+    return Path(value).expanduser().resolve()
+
+
 def resolve_preview_targets(repo: Path) -> tuple[PreviewTarget, ...]:
     """Return the previewable pages, marking the ones absent from this checkout."""
 
@@ -134,9 +147,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         action="store_true",
         help="serve without opening the default browser",
     )
+    parser.add_argument(
+        "--root",
+        default=None,
+        help="directory to serve (default: this checkout's root); useful for serving "
+        "a worktree that holds artifacts kept out of Git",
+    )
     args = parser.parse_args(argv)
 
-    repo = repository_root()
+    repo = resolve_root(args.root)
+    if not repo.is_dir():
+        parser.error(f"--root is not a directory: {repo}")
     targets = resolve_preview_targets(repo)
     for line in _format_targets(targets, args.bind, args.port):
         print(line)
