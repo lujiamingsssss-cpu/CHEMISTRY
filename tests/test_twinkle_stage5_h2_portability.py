@@ -105,6 +105,8 @@ def test_sha_bound_core_authorities_disable_checkout_eol_conversion():
         "scripts/build_twinkle_stage5_fixed_orbit_drag_pilot.py",
         "scripts/build_twinkle_stage5_a192_full_sequence.py",
         "scripts/build_twinkle_stage5_entry_count_pilot.py",
+        "showcase/homepage/catalog/ring-gallery-core.mjs",
+        "showcase/homepage/catalog/product-items.mjs",
     ]
     result = subprocess.run(
         ["git", "check-attr", "text", "--stdin"],

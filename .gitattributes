@@ -3,5 +3,7 @@ registry/twinkle/** -text -whitespace
 scripts/build_twinkle_stage5_fixed_orbit_drag_pilot.py -text
 scripts/build_twinkle_stage5_a192_full_sequence.py -text
 scripts/build_twinkle_stage5_entry_count_pilot.py -text
+showcase/homepage/catalog/ring-gallery-core.mjs -text
+showcase/homepage/catalog/product-items.mjs -text
 showcase/homepage/assets/vendor/** -whitespace
 showcase/homepage/catalog/assets/vendor/** -whitespace
