@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>睿扬光电 · 产品中心</title>
+  <style>
+    :root{--ink:#142b31;--muted:#63777c;--cyan:#49bdc7;--line:rgba(35,83,89,.15);--paper:#d7e7e8;--white:rgba(255,255,255,.86);--dither-x:72%;--dither-y:42%}
+    *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font-family:"Microsoft YaHei UI","Noto Sans SC",sans-serif}body{overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(116deg,rgba(250,253,251,.26),transparent 47%,rgba(94,169,174,.08));z-index:0}
+    [data-spectral-flow]{position:fixed;inset:76px 0 0;z-index:0;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse 52% 42% at var(--dither-x) var(--dither-y),rgba(70,202,208,.58),rgba(75,184,190,.22) 43%,transparent 74%),radial-gradient(ellipse 42% 55% at 28% 86%,rgba(52,157,166,.18),transparent 72%),linear-gradient(126deg,#d4e5e6 0%,#bedbdd 46%,#e3eeeb 100%)}[data-spectral-flow] canvas{width:100%;height:100%;display:block;opacity:.56;mix-blend-mode:multiply;filter:saturate(1.08) contrast(1.04)}
+    .topbar{position:fixed;z-index:50;left:26px;right:26px;top:18px;height:62px;display:flex;align-items:center;padding:0 22px;border:1px solid rgba(255,255,255,.85);border-radius:22px;background:rgba(251,252,249,.76);backdrop-filter:blur(18px);box-shadow:0 12px 42px rgba(41,61,63,.07)}.brand{display:flex;align-items:center;gap:12px;min-height:44px;font-size:14px;font-weight:700;letter-spacing:.11em;color:var(--ink);text-decoration:none;transition:transform 110ms ease}.brand img{width:31px;height:31px;object-fit:contain}.topnav{margin-left:auto;display:flex;gap:6px;font-size:13px;color:#405158}.topnav a{display:flex;align-items:center;min-height:44px;padding:0 10px;border-radius:999px;color:inherit;text-decoration:none;transition:background 110ms ease,color 110ms ease,transform 110ms ease}.topnav a:hover{background:rgba(79,199,210,.12)}.topnav a[aria-current]{background:#173e44;color:#fff}.topnav a:focus-visible,.brand:focus-visible,.cta:focus-visible{outline:2px solid rgba(36,142,153,.58);outline-offset:2px}.topnav a:active{background:#173e44;color:#fff;transform:translateY(1px) scale(.96)}.brand:active{transform:scale(.98)}.cta{margin-left:20px;min-height:44px;padding:11px 17px;border:1px solid rgba(35,83,89,.15);border-radius:999px;display:flex;align-items:center;background:transparent;color:#405158;font:inherit;font-size:12px;cursor:pointer;transition:background 110ms ease,color 110ms ease,transform 110ms ease}.cta:hover{background:rgba(79,199,210,.12);color:#173e44}.cta:active{background:#173e44;color:#fff;transform:translateY(1px) scale(.96)}.catalog-return{position:fixed;z-index:49;left:24px;top:98px;display:grid;width:44px;height:44px;padding:0;place-items:center;border:1px solid rgba(220,245,250,.18);border-radius:50%;color:rgba(238,250,252,.82);background:rgba(4,18,25,.34);backdrop-filter:blur(8px);cursor:pointer;transform:translateY(0) scale(1);transition:transform 140ms ease,background-color 140ms ease,color 140ms ease,border-color 140ms ease}.catalog-return svg{display:block;width:18px;height:18px}.catalog-return:hover{color:rgba(238,250,252,.96);background:rgba(4,18,25,.52);transform:translateY(1px) scale(.985)}.catalog-return:active{transform:translateY(1px) scale(.96);transition-duration:90ms}.catalog-return:focus-visible{outline:2px solid rgba(220,245,250,.92);outline-offset:3px}@media(max-width:900px){.catalog-return{top:90px}}
+    main{position:relative;z-index:1;min-height:100vh;padding-top:98px;display:grid;grid-template-columns:minmax(310px,34vw) 1fr;align-items:stretch}
+    .product-detail{padding:7vh 3vw 6vh 6vw;position:relative;z-index:4;align-self:center}.detail-kicker{font-size:11px;font-weight:750;letter-spacing:.22em;color:#267e88}.product-detail h1{margin:22px 0 0;font-size:clamp(46px,4vw,62px);line-height:1;letter-spacing:-.06em;font-weight:680}.detail-formula{margin-top:11px;font-family:"Noto Serif SC","Songti SC","SimSun",serif;font-size:clamp(27px,2.5vw,39px);line-height:1.1;color:#287f89}.detail-summary{max-width:500px;margin:25px 0 0;padding-bottom:18px;border-bottom:1px solid rgba(35,103,111,.22);font-size:13px;line-height:1.65;color:#536d73}.detail-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 22px;max-width:520px;margin-top:10px}.detail-fact{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid rgba(35,103,111,.16)}.detail-fact span{font-size:10px;letter-spacing:.06em;color:#6a8186}.detail-fact b{text-align:right;font-size:13px;line-height:1.25;letter-spacing:-.015em}.detail-sources,.dialog-sources{margin-top:14px;font-size:10px;line-height:1.5;color:#6a8186}.source-heading{font-weight:700;color:#42666d}.source-links{display:flex;flex-wrap:wrap;gap:5px 9px;margin-top:6px}.source-links a{color:#2b727b;text-decoration:none;border-bottom:1px solid rgba(43,114,123,.28)}
+    .gallery-shell{position:relative;min-width:0;min-height:720px;overflow:hidden}.gallery-shell:before{content:"";position:absolute;left:50%;top:48%;width:68vw;height:47vw;max-height:680px;border:1px solid rgba(64,180,190,.19);border-radius:50%;transform:translate(-43%,-50%) rotate(-7deg);box-shadow:inset 0 0 90px rgba(83,201,210,.04)}
+    [data-ring-stage]{position:absolute;inset:2vh 0 5vh 0;touch-action:none;cursor:grab;outline:none;overflow:hidden}[data-ring-stage]:active{cursor:grabbing}[data-ring-stage] canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+    .active-product{position:absolute;z-index:4;left:50%;bottom:6.5vh;transform:translateX(-36%);width:min(420px,56vw);display:grid;grid-template-columns:1fr auto;align-items:end;gap:16px;padding:17px 20px;border:1px solid rgba(38,92,99,.16);border-radius:18px;background:rgba(249,252,250,.83);box-shadow:0 22px 48px rgba(31,61,67,.12);backdrop-filter:blur(14px)}.active-product small{display:block;font-size:10px;letter-spacing:.14em;color:#6a7f84}.active-product strong{display:block;margin-top:6px;font-size:22px;letter-spacing:-.025em}.active-product button{border:0;border-radius:999px;background:#173f46;color:#fff;padding:12px 17px;font:inherit;font-size:12px;cursor:pointer;white-space:nowrap}.active-product button:hover{background:#245c65}
+    .fallback-list{display:none;position:absolute;inset:12vh 3vw 15vh 2vw;z-index:5;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;overflow:auto}.fallback-card{display:grid;grid-template-columns:86px 1fr;gap:13px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.86);text-align:left;color:var(--ink);font:inherit}.fallback-card img{width:86px;height:72px;object-fit:cover;border-radius:11px}.fallback-card b{display:block}.fallback-card span{display:block;font-size:11px;color:var(--muted);margin-top:4px}
+    .is-static canvas,.is-static .active-product{display:none}.is-static .fallback-list{display:grid}
+    dialog{position:fixed;inset:0 0 0 auto;margin:0;width:min(500px,94vw);height:100%;max-height:none;border:0;border-left:1px solid var(--line);padding:0;overflow:auto;background:#f9fbf9;color:var(--ink);box-shadow:-30px 0 80px rgba(29,55,61,.18)}dialog::backdrop{background:rgba(16,35,40,.22);backdrop-filter:blur(3px)}.dialog-close{position:absolute;right:22px;top:20px;z-index:2;width:40px;height:40px;border:1px solid var(--line);border-radius:50%;background:#fff;font-size:20px;color:#44636a;cursor:pointer}.dialog-media{height:38vh;min-height:260px;padding:64px 34px 20px}.dialog-media img{width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:0 24px 55px rgba(30,57,63,.13)}.dialog-body{padding:24px 36px 40px}.dialog-kicker{font-size:11px;letter-spacing:.15em;color:#2c8992}.dialog-body h2{font-size:34px;line-height:1.08;letter-spacing:-.045em;margin:12px 0 8px}.dialog-formula{font-size:18px;color:#65797e}.dialog-summary{margin:18px 0 4px;font-size:13px;line-height:1.65;color:#536d73}.dialog-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px;margin:8px 0 24px}.dialog-fact{padding:10px 0;border-bottom:1px solid rgba(35,103,111,.16)}.dialog-fact span{display:block;font-size:10px;letter-spacing:.06em;color:#6a8186}.dialog-fact b{display:block;margin-top:5px;font-size:12px;line-height:1.3}.dialog-sources{padding-bottom:20px;border-bottom:1px solid rgba(35,103,111,.16)}.dialog-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.dialog-actions a,.dialog-actions button{padding:13px 16px;border-radius:999px;text-decoration:none;font:inherit;font-size:13px;cursor:pointer}.dialog-actions .official{background:#173f46;color:#fff}.dialog-actions .contact{border:1px solid var(--line);color:#295b63;background:#fff}
+    .inquiry-dialog{inset:auto;left:50%;top:50%;margin:0;transform:translate(-50%,-50%);width:min(390px,calc(100vw - 32px));height:auto;max-height:calc(100vh - 32px);border:1px solid var(--line);border-radius:22px;padding:0;overflow:hidden;background:#f9fbf9;box-shadow:0 24px 55px rgba(30,57,63,.16)}.inquiry-dialog .dialog-close{right:16px;top:16px}.inquiry-body{padding:54px 28px 28px}.inquiry-body h2{margin:10px 0 0;font-size:28px;letter-spacing:-.035em}.inquiry-body p{margin:18px 0 24px;color:#536d73;font-size:14px;line-height:1.7}.inquiry-dismiss{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:999px;background:#fff;color:#295b63;font:inherit;font-size:13px;cursor:pointer}
+    @media(max-width:900px){.topnav{display:none}.topbar{left:12px;right:12px;top:10px;padding:0 14px}.cta{margin-left:auto}main{padding-top:84px}}
+    @media(max-width:980px){main{grid-template-columns:1fr;min-height:auto}.product-detail{padding:8vh 7vw 2vh}.detail-summary{margin-top:24px}.detail-facts{margin-top:30px}.gallery-shell{min-height:680px}.gallery-shell:before{width:120vw;height:85vw}.active-product{left:7vw;right:7vw;width:auto;transform:none;bottom:5vh}.fallback-list{inset:7vh 5vw 15vh}}
+    @media(max-width:620px){[data-spectral-flow]{inset:66px 0 0}[data-spectral-flow] canvas{opacity:.34}.brand span{display:none}.product-detail{padding-top:7vh}.product-detail h1{font-size:44px}.detail-formula{font-size:28px}.detail-summary{font-size:13px}.detail-facts{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}.detail-fact{display:block}.detail-fact b{display:block;margin-top:5px;text-align:left;font-size:12px}.gallery-shell{min-height:610px}.active-product{grid-template-columns:1fr}.active-product button{width:100%}.fallback-list{grid-template-columns:1fr}.dialog-body{padding:24px}.dialog-media{padding-left:24px;padding-right:24px}.dialog-actions{display:grid}.dialog-actions a,.dialog-actions button{text-align:center}}
+    @media(prefers-reduced-motion:reduce){.brand,.topnav a,.cta{transition:none}.brand:active,.topnav a:active,.cta:active{transform:none}.catalog-return,.catalog-return:hover,.catalog-return:active{transform:none;transition:background-color 140ms ease,color 140ms ease,border-color 140ms ease}}
+  </style>
+</head>
+<body>
+  <div data-spectral-flow aria-hidden="true"></div>
+  <header class="topbar"><a class="brand" href="../index.html#home"><img src="./assets/official-logo.png" alt="南京睿扬光电"><span>NANJING RUIYANG OPTICAL</span></a><nav class="topnav"><a href="../index.html#home">首页</a><a href="../index.html#materials">能力概览</a><a href="../index.html#applications">应用方向</a><a href="../index.html#quality">TWINKLE</a><a href="./circular-gallery-preview.html" aria-current="page">产品中心</a><a href="../index.html#company">业务范围</a></nav><button class="cta" type="button" data-open-inquiry>技术询盘</button></header>
+  <!-- Lucide ArrowLeft, https://github.com/lucide-icons/lucide/blob/main/icons/arrow-left.svg
+       ISC License
+       Copyright (c) 2026 Lucide Icons and Contributors
+       Permission to use, copy, modify, and/or distribute this software for any
+       purpose with or without fee is hereby granted, provided that the above
+       copyright notice and this permission notice appear in all copies.
+       THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+       WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+       MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+       ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+       WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+       ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+       OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+       The MIT License (MIT) for the Feather-derived arrow-left icon
+       Copyright (c) 2013-present Cole Bemis
+       Permission is hereby granted, free of charge, to any person obtaining a copy
+       of this software and associated documentation files (the "Software"), to deal
+       in the Software without restriction, including without limitation the rights
+       to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+       copies of the Software, and to permit persons to whom the Software is
+       furnished to do so, subject to the following conditions:
+       The above copyright notice and this permission notice shall be included in all
+       copies or substantial portions of the Software.
+       THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+       IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+       FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+       AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+       LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+       OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+       SOFTWARE. -->
+  <a class="catalog-return" href="../index.html#products" aria-label="返回产品中心"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg></a>
+  <main>
+    <section class="product-detail" aria-live="polite">
+      <div class="detail-kicker" data-detail-category>光学材料</div>
+      <h1 data-detail-name>CVD 硒化锌</h1>
+      <div class="detail-formula" data-detail-formula>CVD ZnSe</div>
+      <p class="detail-summary" data-detail-summary>硒化锌毛坯｜板材与片状｜尺寸可按要求定制</p>
+      <div class="detail-facts" data-detail-facts><div class="detail-fact"><span>CAS</span><b>1315-09-9</b></div><div class="detail-fact"><span>密度</span><b>5.4 g/cm³</b></div><div class="detail-fact"><span>蒸发温度</span><b>600–900 ℃</b></div><div class="detail-fact"><span>折射率</span><b>2.6 @ 600 nm</b></div><div class="detail-fact"><span>透光范围</span><b>500 nm–14 μm</b></div><div class="detail-fact"><span>纯度</span><b>99.999%</b></div><div class="detail-fact"><span>供货形态</span><b>板材 / 片状</b></div><div class="detail-fact"><span>尺寸</span><b>按客户要求</b></div></div>
+      <div class="detail-sources"><div class="source-heading">参考资料</div><div class="source-links" data-detail-sources><a href="http://www.supreme-oe.com/p_details.aspx?code=0302&amp;id=56" target="_blank" rel="noopener">企业产品参数表</a><span>·</span><a href="https://pubchem.ncbi.nlm.nih.gov/compound/Zinc-selenide-_ZnSe" target="_blank" rel="noopener">PubChem 材料记录</a></div></div>
+    </section>
+    <section class="gallery-shell" aria-label="环形产品画廊">
+      <div data-ring-stage tabindex="0" aria-label="睿扬光电产品环形画廊，使用左右方向键切换产品">
+        <div class="fallback-list" data-fallback-list></div>
+        <div class="active-product" data-active-product><div><small data-active-category>光学材料</small><strong data-active-name>CVD 硒化锌 · CVD ZnSe</strong></div><button type="button" data-open-product>产品详情</button></div>
+      </div>
+    </section>
+  </main>
+  <dialog data-product-dialog aria-labelledby="dialog-title">
+    <button class="dialog-close" type="button" data-close-product aria-label="关闭详情">×</button>
+    <div class="dialog-media"><img data-dialog-image alt=""></div>
+    <div class="dialog-body"><div class="dialog-kicker" data-dialog-category></div><h2 id="dialog-title" data-dialog-name></h2><div class="dialog-formula" data-dialog-formula></div><p class="dialog-summary" data-dialog-summary></p><div class="dialog-facts" data-dialog-facts></div><div class="dialog-sources"><div class="source-heading">参考资料</div><div class="source-links" data-dialog-sources></div></div><div class="dialog-actions"><a class="official" data-dialog-official target="_blank" rel="noopener">查看企业产品页 ↗</a><button class="contact" type="button" data-open-inquiry>技术询盘</button></div></div>
+  </dialog>
+  <dialog class="inquiry-dialog" data-inquiry-dialog aria-labelledby="inquiry-title">
+    <button class="dialog-close" type="button" data-close-inquiry aria-label="关闭技术询盘提示">×</button>
+    <div class="inquiry-body"><div class="dialog-kicker">TECHNICAL INQUIRY</div><h2 id="inquiry-title">技术询盘</h2><p>该功能开发中，敬请期待</p><button class="inquiry-dismiss" type="button" data-close-inquiry>关闭</button></div>
+  </dialog>
+  <script type="module" src="./paper-dithering-background.js"></script>
+  <script type="module" src="./product-ring-gallery.js"></script>
+</body>
+</html>

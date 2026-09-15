@@ -1,0 +1,66 @@
+{
+  "schema": "twinkle-stage5-rgba-hover-browser-results-v1",
+  "testedAt": "2026-09-01",
+  "browser": "Playwright Chromium (headed)",
+  "desktop": {
+    "machinePassed": true,
+    "idle": { "frame": "000", "plays": 0 },
+    "playbackSequence": ["000", "001", "002", "003", "004", "003", "002", "001", "000"],
+    "oneRoundEnd": { "frame": "000", "plays": 1 },
+    "noLoopAfterAdditional850Ms": { "frame": "000", "plays": 1 },
+    "fastLeave": { "frame": "000", "plays": 2 },
+    "click": { "frame": "000", "clicks": 1, "navigation": "#clicked", "latencyMs": 23 },
+    "focusDuring": { "frame": "001", "plays": 4 },
+    "focusOut": { "frame": "000", "plays": 4 },
+    "loadedFrameUrls": [
+      "frames/frame-000.png",
+      "frames/frame-001.png",
+      "frames/frame-002.png",
+      "frames/frame-003.png",
+      "frames/frame-004.png"
+    ],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "requestFailures": [],
+    "httpErrors": []
+  },
+  "delayedReadiness": {
+    "machinePassed": true,
+    "delayMsForFrames001Through004": 500,
+    "beforeReady": { "frame": "000", "plays": 0 },
+    "afterReady": { "frame": "002", "plays": 1 },
+    "completed": { "frame": "000", "plays": 1 },
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": []
+  },
+  "reducedMotion": {
+    "machinePassed": true,
+    "mediaMatches": true,
+    "afterHover": { "frame": "000", "plays": 0 },
+    "afterFocus": { "frame": "000", "plays": 0 },
+    "afterClick": { "frame": "000", "plays": 0, "clicks": 1 },
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": []
+  },
+  "noFineHoverMobile": {
+    "machinePassed": true,
+    "fineHoverMatches": false,
+    "afterMouseEnter": { "frame": "000", "plays": 0 },
+    "afterFocus": { "frame": "000", "plays": 0 },
+    "afterClick": { "frame": "000", "plays": 0, "clicks": 1 },
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": []
+  },
+  "visualReview": {
+    "machinePassed": true,
+    "imageCount": 35,
+    "uniqueImageSourceCount": 35,
+    "pageErrors": [],
+    "requestFailures": [],
+    "httpErrors": [],
+    "screenshot": "../playwright/twinkle-stage5-rgba-hover-pilot/visual-review-full.png"
+  }
+}

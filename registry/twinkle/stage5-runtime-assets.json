@@ -1,0 +1,2314 @@
+{
+  "schema": "twinkle-stage5-runtime-assets-v1",
+  "sourceRevision": {
+    "branch": "codex/twinkle-hotspot-page-revision",
+    "head": "4b8f43e4ca5cf636432392d330c51e1faa8d2d78"
+  },
+  "dryRunContract": {
+    "summarySha256": "E04078591E474EDE78D8E56FDE733D535B3E4E680702288035203529FE342CC8",
+    "inventorySha256": "32895FDA93DA4C942AB5C6C698B8C06748CDAF87BEAF3A1ED6252B815127C042"
+  },
+  "authorities": [
+    {
+      "id": "stage1-camera-board",
+      "schema": "twinkle-route1-camera-board-v4",
+      "sourcePath": "output/twinkle-route1-camera-board-r1-1/camera-board-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage1-camera-board.json",
+      "sha256": "8DB0B2055838FA69C6381719587A99A2B132FE526F40EA6F0C231264AD908378",
+      "bytes": 33189
+    },
+    {
+      "id": "stage3-r2",
+      "schema": "twinkle-stage3-step7-full-review-v1",
+      "sourcePath": "output/twinkle-stage3-dual-hotspot-motion-r2/step7-full-review-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage3-r2.json",
+      "sha256": "67674A09A7E4C4C26DA57824AFB30DEC1F77C562C954A963CA266FAF8C776332",
+      "bytes": 7830
+    },
+    {
+      "id": "stage4-orientation",
+      "schema": "twinkle-stage4-orientation-correction-v1",
+      "sourcePath": "output/.twinkle-stage4-orientation-correction-20260828/orientation-correction-r1/orientation-correction-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage4-orientation.json",
+      "sha256": "A53654E3BC8936905C1F776DBE7C779A7ABF626E37918399A258D900D9A80FC2",
+      "bytes": 23510
+    },
+    {
+      "id": "stage4-surface",
+      "schema": "twinkle-stage4-surface-anchor-precheck-v1",
+      "sourcePath": "output/.twinkle-stage4-surface-anchor-precheck-20260829/surface-anchor-precheck-r1/surface-anchor-precheck-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage4-surface.json",
+      "sha256": "A27B447F6D235F748DCFB00A151D92E1D67408526544F831D298C2C598EA6105",
+      "bytes": 907442
+    },
+    {
+      "id": "stage4-c360",
+      "schema": "twinkle-stage4-orbit-c360-f96-v1",
+      "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/orbit-c360-f96-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage4-c360.json",
+      "sha256": "8D774A5821AF2D66AFF6480465C2F69007A556B0FAAA9B831FD9E3ADF51E3623",
+      "bytes": 907698
+    },
+    {
+      "id": "stage4-c1",
+      "schema": "twinkle-stage4-c1-keyframe-precheck-v1",
+      "sourcePath": "output/.twinkle-stage4-c1-keyframe-precheck-20260830/c1-keyframe-precheck-r1/c1-keyframe-precheck-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage4-c1.json",
+      "sha256": "D1AAD3DDBB937E74E7388D1B632248488F106FFF8A427A8E405F5310E3DA2B0C",
+      "bytes": 98352
+    },
+    {
+      "id": "stage4-c2",
+      "schema": "twinkle-stage4-c2-full-review-v1",
+      "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/c2-full-review-manifest.json",
+      "copyPath": "registry/twinkle/stage5-source-manifests/stage4-c2.json",
+      "sha256": "93A6453E451407913BCD6DE716BEB25ABB89FA14C0B2257F88D673DA90518D88",
+      "bytes": 337452
+    }
+  ],
+  "runtimeInventory": {
+    "root": "showcase/homepage/assets/twinkle",
+    "fileCount": 248,
+    "totalBytes": 130156891,
+    "selectedRoutes": [
+      "dual_channel_collection_optics_chamber--entry-006--A",
+      "dual_channel_collection_optics_chamber--entry-065--B",
+      "dual_channel_condenser_lens_assembly--entry-087--A",
+      "dual_channel_condenser_lens_assembly--entry-008--A"
+    ],
+    "files": [
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-000.png",
+        "sha256": "890B71BEA25FA4FAFEC52792633E262104F3D90FCE363E97ED9947104BBFAE1D",
+        "bytes": 312454
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-001.png",
+        "sha256": "B210AB655927ED42295AB33843D02FA0DC9AB46E49CD4E68DE986CF2A5B90872",
+        "bytes": 311033
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-002.png",
+        "sha256": "345FB8601D6E31FFFFA09ED748240E42D048A2E949585FD97105D958DEDFC2F9",
+        "bytes": 309670
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-003.png",
+        "sha256": "912ED32DB3DBD72584DCAD96D35BDCA22F0DF48B479F752790E1223D757CFA3A",
+        "bytes": 308933
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-004.png",
+        "sha256": "4FE707503D1A98DF1B51761E3AE9367245447BAED0273DB31F36EBAF0A645B7A",
+        "bytes": 308393
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-005.png",
+        "sha256": "3543DF0F21F0A120AEA13B81BC96BFBC13238D5CE0C92D8BD8A608AD14445366",
+        "bytes": 307966
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-006.png",
+        "sha256": "AC4841D93037285D08654963859F0C6249B1A7966CE79672400C0ECF037DD78A",
+        "bytes": 307222
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-007.png",
+        "sha256": "19AEAA6AE1D46937A8BE89EAF7B5BFD6B9D7B66DC416EA74D9C6439D1F38B0C0",
+        "bytes": 307879
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-008.png",
+        "sha256": "E7B853CC1C9DDD291DF96C27659073798C1A14C6A25ED5312DF6E5FAF8890BCE",
+        "bytes": 307192
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-009.png",
+        "sha256": "FD431E542735BB0B8AE6032EE37DFDD939062AA4E20EB44D0EBEFC1A7E2131F3",
+        "bytes": 305945
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-010.png",
+        "sha256": "A00ACE20E50F3C585CCD7F4268E2100E8025BF8B6C7591A5C90ECB7AA08F5641",
+        "bytes": 306558
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-011.png",
+        "sha256": "FF8C1A57CBBD640DDAA2CC3CF2F4E3BD1FB5D160561027956A63751B0A34D79D",
+        "bytes": 303112
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-012.png",
+        "sha256": "D23CED55ED7F80D14764C751D08A37079A02BCF53E3E41F66FDC6E3AC92B2170",
+        "bytes": 299131
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-013.png",
+        "sha256": "158342350FC82FBEE9FFF8761DD0EE7CD5FC879AE7828201EF73A2EDE9BBFB8B",
+        "bytes": 297157
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-014.png",
+        "sha256": "4F3144A50DB0C75A5DCE4AE8C1B59FD8C10DB55F4C739EB18DBCF6D7AE3C8AA3",
+        "bytes": 298445
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-015.png",
+        "sha256": "B55CF64B161B079F4E8F87B3603C263959D547931E64075BA213F696F309FF07",
+        "bytes": 302771
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-016.png",
+        "sha256": "49A0EB79A1BACBF54BD0CCCC43EB4E65796008B3BB81B86B5E950A7ACEDD2B9A",
+        "bytes": 306203
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-017.png",
+        "sha256": "319134889910490F801A154792E418DB6A2FF81DDCAB902FABB1C0119A13E006",
+        "bytes": 307929
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-018.png",
+        "sha256": "8C980F4ED80428FD68AAD13CE2F9F3E56ED5842BF0A5266158FCA7AB1C9BC304",
+        "bytes": 310049
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-019.png",
+        "sha256": "7FF8B303A77839732DE68927AE5555D7F8C5B3113E0593E26FB0EC7E776DC735",
+        "bytes": 311053
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-020.png",
+        "sha256": "DA13A2D6B317051D8C117A71330C042B6DCC680D5389C1D176EFF96841BE324C",
+        "bytes": 310869
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-021.png",
+        "sha256": "9ED26DDBE4A168A8CDB2044A69DD70DD59C68AC34B98540C23E95D1F494F9A44",
+        "bytes": 310618
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-022.png",
+        "sha256": "111E2B0BAB4DD71A6E2B3F703CF80565A5351B4027C3B9F7CEC8E1C70EF57490",
+        "bytes": 309921
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-023.png",
+        "sha256": "BF6EF3B80EF29927C0F6CAB3421A69FBCF818159E2EDDD7B134CA6DC785630A1",
+        "bytes": 308738
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-024.png",
+        "sha256": "F7E68143254C45184C11FA20BC0B7DE0D86E3356D05A37C34896DAB390ED9EB1",
+        "bytes": 308876
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-025.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-025.png",
+        "sha256": "0E93DBD6962EA0CC0A3936568716FB79B00768E009C4FAC7EE0B9F353376D4F5",
+        "bytes": 308795
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-026.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-026.png",
+        "sha256": "EFC3CD6D7FEFD8DB8707C4C3928898D3EFB0094CC919400BE3A54E740FE4F2F7",
+        "bytes": 309206
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-027.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-027.png",
+        "sha256": "609AAD279985E174052993B265E00CF92B852669A082194408889D7BCC9964B2",
+        "bytes": 309163
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-028.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-028.png",
+        "sha256": "FE3B0455F632C8DF72A609C988210B1AFD8947C3B66A32D1178F2348DBF5D617",
+        "bytes": 308963
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-029.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-029.png",
+        "sha256": "7DE1E62AE6E0FB50B941CD1B4695292A611247D3126054852B56D3964618B526",
+        "bytes": 308354
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-030.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-030.png",
+        "sha256": "D740E5914DA6872ABB829862AA8AC62DDDAB423D08F92E5F1FFD135B9EE32152",
+        "bytes": 308189
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-031.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-031.png",
+        "sha256": "8FBA3E0A815F9E4E42FC3637F7F27E46FA0A508BCE7759AB9E1C0E56FF957742",
+        "bytes": 308313
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-032.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-032.png",
+        "sha256": "EFFFBBA6500CE27D15BDBAB825763C809F82E899E3E7A24AFF7DEAE9269C55EE",
+        "bytes": 307702
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-033.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-033.png",
+        "sha256": "6B3C6E5D78267682D166B93E373C15A47975E0017DF26CED03115F423E5FD7F2",
+        "bytes": 305963
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-034.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-034.png",
+        "sha256": "3885EAB231E346312DAB8C56C19F1EC54E50F8A327CD6FA88BF124C01C4AB547",
+        "bytes": 304655
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-035.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-035.png",
+        "sha256": "2C81A5747246BEEE1C0BAAF5D0F48D8CFE91E69F4BACAD4E4127F5989B0E6F09",
+        "bytes": 304015
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-036.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-036.png",
+        "sha256": "C2B10562632B0DDB88A2B0F1385E048F53BABDC0037BA3372595AAD1D5083CE0",
+        "bytes": 302500
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-037.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-037.png",
+        "sha256": "6235A7D03CAF5A3AFADB7759156FD7538C2F5972B4747CD8CED2DC7EBA0BF86C",
+        "bytes": 299803
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-038.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-038.png",
+        "sha256": "2B200D8E8AD397A30C3414F5DD49D88947957B2FD29624D577222C46BE0BF90F",
+        "bytes": 302058
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-039.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-039.png",
+        "sha256": "A37E499DAF58B1D436B5B87DFD936DF8F598BD77511200C6210E0DCD434BF786",
+        "bytes": 303404
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-040.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-040.png",
+        "sha256": "DA50CFCDED1FF2B9A34673F54C38C0C9DB037FE79DD567FD93037058ED399C87",
+        "bytes": 305117
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-041.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-041.png",
+        "sha256": "5DA14FC9EB7B4E9749CF9A8DC7A1DA5778476F690FBFF802C93461CF3CA21A02",
+        "bytes": 306809
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-042.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-042.png",
+        "sha256": "07A2A0BE643680440FCC7AC0876DD9B2C064D77620910CF1F135F475B042484D",
+        "bytes": 310571
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-043.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-043.png",
+        "sha256": "C4BC049027A77A1666EE8C4B2B19AD7F38159C0C30A9EACA367085B08A3FA99D",
+        "bytes": 311920
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-044.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-044.png",
+        "sha256": "77FDC39C1A77F0AABD07D19B3909A54B14F8DC4A79F0F400405DA0E4BD103246",
+        "bytes": 312385
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-045.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-045.png",
+        "sha256": "28E9D418D3EBBB34664986D34049EFF59BA5E5E6F401BD404D0737C705B22A1F",
+        "bytes": 311649
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-046.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-046.png",
+        "sha256": "6060C25E4C0E5861E67E5B9C3813B21A3C1F08C9C3F58083608786ABF855998D",
+        "bytes": 311463
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-047.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-047.png",
+        "sha256": "05CE700679649B3AA1CF6B83D0E168CBB5488DC5FC6D2B3F380D1966952D85AB",
+        "bytes": 311821
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-048.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-048.png",
+        "sha256": "ECCD24A8D6F57511FA2118A0D3F0374B4CC33FE42CFB2AECA9ACF9BE63938F5A",
+        "bytes": 311388
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-049.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-049.png",
+        "sha256": "16DDC8253E53BB4CE335AED6B17F259D926B145F7B0A32972EB90F917BAD7A9B",
+        "bytes": 310844
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-050.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-050.png",
+        "sha256": "7926F9F8519F12321BF3C85768115BF9F35C8B1683DC83E02E387203487F30C6",
+        "bytes": 310040
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-051.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-051.png",
+        "sha256": "7B0B5522A70929584EB1BD96ACEFF056D9E7064367553E05F0879BAD5C783D80",
+        "bytes": 310609
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-052.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-052.png",
+        "sha256": "22E00D990D77F22A76EF2E374E44250DA3349BF1EC70956CE157387835F72DF7",
+        "bytes": 310073
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-053.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-053.png",
+        "sha256": "1349A9AA59F45F7F7035BF88D4E3E942F8D7CF5D14BB03B24040D72FF82E6A8C",
+        "bytes": 309594
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-054.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-054.png",
+        "sha256": "372DB30ABB2B43EC75E73C05D347D9A47C156FFD0FFC25B6DAC5D3CC967A5BA7",
+        "bytes": 310358
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-055.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-055.png",
+        "sha256": "4D22E1C40E93F4516BF02834B77696CEC73349A26C304DEF49DF0CE8BAA74372",
+        "bytes": 310788
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-056.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-056.png",
+        "sha256": "F750B16A3AFF1F7D139E2B5F3A0E4BFBEBD5FC172310183C279B7A717EA29171",
+        "bytes": 310913
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-057.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-057.png",
+        "sha256": "90D400ACC05AD29223F3D4663CCB6F819FB8951D9EAFD0ECFA00CF9F4AA769D3",
+        "bytes": 310660
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-058.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-058.png",
+        "sha256": "A996C3BCD2FA9F5E602A4D5FDA68B518299BE28726AAA3A226F57C180DD97257",
+        "bytes": 310450
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-059.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-059.png",
+        "sha256": "79461C5F96CAD5738394DDD095880F4B2DE9AB46386BA13E32D8A750BF060105",
+        "bytes": 309093
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-060.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-060.png",
+        "sha256": "7FB35FBB58F9934E5510AA5825C40A53575C5D924C9839A288593A3AAD1512C7",
+        "bytes": 305656
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-061.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-061.png",
+        "sha256": "B2A3A9254EA61449AB5359CCA2A4EA038455DAF39B3029299B6218000E2957DD",
+        "bytes": 306468
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-062.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-062.png",
+        "sha256": "2C7756BB77F4EEA8888AEB3A7BCE4E81903B675904C081230193A045A1B4A23A",
+        "bytes": 308804
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-063.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-063.png",
+        "sha256": "46E8F08BBFD5D0E944ED8F1FB5E9F97F51F78C003B46F6EC023AC3F48C878863",
+        "bytes": 312228
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-064.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-064.png",
+        "sha256": "9227C9C2384BA448DB2CF33302E7E3D965BED2EC2356919E1EAD552D631E8607",
+        "bytes": 314433
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-065.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-065.png",
+        "sha256": "5F7156564446114BDA4B7FB3BB7A5E9321D9CE4CE28598CE06A504D1FA52ED19",
+        "bytes": 316603
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-066.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-066.png",
+        "sha256": "69AE74F2CF1DE2C9CE81CA7ACED37E89E895398E6449147B2DE905AE65EBD5DE",
+        "bytes": 316984
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-067.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-067.png",
+        "sha256": "BB9C03BEA4DBA7355C0C76F742867693EA28238EA964D92358BDA7F271AAEBB2",
+        "bytes": 317340
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-068.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-068.png",
+        "sha256": "2604FE97A142C5CDCBE9A4033372C58151821EA2D63E8819C09D690B9E5A1F41",
+        "bytes": 317372
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-069.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-069.png",
+        "sha256": "985B114D73FEDC494DA601B7FD59F6B4313411FC0193AC222A2ABFFB79516331",
+        "bytes": 317288
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-070.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-070.png",
+        "sha256": "E0526602981BC9B0A64A2D26E2C38908243B5ED588E41AEE3624F97E4FC1891A",
+        "bytes": 316896
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-071.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-071.png",
+        "sha256": "7B06F667F1CAAD9D38615E18E79D567719A49672768330BD9A57CFC497A79B81",
+        "bytes": 317063
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-072.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-072.png",
+        "sha256": "2E87514D2AF18B0651FA29B5C76DE1740D1C0D86111E2A2708E1D5007130EDAD",
+        "bytes": 318411
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-073.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-073.png",
+        "sha256": "CEDB68E9324FA5ED1F799E2D459A204A45E9717D6DA0B86F8AA10A899ED5791E",
+        "bytes": 319400
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-074.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-074.png",
+        "sha256": "26EB288E390F46B249206B068D3F126C2FDC58910467F289210E2D4D644DE13E",
+        "bytes": 319826
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-075.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-075.png",
+        "sha256": "7546F268223A6A9B54733205E5845FD724185806F090CBC9D092CD7687A21F71",
+        "bytes": 319976
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-076.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-076.png",
+        "sha256": "44E6C960E2592D945473B37A0138F097049B7FDEE39993922FB03ABD679F3176",
+        "bytes": 319284
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-077.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-077.png",
+        "sha256": "FA74572AB09890D39C68B8EBF30F77D249700D4770ADB8741305ECE4168A64CA",
+        "bytes": 317930
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-078.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-078.png",
+        "sha256": "7CD30F9FAA9DAC98B722B070066061F63F89114F4ECABB0AAC00D523C78ED5D0",
+        "bytes": 317709
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-079.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-079.png",
+        "sha256": "AA3830D74D39DA16104B52238DAD845FAAA17171EAD35E254F022CAD8B3FCBE0",
+        "bytes": 317630
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-080.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-080.png",
+        "sha256": "E668C70BE90620591ACE68B7564DF6B8F3B86879AB1B48711A07F13FEFEE696A",
+        "bytes": 317600
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-081.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-081.png",
+        "sha256": "70ABC9D0D9316F75CEC5824BC38E791EDC2E2D87B989CF64AC1F88D3E2A0227D",
+        "bytes": 316565
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-082.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-082.png",
+        "sha256": "6DF2E7959A0DB89361B2D89149AED2527D63D4CAE973D96777466E7DC19285F2",
+        "bytes": 315042
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-083.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-083.png",
+        "sha256": "CD00E84EA2219F9D8278E62EF1BF567ED0E86BC63333591EEA3402C510E3035F",
+        "bytes": 314515
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-084.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-084.png",
+        "sha256": "AA6F8FE5768EC0BDCE94A81F77044C9EC18B6AE059628B0DDD7C60CF4829A942",
+        "bytes": 313101
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-085.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-085.png",
+        "sha256": "90438A79339B5B12C4687D957AB22B1557DA1FCC939F00B62B7400A473D7B740",
+        "bytes": 311497
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-086.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-086.png",
+        "sha256": "88D143876FC80E0A7069F7FA60BF826281FD5AA76239302012AC098018CB9C3A",
+        "bytes": 313347
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-087.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-087.png",
+        "sha256": "24394979D7BCB4FB1E5146295BE3E1D8878A090851B0206F52CF44D12FE91C60",
+        "bytes": 315711
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-088.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-088.png",
+        "sha256": "84F5F7AA88E2741DB0E7DFB2BFB08BD3F4DB3F319F616982BF31749C92919C99",
+        "bytes": 316220
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-089.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-089.png",
+        "sha256": "80C66C88C89E9D68CFA02245BAA3855DE3E3BB76CF88E691D744C29820A6081D",
+        "bytes": 317067
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-090.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-090.png",
+        "sha256": "8A7887FAE46817255AD0E9D9BCEA3075264C94911390519519EA0B26256B367D",
+        "bytes": 316794
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-091.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-091.png",
+        "sha256": "3BE867AB5EB31C43BA1915C1C4ACA4E43F2CEA16D30C7DF66AFABD5EEC100F55",
+        "bytes": 316951
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-092.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-092.png",
+        "sha256": "3A2758572A2D934E72A594C85EA6B7149B3C1C8327BAA6092F9A92A7EBFEAE9F",
+        "bytes": 315929
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-093.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-093.png",
+        "sha256": "F756211BD0126A553B8D6FA74189E6B32ACE17405CDB118E0C91C8FBC91F99E4",
+        "bytes": 315463
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-094.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-094.png",
+        "sha256": "269A3B558A2B63C061F2B36A015D7DD78542A59FFF8A03FA1FDFC6F5DE80E5EB",
+        "bytes": 314081
+      },
+      {
+        "role": "c360",
+        "routeId": "",
+        "sourceManifest": "stage4-c360",
+        "sourcePath": "output/.twinkle-stage4-orbit-c360-f96-20260829/orbit-c360-f96-r1/frames/frame-095.png",
+        "targetPath": "showcase/homepage/assets/twinkle/c360/frame-095.png",
+        "sha256": "B794769460F7651C86765F15525D20D457F637C08B1D1EDAAC070C8E9B3B610E",
+        "bytes": 312810
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-000.png",
+        "sha256": "AC4841D93037285D08654963859F0C6249B1A7966CE79672400C0ECF037DD78A",
+        "bytes": 307222
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-001.png",
+        "sha256": "B4FFB013124BE8369E977AC1F0B8A2630FC109510DDA51EB5BF5ED2131ADF3B4",
+        "bytes": 307959
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-002.png",
+        "sha256": "16682EBFB21B0190D1A038DB903FA3F516FF18A7EF4CF4FF3B8FF9E9B0F5C300",
+        "bytes": 307591
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-003.png",
+        "sha256": "8E155DC24337457B45B13B1DEB3A52BF62A6BC8AAC5F0C78F503046DEB8426BD",
+        "bytes": 308208
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-004.png",
+        "sha256": "4BA10F915A1C395ADF3E344C1B51D96A5CE1B226671D4B9C0B43E89B904A4CD4",
+        "bytes": 308882
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-005.png",
+        "sha256": "5D26EC63B70C244605F11183B83BDDA58ED9AC64F5733B5A76A0702E039202EA",
+        "bytes": 310480
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-006.png",
+        "sha256": "416A9D580D34CBC672D344DC3A4BD8890966F0EE26172D1DCA8DCE39B933F979",
+        "bytes": 311010
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-007.png",
+        "sha256": "94F51263E203109E29140602BCFD2519C9D3F56B6D7D7611157CD4A3FF40C5E4",
+        "bytes": 312657
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-008.png",
+        "sha256": "F039765B500349F95CBBB74D46BCD971815E714F84C18BB5EA9A5DCC2C4C0B1A",
+        "bytes": 313311
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-009.png",
+        "sha256": "72EE17116606CBD15992BD9C827552214ABD40BC8242E9B0101EAC47757101CF",
+        "bytes": 313694
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-010.png",
+        "sha256": "1A6A0EEFCA2469D86C4FC7A028B3B526A63014E8BE7734AEE4E8C3A7EC4564B9",
+        "bytes": 310944
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-011.png",
+        "sha256": "EEDBCF032BD99EA446EA9E8B9226CB013CC3E1F90AE3CB5147FC23DCBF5587DC",
+        "bytes": 304327
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-012.png",
+        "sha256": "A61BF405DDECA6353BB805FA5F9E54CD1DDEECF7D3BAAD673E8EF7D37ADC3EB1",
+        "bytes": 298811
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-013.png",
+        "sha256": "BF83584F2A5AB5BB70459AFA66B35B363DD0A7629030D42E0436BB15713C1217",
+        "bytes": 298188
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-014.png",
+        "sha256": "B03DCA79080718FBEE8E71892768FB30E6A1D7DDD7C22A7F4920AB2A5C185518",
+        "bytes": 295780
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-015.png",
+        "sha256": "D03873BB6BCC0A0899E6338D421BEA4FCEF4438509E8EEF36C18BC914CD90122",
+        "bytes": 295453
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-016.png",
+        "sha256": "AC6C13A4A40ACCF7B3CFE3D598106E50EE0EF6D35B25945866AF8DDF53F8BDAD",
+        "bytes": 305040
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-017.png",
+        "sha256": "AEA460A7A83995311B3A6633BB88B5E067E5CC81690DA9F4A48AD43FE9FD62F5",
+        "bytes": 322492
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-018.png",
+        "sha256": "881C78E08547E42C798A380657A0F3199BF2C841B9A4DDDD4758C0542ED46E64",
+        "bytes": 334408
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-019.png",
+        "sha256": "1BA4479497B5C723ACA6A5D156D891945F865D64B51D4CC9BE4B9691498F5854",
+        "bytes": 341778
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-020.png",
+        "sha256": "3AF9FC65CB40F8912B7B9EDE51E0527CD1CA54B1E87F898A733ADA1A7DEA00CE",
+        "bytes": 342445
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-021.png",
+        "sha256": "DDC6D7B069F05C4C7ED033C1637CAACC03F590B35F67421CCF4316A444D7E020",
+        "bytes": 347382
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-022.png",
+        "sha256": "DCCF2C249A4626E6B1B9911EEBAA55608695BB827ED9A7E73E38C574A5696A3A",
+        "bytes": 352989
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-023.png",
+        "sha256": "A33AE94F0B765F63E2AFB9ABCDA7949E545A7F3158117179B535EB405AF19371",
+        "bytes": 357181
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-006--A/focus-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-006--A/focus-024.png",
+        "sha256": "642FA008CE1F3DFB3C78479E1C49A1A31FAFFBC5174D4D01C0DA822E6CD12829",
+        "bytes": 1322976
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-000.png",
+        "sha256": "5F7156564446114BDA4B7FB3BB7A5E9321D9CE4CE28598CE06A504D1FA52ED19",
+        "bytes": 316603
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-001.png",
+        "sha256": "20BFF81878B40771509550CDFD06AA80375DE987B2418D46A75A4DEA754AA074",
+        "bytes": 317036
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-002.png",
+        "sha256": "4D37863638E6703C441837AF2DBBCB9800831B616B19A46DC9EA339C3780B4C0",
+        "bytes": 317559
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-003.png",
+        "sha256": "77887762D76680BD56AAB4253DBF9AA9C4A63AA3462EAEA0D7E5852122E3739D",
+        "bytes": 318123
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-004.png",
+        "sha256": "F78CB9BA44548817788CFD0921715D5659DBF30EE15EFB78BA20A70631296BBF",
+        "bytes": 317735
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-005.png",
+        "sha256": "82742EC30ABB3CA3B094CA1AA8289103A509B3B33CB97D42C29186F58563E68E",
+        "bytes": 317871
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-006.png",
+        "sha256": "A9C53E0A1C542D6ADDD53070E1C1317B8C0369E9A66B99B7524476E9499DF94C",
+        "bytes": 318412
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-007.png",
+        "sha256": "4A38AB48E772FEB3DF2F657DC0B2C4513B6276D2F964543E3740CD2AE87572D5",
+        "bytes": 318651
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-008.png",
+        "sha256": "E896C4B0647DA11F8FCC442A6E397D5796E5A5F37606BFC01F1342DE197FE927",
+        "bytes": 319436
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-009.png",
+        "sha256": "E8CC692AC3C4C56CF3A17F44DC6F8D57878097170C007A2C7EC50388CBF49628",
+        "bytes": 320128
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-010.png",
+        "sha256": "67ABABE3E7F836E2EDC5AC7CEB5D05F12653DEA5BB1E103EDBAC37E724863547",
+        "bytes": 321716
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-011.png",
+        "sha256": "B9467347A6F4C30A9A94303370ABF37A5D975CE2860B37FE27FAC0D7FEC8D77C",
+        "bytes": 322864
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-012.png",
+        "sha256": "5A63FFDEA3C2D70B74524EE4105E11AD76D8D5E468C60AE0532100FACC0134E0",
+        "bytes": 324062
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-013.png",
+        "sha256": "D08443C6AE31AD5A40573A5660BE1D4E7CC87784BAF19B5A65C8A455A8A9AF7C",
+        "bytes": 324043
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-014.png",
+        "sha256": "EDAD93B2DF80EE9E5768A17932F0478F1015012449CEC71F2F4FE417AAA962A5",
+        "bytes": 320505
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-015.png",
+        "sha256": "E8C3E8E05E02FE50D79B7DE9098DDBF3EB47751DE96EE76A1B4A108647C369A8",
+        "bytes": 317501
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-016.png",
+        "sha256": "70088C2F108EB44306D39A5C5ADAF74B6AE896D8030D9AFC2CD42CDA20501ACD",
+        "bytes": 315077
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-017.png",
+        "sha256": "FBDD08ED13CB61E83F2108494CC1C32FF6716D4A09FF07E362F9A819F13E4E82",
+        "bytes": 314560
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-018.png",
+        "sha256": "EC7BDD8778738AB83D5C486C679FBDDF43DB3936CAFFED207EC424B5AF030949",
+        "bytes": 320403
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-019.png",
+        "sha256": "EC1018C747F241C6B37029E0AE293D918A48129CBB0A71767126FF2057959D0B",
+        "bytes": 324987
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-020.png",
+        "sha256": "388F27380162F1C5625255FA02E38561486ADA6AE23EBDBD7AA970DEC1B9515C",
+        "bytes": 327116
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-021.png",
+        "sha256": "C39F4EE7EF45B0EECF5B01614FE96AA4F405081C46DA9ACD0EFB2B00C83B0700",
+        "bytes": 334728
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-022.png",
+        "sha256": "51AA9DE95CEE11C7CB7162B14024695CE1427DB571ADC38096409D9FB1B0D1E6",
+        "bytes": 348877
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-023.png",
+        "sha256": "78F4204BACC2604DC604AD598520646965FD291A37EE80050BDE19C2372B602B",
+        "bytes": 359540
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_collection_optics_chamber--entry-065--B/focus-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_collection_optics_chamber--entry-065--B/focus-024.png",
+        "sha256": "642FA008CE1F3DFB3C78479E1C49A1A31FAFFBC5174D4D01C0DA822E6CD12829",
+        "bytes": 1322976
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-000.png",
+        "sha256": "E7B853CC1C9DDD291DF96C27659073798C1A14C6A25ED5312DF6E5FAF8890BCE",
+        "bytes": 307192
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-001.png",
+        "sha256": "679682530DB55DC44FA5AAA95DC0C59A5B1606FF2E18D909FCC9222E23F098CF",
+        "bytes": 307257
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-002.png",
+        "sha256": "ED3F4C9F0BF34AAE0CBB1E69E7613247FC181A58B48F979541AB693EA3498515",
+        "bytes": 308701
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-003.png",
+        "sha256": "0E67CC4DFA0A85B52172377569269FC0CA1E084D17F9B94AE5502135CC85382D",
+        "bytes": 310583
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-004.png",
+        "sha256": "7BA9BA2114BC45E3F2F01DC1E3A9160424CAC04B3DECC9BFA6C9453C798049EC",
+        "bytes": 311788
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-005.png",
+        "sha256": "BAB0F627B69934D560926EA25126B5C8B6B75FFC4F68CAD140101D53AD2CD4C8",
+        "bytes": 312300
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-006.png",
+        "sha256": "0B01332629C2C3FD107D2CFECEECFAF18074EFAA8BEC5CA0217F418A52829C83",
+        "bytes": 311829
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-007.png",
+        "sha256": "CDFB874EA5CCD4B0DC26E1D63CB67EEF436AA934229CB8BCCED719731C10E231",
+        "bytes": 313849
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-008.png",
+        "sha256": "78A6CE48473294D4E135759E2BDE428AF1DCF40EB2943A17486683C473559319",
+        "bytes": 315377
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-009.png",
+        "sha256": "6513289534B982833B92C96847ED6F5A8E468E1BBA4C918B7C632818443FB236",
+        "bytes": 316266
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-010.png",
+        "sha256": "8785D3439BC4B47B4A2A374A18A6A44DDCAA38E189BE09A0FAE123B0A0CB17F3",
+        "bytes": 318433
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-011.png",
+        "sha256": "E147A0E1D065EDADDCBBA2210C2BAA856DF670A08E2864ABD228179BF1BF4EA9",
+        "bytes": 320179
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-012.png",
+        "sha256": "60A78E2876871E7628F001391C8748D5623DFD8EBC4833E549253B4DC21BB3E3",
+        "bytes": 324990
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-013.png",
+        "sha256": "A368BE93E29A650DDF7E234864005F2B39E745385978FB715AFCDC6DFD75D924",
+        "bytes": 322741
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-014.png",
+        "sha256": "B0056A203F4EFD68D542FFFA9F3B36078767B6EC4E128D9FF2A2E245E664081F",
+        "bytes": 321114
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-015.png",
+        "sha256": "23AF7A1686E5468DD92E7DED354F3BAB4A805CF765F9465F13E2E349CCA1E15A",
+        "bytes": 321645
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-016.png",
+        "sha256": "6CFA2018FA6E3C203C30ED572074B40865DF16BC6AE5D07C881224B4444900E6",
+        "bytes": 322709
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-017.png",
+        "sha256": "88A5A5873F171A9B302985912221EF935B011FBCE95755EA32434B9066CA73C7",
+        "bytes": 323110
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-018.png",
+        "sha256": "BF46FA3F2C2BC256A864C1C816CCAD93954205F8E8C4B81351C5FAAE3445F261",
+        "bytes": 323937
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-019.png",
+        "sha256": "B0010331C64FF940DD1C6C68037B743846696CFC44AC53EDEA47AD6E8284DCA4",
+        "bytes": 324559
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-020.png",
+        "sha256": "11BAA7A31ACB6702FADCACEA7D97340EAB941FADB015800617E3420F20AB06DF",
+        "bytes": 327670
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-021.png",
+        "sha256": "FD29A4EF3EEA62AE63BE6D0AAC08F8DC1E2DA71537981184C83A471EE36CB30A",
+        "bytes": 328884
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-022.png",
+        "sha256": "7ADD3ECD213A38F786112FA97B29A9959DB18E579E6070F34066D1D0D59F7D9C",
+        "bytes": 332306
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-023.png",
+        "sha256": "9F5205F87CB45DF666E383537CD6CD5818304695CAC486268BE854784DE92CAD",
+        "bytes": 332627
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-008--A/focus-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-008--A/focus-024.png",
+        "sha256": "D7CB8F3EF32507317DFE4050CEB935EA7845794A429E0100E29B86DD7506837C",
+        "bytes": 800901
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-000.png",
+        "sha256": "24394979D7BCB4FB1E5146295BE3E1D8878A090851B0206F52CF44D12FE91C60",
+        "bytes": 315711
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-001.png",
+        "sha256": "2C005469141F0B5D359F265CE20C448A96A4E12AF06A03CAD33335CE47868DE0",
+        "bytes": 316252
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-002.png",
+        "sha256": "9670962F237FA1228207085E146863AC3E5B1A9A5DB25C121F1F948F2AB18FED",
+        "bytes": 317421
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-003.png",
+        "sha256": "0FB288AA3B3AB0FCCA5CCA3AF6E5676B782D89A8F7E4E7455C2114FBAC3CD902",
+        "bytes": 317947
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-004.png",
+        "sha256": "9294450406F5ABB7F8AA6DBD3330A7A507FD3B7D1C2F384BEF27937A12F13E93",
+        "bytes": 318423
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-005.png",
+        "sha256": "0C74F63D856202C61B1293D986B485726748093B1FD48420E83A1931C00122FC",
+        "bytes": 319645
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-006.png",
+        "sha256": "230C0DBCDB288B167F9F8CA675C2BE68F92712099496DB21CABBC140B3A3B2F0",
+        "bytes": 320515
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-007.png",
+        "sha256": "92E209C62767C6B5B18E80D53F60D0DBDAC5742E5017C4913BFBFFC3756FF1CB",
+        "bytes": 320961
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-008.png",
+        "sha256": "34FCEB62703F806FEA4E1DE9AB68CE17B79D0CAB47A5561F96AAD328CC6EA388",
+        "bytes": 322558
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-009.png",
+        "sha256": "D2134EB67F5E92B42810C380331B83D2220F9A80B26C117E188F27AB36FFE9A9",
+        "bytes": 322273
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-010.png",
+        "sha256": "92A167C56BB1F63C45D4FD66E39F662A2A178BDF536670BD281E3D4F2AC88D07",
+        "bytes": 321465
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-011.png",
+        "sha256": "86BA11B900B5914C6334ECCDF06DA57C40D0F04DAA1A8A42F93434CC7AB23495",
+        "bytes": 321538
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-012.png",
+        "sha256": "0E49A3A709CFF5DE38A61EAB8159C1DA6542002EFB9405B20B9BAD0C2EADE6BE",
+        "bytes": 322341
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-013.png",
+        "sha256": "BEF814469E854753EA010A8640988A0DC45CE45C413DE904C9C0A42FED281269",
+        "bytes": 323766
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-014.png",
+        "sha256": "6FE05EC68030457D795472C73377CE5D28210C1DC0F564CCF3455258A6B2DD14",
+        "bytes": 324405
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-015.png",
+        "sha256": "F8376F31D6D95839CD06C8318828B11FCE67CB5A4CB10757C621938650AF0F83",
+        "bytes": 325394
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-016.png",
+        "sha256": "B9A9774F0E6DE847FD0A110E3A668943CA6AC3F88EB392A672F4AB9191ED9BDF",
+        "bytes": 325578
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-017.png",
+        "sha256": "07DFB10CF2A1CF6FC4487C64C72A382DF51F497E01EC9E3C53194521154FAB1A",
+        "bytes": 326477
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-018.png",
+        "sha256": "72BF7E6ECA16E7A8E1F48B47573A0B411413028A2C8071A6ACC91F741E815293",
+        "bytes": 325219
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-019.png",
+        "sha256": "2734EA4797E71848B0721B36E9B0B60C6B8A14668BB8FE04290221CE0FB89442",
+        "bytes": 324730
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-020.png",
+        "sha256": "495EFF73E9FB6659ABC025B2C8E6EC5AF270DE8614C3EB7CF18D2DA17AE59D36",
+        "bytes": 322922
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-021.png",
+        "sha256": "E99F65F799895B9C4C0385F1A28656C4E6D8857BEE6BFD66CFD12E662F0F388A",
+        "bytes": 323357
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-022.png",
+        "sha256": "1EC8F562A5375D43B698EF63167E995D9C1793E77795C5D100C37A2D6C1CD43D",
+        "bytes": 323575
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-023.png",
+        "sha256": "F1BE65B3613B1B15B34FE137F5C2313B76FDA1CA64EE8CAF1FCF21E3EE685464",
+        "bytes": 329009
+      },
+      {
+        "role": "focus",
+        "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+        "sourceManifest": "stage4-c2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/frames/dual_channel_condenser_lens_assembly--entry-087--A/focus-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/focus/dual_channel_condenser_lens_assembly--entry-087--A/focus-024.png",
+        "sha256": "D7CB8F3EF32507317DFE4050CEB935EA7845794A429E0100E29B86DD7506837C",
+        "bytes": 800901
+      },
+      {
+        "role": "inspection-chamber-lit",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/review/inspection-lit.png",
+        "targetPath": "showcase/homepage/assets/twinkle/inspection/chamber-lit.png",
+        "sha256": "0AF82688B0A2DD0C339E54327CA35E96731C31FC0601A2CF5299E49C39C12B7C",
+        "bytes": 967979
+      },
+      {
+        "role": "inspection-chamber-unlit",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/review/inspection-unlit.png",
+        "targetPath": "showcase/homepage/assets/twinkle/inspection/chamber-unlit.png",
+        "sha256": "9166E1E5EB4F2ABC2B4BD47D5ECE5306DDE118AC2D75EE957CD89F0CB2C5BE08",
+        "bytes": 1306874
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-000.png",
+        "sha256": "642FA008CE1F3DFB3C78479E1C49A1A31FAFFBC5174D4D01C0DA822E6CD12829",
+        "bytes": 1322976
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-001.png",
+        "sha256": "723DC53858054E76E5D5309023959D5FAB7DBCED53754C41C0042EBDBC41DCEC",
+        "bytes": 1331670
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-002.png",
+        "sha256": "DB1216FA6DF7A213D8542CF6C47D95485F26C206BBBEEFDBFBF1D4BD32329CE9",
+        "bytes": 1324686
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-003.png",
+        "sha256": "48F5105D00E030F822896718CE7D5DEDE1E13CF1A1923326DBFDEC81E0180573",
+        "bytes": 1317314
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-004.png",
+        "sha256": "AD98F716D2CF7669E8D229861EB99B6E98AC083B91A0925ED8EAD86E301C0C09",
+        "bytes": 1312717
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-005.png",
+        "sha256": "68425CD1320D1D916CCCBDBE587D19DB1FA2D9A9D90CFB1A26CCE0A685D49A8D",
+        "bytes": 1315107
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-006.png",
+        "sha256": "61D28890A8C4ED2FEB337C56EFF8C992E5CA754930ED6F06E6E59CB708E089BF",
+        "bytes": 1314573
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-007.png",
+        "sha256": "AF1A9491618538A6772D38038877ED26FEFE37B36C8E51E6BB33FAE3D3FD4886",
+        "bytes": 1316013
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-008.png",
+        "sha256": "683E9EAC058CB6D3AF85B242ACED9427811D881E4D5615C8D87B8791C3FC07F4",
+        "bytes": 1317165
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-009.png",
+        "sha256": "5A4FE70C58382B3B83C37BE7BFFC64E195F934767F8977C4B90F805E1FB3AF01",
+        "bytes": 1315735
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-010.png",
+        "sha256": "F82EB66845812FB13B1902AE97958F46948B34DB65A6717117AAB5F70E60D989",
+        "bytes": 1326165
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-011.png",
+        "sha256": "D245C82049A98D659F3A9334A805B59175EEE8B1F3333FEDF82D973555FFE711",
+        "bytes": 1318175
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-012.png",
+        "sha256": "48CC60A41EE9B857EE14A711C257260FBF58110F30EE9D9B4DFC844733DB56D1",
+        "bytes": 1319646
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-013.png",
+        "sha256": "88C43CD7E5E0148614585C1A5D2B6D9FF9B7AFADF2B97444B6B5DEC264FA3A27",
+        "bytes": 1292620
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-014.png",
+        "sha256": "653A54B6ED8AD4DD4F5588234B58F64BB40775F1AF71965C40D04FDA5725979D",
+        "bytes": 1298902
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-015.png",
+        "sha256": "CA8C6B285359B480E4E74C6E6CDE2C71DE359C63FD531CA6DE04C389B4D51E84",
+        "bytes": 1315900
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-016.png",
+        "sha256": "5AEE753D91ACEFAB2E7D44D86BDD303744F24B4186A6B7FBD77EF82ADED305DD",
+        "bytes": 1320562
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-017.png",
+        "sha256": "9EF963E27BFFE113AA838FABFA6E8C9D120A50DED3847A321A2B8B8380CC63F0",
+        "bytes": 1318441
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-018.png",
+        "sha256": "EFA6AA8A85A8D6ECCD497DC222EDCD03D6940D56275FEB49D4D581309679D777",
+        "bytes": 1315448
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-019.png",
+        "sha256": "1072A6D22ABC14E11017BC8006DFC8C652885174BAD2E9F57EA60C6952B96FC6",
+        "bytes": 1312268
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-020.png",
+        "sha256": "8935EA1ABE595EFDF98CD937016DEF577140DDF7AFB3FBB3C3771DB16D0C1811",
+        "bytes": 1310643
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-021.png",
+        "sha256": "D60A4FD1557229F2C30E784C950C59BFE99A09BED66BD5EB5E737AD26C67A2E3",
+        "bytes": 1309001
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-022.png",
+        "sha256": "3E6C06E092E2AB12899B41EB28B5B821F649B71087C5F911E023C0C1FA4C7F9F",
+        "bytes": 1307487
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-023.png",
+        "sha256": "CFB7F2F6C981CC1D7B5273F9A457346C6DE03537175F5CB20C49D8C6759C98CE",
+        "bytes": 1307059
+      },
+      {
+        "role": "mechanical-chamber",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/chamber-frames/frame-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/chamber/frame-024.png",
+        "sha256": "9166E1E5EB4F2ABC2B4BD47D5ECE5306DDE118AC2D75EE957CD89F0CB2C5BE08",
+        "bytes": 1306874
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-000.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-000.png",
+        "sha256": "068BA7DA065D87133B59DBE361AAEEBFCCA787D1D72EBB3F47D9E34D645E8762",
+        "bytes": 1202613
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-001.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-001.png",
+        "sha256": "4202422E5ADDCACB6952CA6D7B6732DF56D2F5AC1ADF249CC199474DC54EF70D",
+        "bytes": 1202298
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-002.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-002.png",
+        "sha256": "0779F2104672BD0C650F61962EA14E42D6F44257AECC63596C6F9F0FFAF2A674",
+        "bytes": 1202275
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-003.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-003.png",
+        "sha256": "83629FEB2063C0DBA31A0B5E6EE4DEA90FDCE91E8D75FAA071E89D1955863052",
+        "bytes": 1202226
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-004.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-004.png",
+        "sha256": "E3709DD2E77B26320390835A48C62AEF7D01477EFCAB01D4A95C3E2FDCABB55C",
+        "bytes": 1202257
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-005.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-005.png",
+        "sha256": "70FD3856A95B719119125B431BAE21BDE0BE7D542444FB8438458E57A4A06946",
+        "bytes": 1201895
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-006.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-006.png",
+        "sha256": "A9C69713E062A0F424B50836565908023597CE6FA1F8E8B6BBF910BB19C4B3AD",
+        "bytes": 1206866
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-007.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-007.png",
+        "sha256": "6970FC999B81B8023A30EEAC5536C9EDEC868D70AC722BBEF0D6D6A1EEFA458E",
+        "bytes": 1205458
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-008.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-008.png",
+        "sha256": "D621F148F665B5E9D4161770D546E62A9F6549BCC77472C47B61DCEC8AC23B30",
+        "bytes": 1202669
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-009.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-009.png",
+        "sha256": "B4A9F9555088AAD79EABA92E00387688A519364ED3666B30B82E9702FE04EC48",
+        "bytes": 1202334
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-010.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-010.png",
+        "sha256": "E761D9FB77815249280684A80342C3D72796EF05A3144F8C0CC770664B5ECDC1",
+        "bytes": 1199066
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-011.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-011.png",
+        "sha256": "A7136E0B209522E6D5213A39A7751AFBD0787D9B9AE6415EE6D3E286970C3912",
+        "bytes": 1198129
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-012.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-012.png",
+        "sha256": "FA7AA10E540C4CA0C71F1ED818D860C9C20D007A9B45FFE22348716276B1A5CE",
+        "bytes": 1195853
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-013.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-013.png",
+        "sha256": "A13237EA305ED67CB1F88DF49CCEC432920232A7A4F53B85EBABF0647F59DDFC",
+        "bytes": 1201860
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-014.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-014.png",
+        "sha256": "D1E6F7A008AB7491D1BC05494ACC70075EE3AA4A2684C0105268D8801034E9FC",
+        "bytes": 1203787
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-015.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-015.png",
+        "sha256": "31F846B5E3183E3494238253FA2AE1630CDB5CD57A566EF45EF8FBDACABEC896",
+        "bytes": 1207681
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-016.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-016.png",
+        "sha256": "4006BF057DE618A34A1EF588BE88DB737FD1673A884D40784D0E9381DD692BC9",
+        "bytes": 1209348
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-017.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-017.png",
+        "sha256": "C36C39BE5D7B471F8BDAF5B51BA718FCE900DB3D44FFA73D782E86BE23C9BA1D",
+        "bytes": 1212273
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-018.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-018.png",
+        "sha256": "285B237CB42079F55EBC58152944961E6248BF456462878F26C3330DAFDB00E6",
+        "bytes": 1214114
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-019.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-019.png",
+        "sha256": "0FED766A509FA9945AE58ECAEBE757EC49B59B5BCDBA2F4C7E6E27990F94A6BC",
+        "bytes": 1217111
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-020.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-020.png",
+        "sha256": "9EA5629B97C61C721C2B53EF55ABC81E8F76EACBC56C720285B926D10F2AF06B",
+        "bytes": 1217344
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-021.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-021.png",
+        "sha256": "627A57F94962BB372C475CBBE3CF643C91C5D0B14BB3F5AB22679704A27DF6FF",
+        "bytes": 1217438
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-022.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-022.png",
+        "sha256": "9CFE34F3D1966B172D517C5F15E7B69394955484D3F42661389DC74E9C5527A8",
+        "bytes": 1217128
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-023.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-023.png",
+        "sha256": "A8C67D974ED387C2A8F1FDF47D6FA30B77E521BB0291472182A5EE11F5094068",
+        "bytes": 1216285
+      },
+      {
+        "role": "mechanical-condenser",
+        "routeId": "",
+        "sourceManifest": "stage4-c2+stage3-r2",
+        "sourcePath": "output/.twinkle-stage4-c2-full-review-20260830/c2-full-review-r1/review-assets/stage3/frames/frame-024.png",
+        "targetPath": "showcase/homepage/assets/twinkle/mechanical/condenser/frame-024.png",
+        "sha256": "CDCEA87E94F88279AB5C9A506675C854196E7729F31277BD63E98B6FD052EBB7",
+        "bytes": 1215797
+      }
+    ]
+  }
+}

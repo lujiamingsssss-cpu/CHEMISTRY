@@ -5944,6 +5944,7 @@ def blender_condenser_r1_linefix_probe_worker(
     frames_subdir=None,
     motion_controller=None,
     render=None,
+    linefix_proxy_hidden=False,
 ):
     import bmesh
     import bpy
@@ -6141,6 +6142,7 @@ def blender_condenser_r1_linefix_probe_worker(
         proxy_mesh.update()
         proxy = bpy.data.objects.new("TEMP__STAGE3_R1_LINEFIX_PROXY", proxy_mesh)
         scene.collection.objects.link(proxy)
+        proxy.hide_render = bool(linefix_proxy_hidden)
         proxy.matrix_world = target.matrix_world.copy()
         boolean = proxy.modifiers.new("TEMP__STAGE3_R1_LINEFIX_EXACT", "BOOLEAN")
         boolean.operation = "INTERSECT"
@@ -6311,6 +6313,7 @@ def blender_condenser_motion_only_probe_worker(
     schema=CONDENSER_MOTION_ONLY_PROBE_SCHEMA,
     report_name="motion-runtime.json",
     frames_subdir="frames/new",
+    linefix_proxy_hidden=False,
 ):
     import bpy
     from mathutils import Matrix
@@ -6470,6 +6473,7 @@ def blender_condenser_motion_only_probe_worker(
         frames_subdir=frames_subdir,
         motion_controller=setup_motion,
         render=render,
+        linefix_proxy_hidden=linefix_proxy_hidden,
     )
 
 
