@@ -1,0 +1,52 @@
+{
+  "schema": "twinkle-stage5-rgba-hover-worker-v1",
+  "frameIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "anglesDegrees": [
+    0.0,
+    3.75,
+    7.5,
+    11.25,
+    15.0
+  ],
+  "renderedFrameCount": 5,
+  "oneBlenderInvocation": true,
+  "filmTransparent": true,
+  "studioFloorHidden": true,
+  "contactShadowIncluded": false,
+  "candidateBlendSha256Before": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+  "candidateBlendSha256After": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+  "candidateBlendSaved": false,
+  "frames": [
+    {
+      "frameIndex": 0,
+      "azimuthDegrees": 0.0,
+      "sha256": "E2C15CEE3E30BE84D79BCA375653118B6DF159C9DBF1C4855F9AFBC62853FAAC"
+    },
+    {
+      "frameIndex": 1,
+      "azimuthDegrees": 3.75,
+      "sha256": "BB356F37AEE265FF342A58AC24CCD2B1C4B7D429C9CAE8C302C3E13622CB8AF5"
+    },
+    {
+      "frameIndex": 2,
+      "azimuthDegrees": 7.5,
+      "sha256": "86D8102A4BADEB3032BAD6DC7C1F929D501C30C090E4662F86EF20A57212D0AD"
+    },
+    {
+      "frameIndex": 3,
+      "azimuthDegrees": 11.25,
+      "sha256": "67B2B83D2BCEDDF36344A788257516A79F81C7DC850F808ABFEE33B82D83FE07"
+    },
+    {
+      "frameIndex": 4,
+      "azimuthDegrees": 15.0,
+      "sha256": "964DD67878D534D09E8A9017C7F96EA2C60D87E493E4D85DCFFBF6339A82C78D"
+    }
+  ]
+}

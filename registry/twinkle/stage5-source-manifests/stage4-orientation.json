@@ -1,0 +1,715 @@
+{
+  "schema": "twinkle-stage4-orientation-correction-v1",
+  "scope": "stage4-step4-single-public-orientation-correction-only",
+  "contract": {
+    "constraint": "TRACK_TO",
+    "render": {
+      "resolution": [
+        640,
+        450
+      ],
+      "samples": 64
+    },
+    "renders": [
+      {
+        "unit": "dual_channel_collection_optics_chamber",
+        "pose": "focus",
+        "sourceFrame": 101
+      },
+      {
+        "unit": "dual_channel_condenser_lens_assembly",
+        "pose": "transition",
+        "sourceFrame": 51
+      },
+      {
+        "unit": "dual_channel_condenser_lens_assembly",
+        "pose": "focus",
+        "sourceFrame": 101
+      }
+    ],
+    "renderFrameCount": 3,
+    "maximumRenderFrameCount": 3,
+    "reusesRejectedLockedTrackEvidence": true,
+    "testsConstraintCombination": false,
+    "candidateBlendSaved": false
+  },
+  "constraint": "TRACK_TO",
+  "renderProfile": {
+    "engine": "BLENDER_EEVEE",
+    "filmTransparent": false,
+    "colorManagement": {
+      "viewTransform": "AgX",
+      "look": "AgX - Medium High Contrast",
+      "exposure": -1.600000023841858,
+      "gamma": 1.0
+    },
+    "sharedHiddenObjects": [
+      "WS_Studio_Floor"
+    ],
+    "sharedTechnicalLights": {
+      "key": {
+        "energy": 10.0,
+        "size": 0.1,
+        "location": [
+          0.34,
+          0.48,
+          0.48
+        ]
+      },
+      "fill": {
+        "energy": 3.5,
+        "size": 0.14,
+        "location": [
+          0.24,
+          0.66,
+          0.52
+        ]
+      }
+    },
+    "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+    "materialRule": {
+      "object": "DetectBoxTopPlate :: 实体1",
+      "originalMaterial": "WS_Black_Anodized_Aluminum",
+      "temporaryMaterial": "TEMP__SHARED_TOP_PLATE_NO_NORMAL",
+      "normalMapStrengthBefore": 0.07999999821186066,
+      "normalMapStrengthDuringRender": 0.0,
+      "scope": "all-seven-frames"
+    },
+    "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+    "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000"
+  },
+  "renderFrameCount": 3,
+  "budgetEvidence": {
+    "initialProbeRenders": 12,
+    "correctionRendersBeforeRecovery": [
+      0
+    ],
+    "reusedFrameIndices": [
+      0
+    ],
+    "renderedFrameIndicesThisRun": [
+      1,
+      2
+    ],
+    "totalOrientationRenders": 15
+  },
+  "frames": [
+    {
+      "index": 0,
+      "unit": "dual_channel_collection_optics_chamber",
+      "pose": "focus",
+      "sourceFrame": 101,
+      "path": "frames/candidate-00.png",
+      "sha256": "550677558E719C71E08BD1F968165F4FB161648BB8BD65E495A53BAB5C3DCCEB",
+      "cameraIntrinsics": {
+        "lensMm": 55.0,
+        "sensorWidthMm": 36.0,
+        "shiftX": 0.0,
+        "shiftY": 0.0
+      },
+      "projection": {
+        "method": "twinkle_camera_projection-authority-hull",
+        "geometrySnapshotSha256": "A5066A084C95E8D4F39DEB61DBF23B91CB339DC1062A09447943845980A940DA",
+        "safeTargetBounds": [
+          0.05,
+          0.05,
+          0.69,
+          0.95
+        ],
+        "minimumVisibleSubjectFraction": 0.75,
+        "minimumVisibleCanvasArea": 0.005,
+        "targetCenter": [
+          0.5000000000000001,
+          0.5000000000000002
+        ],
+        "targetDepthPositive": true,
+        "subjectBounds": [
+          0.24430828186015335,
+          -0.1437746000630824,
+          1.0950059361442082,
+          0.9158202381441289
+        ],
+        "visibleSubjectFraction": 0.7677853655063592,
+        "visibleCanvasArea": 0.6920777692703802,
+        "targetClipped": false,
+        "subjectOutOfFrame": false,
+        "failureReasons": []
+      },
+      "location": [
+        0.411294013,
+        0.420015991,
+        0.371681988
+      ],
+      "targetErrorDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "upDotWorldZ": 0.7448599934577942,
+      "quality": {
+        "resolution": [
+          640,
+          450
+        ],
+        "meanLuminance": 132.09351041666667,
+        "nearBlackFraction": 0.04943402777777778,
+        "dynamicRange": 255,
+        "blackFrame": false,
+        "emptyFrame": false,
+        "referenceScale": "LANCZOS",
+        "referenceRgbMae": 0.8539976851851852,
+        "referenceAsset": "assets/dual-channel-collection-optics-chamber--focused-settled.png",
+        "referenceAssetSha256": "642FA008CE1F3DFB3C78479E1C49A1A31FAFFBC5174D4D01C0DA822E6CD12829"
+      }
+    },
+    {
+      "index": 1,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "pose": "transition",
+      "sourceFrame": 51,
+      "path": "frames/candidate-01.png",
+      "sha256": "BEEA00A514A158AFEA744CA92C01EFA00D35897900A046B8F9BCD3F56967A7EA",
+      "cameraIntrinsics": {
+        "lensMm": 72.0,
+        "sensorWidthMm": 36.0,
+        "shiftX": 0.0,
+        "shiftY": 0.019999999552965164
+      },
+      "projection": {
+        "method": "twinkle_camera_projection-authority-hull",
+        "geometrySnapshotSha256": "A5066A084C95E8D4F39DEB61DBF23B91CB339DC1062A09447943845980A940DA",
+        "safeTargetBounds": [
+          0.05,
+          0.05,
+          0.69,
+          0.95
+        ],
+        "minimumVisibleSubjectFraction": 0.75,
+        "minimumVisibleCanvasArea": 0.005,
+        "targetCenter": [
+          0.5000000000000001,
+          0.5284444438086615
+        ],
+        "targetDepthPositive": true,
+        "subjectBounds": [
+          0.2997410664597711,
+          0.22327580158725735,
+          0.6889415591129001,
+          0.708242801837272
+        ],
+        "visibleSubjectFraction": 1.0,
+        "visibleCanvasArea": 0.18874939541781582,
+        "targetClipped": false,
+        "subjectOutOfFrame": false,
+        "failureReasons": []
+      },
+      "location": [
+        0.659098744,
+        0.232096329,
+        0.739678204
+      ],
+      "targetErrorDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "upDotWorldZ": 0.9350294470787048,
+      "quality": {
+        "resolution": [
+          640,
+          450
+        ],
+        "meanLuminance": 134.46628819444445,
+        "nearBlackFraction": 0.07144097222222222,
+        "dynamicRange": 255,
+        "blackFrame": false,
+        "emptyFrame": false,
+        "referenceScale": "LANCZOS",
+        "referenceRgbMae": 0.0
+      }
+    },
+    {
+      "index": 2,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "pose": "focus",
+      "sourceFrame": 101,
+      "path": "frames/candidate-02.png",
+      "sha256": "82C79626749AF85F86AB8E74CFC1D207401AEAB0E5E1CD54E45296FFAFE0E063",
+      "cameraIntrinsics": {
+        "lensMm": 72.0,
+        "sensorWidthMm": 36.0,
+        "shiftX": 0.0,
+        "shiftY": 0.019999999552965164
+      },
+      "projection": {
+        "method": "twinkle_camera_projection-authority-hull",
+        "geometrySnapshotSha256": "A5066A084C95E8D4F39DEB61DBF23B91CB339DC1062A09447943845980A940DA",
+        "safeTargetBounds": [
+          0.05,
+          0.05,
+          0.69,
+          0.95
+        ],
+        "minimumVisibleSubjectFraction": 0.75,
+        "minimumVisibleCanvasArea": 0.005,
+        "targetCenter": [
+          0.5,
+          0.5284444438086615
+        ],
+        "targetDepthPositive": true,
+        "subjectBounds": [
+          0.02072524126354136,
+          0.08524208887568774,
+          0.5099508295202348,
+          0.7520619390618247
+        ],
+        "visibleSubjectFraction": 1.0,
+        "visibleCanvasArea": 0.3262253334685531,
+        "targetClipped": false,
+        "subjectOutOfFrame": false,
+        "failureReasons": []
+      },
+      "location": [
+        0.435360432,
+        0.324144304,
+        0.563809991
+      ],
+      "targetErrorDegrees": 0.0,
+      "rollDegrees": 0.0,
+      "upDotWorldZ": 0.9990332722663879,
+      "quality": {
+        "resolution": [
+          640,
+          450
+        ],
+        "meanLuminance": 126.66659027777777,
+        "nearBlackFraction": 0.15449305555555556,
+        "dynamicRange": 247,
+        "blackFrame": false,
+        "emptyFrame": false,
+        "referenceScale": "LANCZOS",
+        "referenceRgbMae": 0.8874675925925927,
+        "referenceAsset": "assets/dual-channel-condenser-lens-assembly--focused-settled.png",
+        "referenceAssetSha256": "D7CB8F3EF32507317DFE4050CEB935EA7845794A429E0100E29B86DD7506837C"
+      }
+    }
+  ],
+  "orientationMetrics": {
+    "maximumTargetErrorDegrees": 0.0,
+    "maximumRollDegrees": 0.0,
+    "maximumEndpointRotationErrorDegrees": 0.0,
+    "maximumEndpointLocationErrorM": 0.0,
+    "minimumUpDotWorldZ": 0.7448599934577942,
+    "maximumOrientationStepDegrees": 7.016439464055713,
+    "flipCount": 0,
+    "constraintCompetition": false,
+    "evaluationLoopDetected": false,
+    "scenarios": [
+      {
+        "unit": "dual_channel_collection_optics_chamber",
+        "sampleCount": 21,
+        "samples": [
+          {
+            "frame": 1,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9131078720092773,
+            "orientationStepDegrees": 0.0
+          },
+          {
+            "frame": 6,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9140267372131348,
+            "orientationStepDegrees": 0.12511451142200766
+          },
+          {
+            "frame": 11,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9166954159736633,
+            "orientationStepDegrees": 0.37949126002100575
+          },
+          {
+            "frame": 16,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9210255146026611,
+            "orientationStepDegrees": 0.6330356993768276
+          },
+          {
+            "frame": 21,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9269664287567139,
+            "orientationStepDegrees": 0.8952487960477327
+          },
+          {
+            "frame": 26,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9344805479049683,
+            "orientationStepDegrees": 1.1849658905675156
+          },
+          {
+            "frame": 31,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9435046911239624,
+            "orientationStepDegrees": 1.5138448351889187
+          },
+          {
+            "frame": 36,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9538969993591309,
+            "orientationStepDegrees": 1.8970645514035316
+          },
+          {
+            "frame": 41,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9653469920158386,
+            "orientationStepDegrees": 2.351728046336478
+          },
+          {
+            "frame": 46,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9772359132766724,
+            "orientationStepDegrees": 2.894795320027134
+          },
+          {
+            "frame": 51,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9888807535171509,
+            "orientationStepDegrees": 3.6966537656145184
+          },
+          {
+            "frame": 56,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.997957706451416,
+            "orientationStepDegrees": 4.9710744302982794
+          },
+          {
+            "frame": 61,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9993817806243896,
+            "orientationStepDegrees": 5.769867188165387
+          },
+          {
+            "frame": 66,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9893010854721069,
+            "orientationStepDegrees": 6.4792096542278905
+          },
+          {
+            "frame": 71,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9649493098258972,
+            "orientationStepDegrees": 6.947116885961492
+          },
+          {
+            "frame": 76,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9265836477279663,
+            "orientationStepDegrees": 7.016439464055713
+          },
+          {
+            "frame": 81,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.8786045908927917,
+            "orientationStepDegrees": 6.591605539662328
+          },
+          {
+            "frame": 86,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.8286552429199219,
+            "orientationStepDegrees": 5.683178427219585
+          },
+          {
+            "frame": 91,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.7852283120155334,
+            "orientationStepDegrees": 4.382133685151114
+          },
+          {
+            "frame": 96,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.7555650472640991,
+            "orientationStepDegrees": 2.791272490654778
+          },
+          {
+            "frame": 101,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.7448599934577942,
+            "orientationStepDegrees": 0.9755752357816677
+          }
+        ],
+        "startLocationErrorM": 0.0,
+        "endLocationErrorM": 0.0,
+        "startRotationErrorDegrees": 0.0,
+        "endRotationErrorDegrees": 0.0,
+        "maximumTargetErrorDegrees": 0.0,
+        "maximumRollDegrees": 0.0,
+        "minimumUpDotWorldZ": 0.7448599934577942,
+        "maximumOrientationStepDegrees": 7.016439464055713,
+        "flipCount": 0,
+        "constraintCompetition": false,
+        "evaluationLoopDetected": false
+      },
+      {
+        "unit": "dual_channel_condenser_lens_assembly",
+        "sampleCount": 21,
+        "samples": [
+          {
+            "frame": 1,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9131078720092773,
+            "orientationStepDegrees": 0.0
+          },
+          {
+            "frame": 6,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9132810831069946,
+            "orientationStepDegrees": 0.08846931922527276
+          },
+          {
+            "frame": 11,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9137893915176392,
+            "orientationStepDegrees": 0.25333761269001737
+          },
+          {
+            "frame": 16,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9146302938461304,
+            "orientationStepDegrees": 0.4224354340972262
+          },
+          {
+            "frame": 21,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9158197641372681,
+            "orientationStepDegrees": 0.5947882408503429
+          },
+          {
+            "frame": 26,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.917389988899231,
+            "orientationStepDegrees": 0.7783304182482478
+          },
+          {
+            "frame": 31,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9193909168243408,
+            "orientationStepDegrees": 0.9819725617130308
+          },
+          {
+            "frame": 36,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9218904972076416,
+            "orientationStepDegrees": 1.214325672158227
+          },
+          {
+            "frame": 41,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9249758720397949,
+            "orientationStepDegrees": 1.4824985357667912
+          },
+          {
+            "frame": 46,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9287525415420532,
+            "orientationStepDegrees": 1.796620856686382
+          },
+          {
+            "frame": 51,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9350294470787048,
+            "orientationStepDegrees": 2.5306450650883736
+          },
+          {
+            "frame": 56,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9464012384414673,
+            "orientationStepDegrees": 3.934442959587104
+          },
+          {
+            "frame": 61,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9585878849029541,
+            "orientationStepDegrees": 4.498325021329963
+          },
+          {
+            "frame": 66,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9708206057548523,
+            "orientationStepDegrees": 5.018257377084728
+          },
+          {
+            "frame": 71,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9819998741149902,
+            "orientationStepDegrees": 5.410602226030478
+          },
+          {
+            "frame": 76,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9909349083900452,
+            "orientationStepDegrees": 5.571306331917123
+          },
+          {
+            "frame": 81,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9967933893203735,
+            "orientationStepDegrees": 5.398867961036395
+          },
+          {
+            "frame": 86,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9995293617248535,
+            "orientationStepDegrees": 4.828869891778615
+          },
+          {
+            "frame": 91,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9999602437019348,
+            "orientationStepDegrees": 3.855252038802684
+          },
+          {
+            "frame": 96,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9993941783905029,
+            "orientationStepDegrees": 2.5210384040207505
+          },
+          {
+            "frame": 101,
+            "targetErrorDegrees": 0.0,
+            "rollDegrees": 0.0,
+            "upDotWorldZ": 0.9990332722663879,
+            "orientationStepDegrees": 0.893498560072917
+          }
+        ],
+        "startLocationErrorM": 0.0,
+        "endLocationErrorM": 0.0,
+        "startRotationErrorDegrees": 0.0,
+        "endRotationErrorDegrees": 0.0,
+        "maximumTargetErrorDegrees": 0.0,
+        "maximumRollDegrees": 0.0,
+        "minimumUpDotWorldZ": 0.9131078720092773,
+        "maximumOrientationStepDegrees": 5.571306331917123,
+        "flipCount": 0,
+        "constraintCompetition": false,
+        "evaluationLoopDetected": false
+      }
+    ]
+  },
+  "restoration": {
+    "candidateBlendSha256Before": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+    "candidateBlendSha256After": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+    "candidateBlendSaved": false,
+    "sourceCameraTransformRestored": true,
+    "sceneSettingsRestored": true,
+    "visibilityRestored": true,
+    "materialRestored": true,
+    "temporaryCamerasRemaining": [],
+    "temporaryCurvesRemaining": [],
+    "temporaryEmptiesRemaining": [],
+    "temporaryLightsRemaining": [],
+    "temporaryMaterialsRemaining": [],
+    "temporaryConstraintsRemaining": [],
+    "temporaryActionsRemaining": []
+  },
+  "reviewLabels": {
+    "candidate": "CANDIDATE / 候选",
+    "failed": "FAILED / 失败"
+  },
+  "rejectedBaseline": {
+    "path": "F:\\半导体材料产品展示\\.worktrees\\twinkle-hotspot-page-revision\\output\\.twinkle-stage4-orientation-probe-20260828\\orientation-probe-r1",
+    "manifestSha256": "060B10941A0D12545118E4B5E869AAB239E960FF035019A86B317FA937B0A2DD",
+    "humanApproved": false,
+    "lockedTrackMaximumTargetErrorDegrees": 65.32844397704334,
+    "lockedTrackMaximumRollDegrees": 65.91956269876208
+  },
+  "workerAuditSha256": "84E518E0C183DEFC5EA0C1155D838F55F8762859B7F6602A4FF0475856CB87A0",
+  "machinePassed": true,
+  "humanApproved": true,
+  "authorizesStep5": false,
+  "inventorySha256": {
+    "frames/candidate-00.png": "550677558E719C71E08BD1F968165F4FB161648BB8BD65E495A53BAB5C3DCCEB",
+    "frames/candidate-01.png": "BEEA00A514A158AFEA744CA92C01EFA00D35897900A046B8F9BCD3F56967A7EA",
+    "frames/candidate-02.png": "82C79626749AF85F86AB8E74CFC1D207401AEAB0E5E1CD54E45296FFAFE0E063",
+    "technical-pose-contact-sheet.png": "A7F1F3A2678DDF35DA911AED8C8BC41BAA00607932832D33EEEB0363EF48B807",
+    "track-to-six-grid-contact-sheet.png": "FA1ABEF053FD20CF996B4EE5C6ECAFD57A00F24DE053052BD01D8ABDD2A039F0",
+    "worker-audit.json": "84E518E0C183DEFC5EA0C1155D838F55F8762859B7F6602A4FF0475856CB87A0"
+  },
+  "reviewSheetSources": [
+    "frames/candidate-00.png",
+    "frames/candidate-01.png",
+    "frames/candidate-02.png"
+  ],
+  "reviewFont": {
+    "path": "C:/Windows/Fonts/msyh.ttc",
+    "sha256": "D79C55E68B1131EEA0CC1C47BE4F572D964F28C682E143DB2AD09C1E4CB07A3F",
+    "family": "Microsoft YaHei",
+    "size": 18
+  },
+  "reviewSheetSha256": "A7F1F3A2678DDF35DA911AED8C8BC41BAA00607932832D33EEEB0363EF48B807",
+  "trackToSixGrid": {
+    "constraint": "TRACK_TO",
+    "grid": [
+      2,
+      3
+    ],
+    "sources": [
+      "orientation-probe-r1/frames/pose-00.png",
+      "orientation-probe-r1/frames/pose-01.png",
+      "orientation-correction-r1/frames/candidate-00.png",
+      "orientation-probe-r1/frames/pose-03.png",
+      "orientation-correction-r1/frames/candidate-01.png",
+      "orientation-correction-r1/frames/candidate-02.png"
+    ],
+    "font": {
+      "path": "C:/Windows/Fonts/msyh.ttc",
+      "sha256": "D79C55E68B1131EEA0CC1C47BE4F572D964F28C682E143DB2AD09C1E4CB07A3F",
+      "family": "Microsoft YaHei",
+      "size": 18
+    },
+    "asset": "track-to-six-grid-contact-sheet.png",
+    "sha256": "FA1ABEF053FD20CF996B4EE5C6ECAFD57A00F24DE053052BD01D8ABDD2A039F0"
+  },
+  "humanApproval": {
+    "approvedBy": "user",
+    "approvedOn": "2026-08-29",
+    "scope": "stage4-step4-track-to-common-orientation-and-six-grid-review-only",
+    "approvedConstraint": "TRACK_TO",
+    "approvedAsset": "track-to-six-grid-contact-sheet.png",
+    "approvedAssetSha256": "FA1ABEF053FD20CF996B4EE5C6ECAFD57A00F24DE053052BD01D8ABDD2A039F0",
+    "authorizesStep5": false
+  }
+}

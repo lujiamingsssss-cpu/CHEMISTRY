@@ -1267,6 +1267,26 @@ def test_motion_only_worker_uses_blender_52_recursive_children_api():
     assert "parent_recursive" not in worker
 
 
+def test_motion_only_worker_exposes_only_the_linefix_proxy_render_visibility():
+    assert (
+        stage3.blender_condenser_motion_only_probe_worker.__kwdefaults__[
+            "linefix_proxy_hidden"
+        ]
+        is False
+    )
+    source = Path(stage3.__file__).read_text(encoding="utf-8")
+    linefix_start = source.index("def blender_condenser_r1_linefix_probe_worker")
+    linefix_end = source.index("\ndef blender_condenser_motion_only_probe_worker", linefix_start)
+    linefix = source[linefix_start:linefix_end]
+    motion_start = linefix_end + 1
+    motion_end = source.index("\ndef blender_condenser_second_repair_probe_worker", motion_start)
+    motion = source[motion_start:motion_end]
+
+    assert "linefix_proxy_hidden=False" in linefix
+    assert "proxy.hide_render = bool(linefix_proxy_hidden)" in linefix
+    assert "linefix_proxy_hidden=linefix_proxy_hidden" in motion
+
+
 def test_motion_only_review_inventory_is_exact():
     assert stage3.CONDENSER_MOTION_ONLY_REVIEW_FILES == (
         "review/old-new-same-frame-contact-sheet.png",

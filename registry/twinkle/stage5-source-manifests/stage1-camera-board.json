@@ -1,0 +1,1154 @@
+{
+  "schema": "twinkle-route1-camera-board-v4",
+  "canvas": {
+    "width": 1280,
+    "height": 900
+  },
+  "source": {
+    "path": "E:\\Blender\\Projects\\TWINKLE_Collection_Prototype\\TWINKLE_Collection_WebShowcase.blend",
+    "sha256": "5458C6A3033DF6D1CFD3CAD4B11F3A7DF69BB278D3EE7853767B96E412E7AF81"
+  },
+  "candidateBlend": {
+    "path": "E:\\Blender\\Projects\\TWINKLE_Collection_Prototype\\page-coordinated-experiment-v7\\TWINKLE_Collection_WebShowcase_PageCoordinated_Experiment_v7.blend",
+    "sha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6"
+  },
+  "designAuthority": {
+    "dual_channel_collection_optics_chamber": {
+      "kind": "codex-thread",
+      "threadId": "01a02ff9-18a2-7da3-a250-12dc45e86ff9",
+      "migratedToSpecification": true,
+      "sourceEvidence": {
+        "irSideContextSha256": "CC7CB230CFD2065A7D312E56D213AD57DB835D677877D39D55F8108ED32E65AF",
+        "simultaneousTerminalSha256": "A681491EEA32638261583E9CEE6102A530EA14D4066F9F905885C548A2B529EB"
+      }
+    },
+    "dual_channel_condenser_lens_assembly": {
+      "kind": "repository-record",
+      "specification": "docs/superpowers/specs/2026-08-20-twinkle-page-coordinated-render-design.md",
+      "legacyAcceptedReference": {
+        "path": "F:\\半导体材料产品展示\\.worktrees\\twinkle-hotspot-page-revision\\scripts\\assets\\twinkle_condenser_legacy_reference.png",
+        "sha256": "12364CBBE6AA9F9AC0A382530506A5B16236AFDF55910D3EEB05A01481A8DC0A"
+      }
+    }
+  },
+  "renderBatchId": "stage1-12c58d65c2b44671",
+  "renderProfileId": "shared-render-aefc47d96ec104a3",
+  "renderProfile": {
+    "id": "shared-render-aefc47d96ec104a3",
+    "frameCount": 7,
+    "engine": "BLENDER_EEVEE",
+    "resolution": [
+      1280,
+      900,
+      100
+    ],
+    "taaRenderSamples": 512,
+    "filmTransparent": false,
+    "colorManagement": {
+      "viewTransform": "AgX",
+      "look": "AgX - Medium High Contrast",
+      "exposure": -1.600000023841858,
+      "gamma": 1.0
+    },
+    "existingLights": [
+      "WS_Key_Softbox",
+      "WS_Fill_Softbox",
+      "WS_Rim_Light",
+      "WS_Front_Bounce"
+    ],
+    "sharedTechnicalLights": {
+      "key": {
+        "energy": 10.0,
+        "size": 0.1,
+        "location": [
+          0.34,
+          0.48,
+          0.48
+        ]
+      },
+      "fill": {
+        "energy": 3.5,
+        "size": 0.14,
+        "location": [
+          0.24,
+          0.66,
+          0.52
+        ]
+      }
+    },
+    "sharedHiddenObjects": [
+      "WS_Studio_Floor"
+    ],
+    "lightRig": [
+      {
+        "name": "WS_Key_Softbox",
+        "type": "AREA",
+        "energy": 44.0,
+        "color": [
+          0.92000002,
+          0.94999999,
+          1.0
+        ],
+        "location": [
+          0.02733433,
+          0.63146359,
+          0.95114213
+        ],
+        "rotation": [
+          0.78815299,
+          1.1e-07,
+          -1.67567348
+        ]
+      },
+      {
+        "name": "WS_Fill_Softbox",
+        "type": "AREA",
+        "energy": 18.0,
+        "color": [
+          0.75,
+          0.83999997,
+          1.0
+        ],
+        "location": [
+          0.74733436,
+          0.54146355,
+          0.73114216
+        ],
+        "rotation": [
+          1.13506126,
+          -7e-08,
+          1.42478418
+        ]
+      },
+      {
+        "name": "WS_Rim_Light",
+        "type": "AREA",
+        "energy": 46.0,
+        "color": [
+          0.60000002,
+          0.75,
+          1.0
+        ],
+        "location": [
+          0.48733431,
+          0.97146356,
+          0.91114211
+        ],
+        "rotation": [
+          0.85165793,
+          -8e-08,
+          2.93409657
+        ]
+      },
+      {
+        "name": "WS_Front_Bounce",
+        "type": "AREA",
+        "energy": 0.3499999940395355,
+        "color": [
+          0.81999999,
+          0.88,
+          1.0
+        ],
+        "location": [
+          0.35733432,
+          0.37146357,
+          0.53114212
+        ],
+        "rotation": [
+          1.74626994,
+          2e-08,
+          -0.22347669
+        ]
+      },
+      {
+        "name": "TEMP__SHARED_KEY",
+        "type": "AREA",
+        "energy": 10.0,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "location": [
+          0.34,
+          0.47999999,
+          0.47999999
+        ],
+        "rotation": [
+          2.17469501,
+          -5e-08,
+          0.36742291
+        ],
+        "size": 0.10000000149011612
+      },
+      {
+        "name": "TEMP__SHARED_FILL",
+        "type": "AREA",
+        "energy": 3.5,
+        "color": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "location": [
+          0.23999999,
+          0.66000003,
+          0.51999998
+        ],
+        "rotation": [
+          2.40705967,
+          -1.2e-07,
+          -2.26562381
+        ],
+        "size": 0.14000000059604645
+      }
+    ],
+    "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+    "materialRule": {
+      "object": "DetectBoxTopPlate :: 实体1",
+      "originalMaterial": "WS_Black_Anodized_Aluminum",
+      "temporaryMaterial": "TEMP__SHARED_TOP_PLATE_NO_NORMAL",
+      "normalMapStrengthBefore": 0.07999999821186066,
+      "normalMapStrengthDuringRender": 0.0,
+      "scope": "all-seven-frames"
+    },
+    "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+    "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000"
+  },
+  "units": {
+    "dual_channel_collection_optics_chamber": {
+      "rootObjects": [
+        "DetectBox_Bottom_Mala2020:1",
+        "Side2_optics:1"
+      ],
+      "fullOffsetsM": {
+        "bottomCover": [
+          0.0,
+          0.0,
+          -0.14
+        ],
+        "sidePanel": [
+          0.0,
+          -0.1,
+          0.0
+        ]
+      },
+      "cameraPresetId": "collection-optics-chamber-side-underside",
+      "camera": {
+        "location": [
+          0.41129401,
+          0.42001599,
+          0.37168199
+        ],
+        "rotation": [
+          2.30126786,
+          2e-08,
+          0.55730778
+        ],
+        "target": [
+          0.285227,
+          0.622304,
+          0.585193
+        ],
+        "lensMm": 55.0,
+        "sensorWidthMm": 36.0,
+        "shiftX": 0.0,
+        "shiftY": 0.0
+      },
+      "projectionCamera": {
+        "location": [
+          0.411294,
+          0.420016,
+          0.371682
+        ],
+        "target": [
+          0.285227,
+          0.622304,
+          0.585193
+        ],
+        "lens_mm": 55.0,
+        "sensor_width_mm": 36.0,
+        "shift_x": 0.0,
+        "shift_y": 0.0,
+        "resolution_x": 1280,
+        "resolution_y": 900,
+        "sensor_fit": "AUTO"
+      },
+      "frames": {
+        "focused-settled": {
+          "progress": 0.0,
+          "asset": "assets/dual-channel-collection-optics-chamber--focused-settled.png",
+          "componentOffsetsM": {
+            "bottomCover": [
+              0.0,
+              0.0,
+              -0.0
+            ],
+            "sidePanel": [
+              0.0,
+              -0.0,
+              0.0
+            ]
+          },
+          "rootWorldMatrices": {
+            "DetectBox_Bottom_Mala2020:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "Side2_optics:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.41129401,
+              0.42001599,
+              0.37168199
+            ],
+            "rotation": [
+              2.30126786,
+              2e-08,
+              0.55730778
+            ],
+            "target": [
+              0.285227,
+              0.622304,
+              0.585193
+            ],
+            "lensMm": 55.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.0
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "642FA008CE1F3DFB3C78479E1C49A1A31FAFFBC5174D4D01C0DA822E6CD12829"
+        },
+        "fasteners-released-seam": {
+          "progress": 0.06,
+          "asset": "assets/dual-channel-collection-optics-chamber--fasteners-released-seam.png",
+          "componentOffsetsM": {
+            "bottomCover": [
+              0.0,
+              0.0,
+              -0.0084
+            ],
+            "sidePanel": [
+              0.0,
+              -0.006,
+              0.0
+            ]
+          },
+          "rootWorldMatrices": {
+            "DetectBox_Bottom_Mala2020:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -0.0084
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "Side2_optics:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                -0.006
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.41129401,
+              0.42001599,
+              0.37168199
+            ],
+            "rotation": [
+              2.30126786,
+              2e-08,
+              0.55730778
+            ],
+            "target": [
+              0.285227,
+              0.622304,
+              0.585193
+            ],
+            "lensMm": 55.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.0
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "FA9633B205829F591E5CA2410B89CD234FCAAD7C4F4139057CCFB1C7726263E4"
+        },
+        "extract-mid": {
+          "progress": 0.5,
+          "asset": "assets/dual-channel-collection-optics-chamber--extract-mid.png",
+          "componentOffsetsM": {
+            "bottomCover": [
+              0.0,
+              0.0,
+              -0.07
+            ],
+            "sidePanel": [
+              0.0,
+              -0.05,
+              0.0
+            ]
+          },
+          "rootWorldMatrices": {
+            "DetectBox_Bottom_Mala2020:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -0.07
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "Side2_optics:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                -0.05
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.41129401,
+              0.42001599,
+              0.37168199
+            ],
+            "rotation": [
+              2.30126786,
+              2e-08,
+              0.55730778
+            ],
+            "target": [
+              0.285227,
+              0.622304,
+              0.585193
+            ],
+            "lensMm": 55.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.0
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "688BBB31C87EC517745AD3941F139EB5DCF129FB09A7D7542361CEF30BA1EE54"
+        },
+        "extract-end": {
+          "progress": 1.0,
+          "asset": "assets/dual-channel-collection-optics-chamber--extract-end.png",
+          "componentOffsetsM": {
+            "bottomCover": [
+              0.0,
+              0.0,
+              -0.14
+            ],
+            "sidePanel": [
+              0.0,
+              -0.1,
+              0.0
+            ]
+          },
+          "rootWorldMatrices": {
+            "DetectBox_Bottom_Mala2020:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -0.14
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ],
+            "Side2_optics:1": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                -0.1
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.41129401,
+              0.42001599,
+              0.37168199
+            ],
+            "rotation": [
+              2.30126786,
+              2e-08,
+              0.55730778
+            ],
+            "target": [
+              0.285227,
+              0.622304,
+              0.585193
+            ],
+            "lensMm": 55.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.0
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "9166E1E5EB4F2ABC2B4BD47D5ECE5306DDE118AC2D75EE957CD89F0CB2C5BE08"
+        }
+      },
+      "timingMs": {
+        "settledHold": 200,
+        "seam": 240,
+        "acceleratedTravel": 760
+      },
+      "panelCopy": "紧固件解除后，底盖/侧板沿法线移开。",
+      "hideRenderUsed": false,
+      "mirror3IdentityStatus": "reference-only",
+      "inspectionLight": {
+        "baseState": "extract-end",
+        "asset": "assets/dual-channel-collection-optics-chamber--inspection-lit.png",
+        "sha256": "0AF82688B0A2DD0C339E54327CA35E96731C31FC0601A2CF5299E49C39C12B7C",
+        "transitionMs": {
+          "enter": 900,
+          "hold": 500,
+          "exit": 700
+        },
+        "light": {
+          "type": "AREA",
+          "energy": 10.0,
+          "size": 0.11,
+          "cameraRelativeOffset": [
+            -0.012,
+            0.008,
+            0.25
+          ],
+          "aimDepth": 0.115
+        },
+        "maskLuma": {
+          "fullAtOrBelow": 35.0,
+          "zeroAtOrAbove": 60.0
+        },
+        "maskAudit": {
+          "changedPixels": 112331,
+          "outsideMaskChangedPixels": 0,
+          "totalPixels": 1152000
+        }
+      },
+      "semanticId": "dual_channel_collection_optics_chamber",
+      "displayNameZh": "双通道采集光学舱"
+    },
+    "dual_channel_condenser_lens_assembly": {
+      "rootObjects": [
+        "SHOWCASE_GROUP__f_dual_acl_housing"
+      ],
+      "fullOffsetsM": {
+        "condenserAssembly": [
+          0.034,
+          0.012,
+          -0.016
+        ]
+      },
+      "cameraPresetId": "condenser-lens-front-hero-right-15mm",
+      "camera": {
+        "location": [
+          0.43536043,
+          0.3241443,
+          0.56380999
+        ],
+        "rotation": [
+          1.61477447,
+          -0.0,
+          -0.05107036
+        ],
+        "target": [
+          0.45065495,
+          0.62336338,
+          0.57699472
+        ],
+        "lensMm": 72.0,
+        "sensorWidthMm": 36.0,
+        "shiftX": 0.0,
+        "shiftY": 0.019999999552965164
+      },
+      "projectionCamera": {
+        "location": [
+          0.43536043,
+          0.3241443,
+          0.56380999
+        ],
+        "target": [
+          0.45065495,
+          0.62336338,
+          0.57699472
+        ],
+        "lens_mm": 72.0,
+        "sensor_width_mm": 36.0,
+        "shift_x": 0.0,
+        "shift_y": 0.02,
+        "resolution_x": 1280,
+        "resolution_y": 900,
+        "sensor_fit": "AUTO"
+      },
+      "frames": {
+        "focused-settled": {
+          "progress": 0.0,
+          "asset": "assets/dual-channel-condenser-lens-assembly--focused-settled.png",
+          "componentOffsetsM": {
+            "condenserAssembly": [
+              0.0,
+              0.0,
+              -0.0
+            ]
+          },
+          "rootWorldMatrices": {
+            "SHOWCASE_GROUP__f_dual_acl_housing": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                0.0
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.43536043,
+              0.3241443,
+              0.56380999
+            ],
+            "rotation": [
+              1.61477447,
+              -0.0,
+              -0.05107036
+            ],
+            "target": [
+              0.45065495,
+              0.62336338,
+              0.57699472
+            ],
+            "lensMm": 72.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.019999999552965164
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "D7CB8F3EF32507317DFE4050CEB935EA7845794A429E0100E29B86DD7506837C",
+          "cleanupAudit": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              0,
+              70,
+              650,
+              692
+            ],
+            "changedPixels": 8054,
+            "outsideMaskChangedPixels": 0
+          }
+        },
+        "extract-mid": {
+          "progress": 0.5,
+          "asset": "assets/dual-channel-condenser-lens-assembly--extract-mid.png",
+          "componentOffsetsM": {
+            "condenserAssembly": [
+              0.017,
+              0.006,
+              -0.008
+            ]
+          },
+          "rootWorldMatrices": {
+            "SHOWCASE_GROUP__f_dual_acl_housing": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.017
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.006
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -0.008
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.43536043,
+              0.3241443,
+              0.56380999
+            ],
+            "rotation": [
+              1.61477447,
+              -0.0,
+              -0.05107036
+            ],
+            "target": [
+              0.45065495,
+              0.62336338,
+              0.57699472
+            ],
+            "lensMm": 72.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.019999999552965164
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "FDE78AC2B3918F0FDC8E9E1ECCACA210EA6F9ED00053457A9202A6AF6D070889",
+          "cleanupAudit": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              206,
+              174,
+              812,
+              752
+            ],
+            "changedPixels": 6971,
+            "outsideMaskChangedPixels": 0
+          }
+        },
+        "extract-end": {
+          "progress": 1.0,
+          "asset": "assets/dual-channel-condenser-lens-assembly--extract-end.png",
+          "componentOffsetsM": {
+            "condenserAssembly": [
+              0.034,
+              0.012,
+              -0.016
+            ]
+          },
+          "rootWorldMatrices": {
+            "SHOWCASE_GROUP__f_dual_acl_housing": [
+              [
+                1.0,
+                0.0,
+                0.0,
+                0.034
+              ],
+              [
+                0.0,
+                1.0,
+                0.0,
+                0.012
+              ],
+              [
+                0.0,
+                0.0,
+                1.0,
+                -0.016
+              ],
+              [
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ]
+            ]
+          },
+          "camera": {
+            "location": [
+              0.43536043,
+              0.3241443,
+              0.56380999
+            ],
+            "rotation": [
+              1.61477447,
+              -0.0,
+              -0.05107036
+            ],
+            "target": [
+              0.45065495,
+              0.62336338,
+              0.57699472
+            ],
+            "lensMm": 72.0,
+            "sensorWidthMm": 36.0,
+            "shiftX": 0.0,
+            "shiftY": 0.019999999552965164
+          },
+          "modelSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+          "renderBatchId": "stage1-12c58d65c2b44671",
+          "renderProfileId": "shared-render-aefc47d96ec104a3",
+          "lightRigHash": "E202D7185479CA5EDA01B5E502683905CE9E9B5C2CF209522DA65CBF816465A5",
+          "materialRuleHash": "C9055F0E6A65E5F1DB077AF86C37D4ABE143C4684995D510D181C29642B53EFB",
+          "colorManagementHash": "19D8899E7C9F42EB22B4E01B51124A4953DC9EF602BBE66FF8456CF1F9C04000",
+          "sha256": "C1281E8B85FE1FE2904FFD0DC7736CBB174A5BA496C6148AE2FE6588451BB319",
+          "cleanupAudit": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              376,
+              259,
+              966,
+              825
+            ],
+            "changedPixels": 6591,
+            "outsideMaskChangedPixels": 0
+          }
+        }
+      },
+      "legacySourceObjectId": "SHOWCASE_GROUP__f_dual_acl_housing",
+      "legacyAcceptedHashes": {
+        "focused-settled": "F60DE02B9A9612036FBDAB7E4EF35792CD2F20F59D47565CAE72D6D444BF837D",
+        "extract-mid": "2B886A06E115F410582A7E1CA45F751CEB5D6D4A44E00A758754D5470DA20C34",
+        "extract-end": "BD605CD7018B9505B0394623D1858428926CE5580E0F4A3764A28342240D1FBC"
+      },
+      "inspectionLight": null,
+      "cleanup": {
+        "method": "ffmpeg-removelogo-bitmap-mask",
+        "baseState": "extract-end",
+        "ffmpeg": "G:\\ffmpeg\\ffmpeg-8.1-essentials_build\\bin\\ffmpeg.exe",
+        "frames": {
+          "focused-settled": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              0,
+              70,
+              650,
+              692
+            ],
+            "changedPixels": 8054,
+            "outsideMaskChangedPixels": 0
+          },
+          "extract-mid": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              206,
+              174,
+              812,
+              752
+            ],
+            "changedPixels": 6971,
+            "outsideMaskChangedPixels": 0
+          },
+          "extract-end": {
+            "method": "ffmpeg-removelogo-bitmap-mask",
+            "plateBoundsPx": [
+              376,
+              259,
+              966,
+              825
+            ],
+            "changedPixels": 6591,
+            "outsideMaskChangedPixels": 0
+          }
+        }
+      },
+      "semanticId": "dual_channel_condenser_lens_assembly",
+      "displayNameZh": "聚光镜组件"
+    }
+  },
+  "sceneMutationAudit": {
+    "cameraChanged": false,
+    "renderSettingsChanged": false,
+    "renderVisibilityChanged": [],
+    "objectTransformsChanged": [],
+    "materialSlotsChanged": [],
+    "newObjectsRemaining": [],
+    "objectsMissing": [],
+    "temporaryDataBlocksRemaining": [],
+    "temporaryLightsRemoved": true,
+    "sharedMaterialRestored": true
+  },
+  "stage1CleanupEvidence": {
+    "deletedDirectories": [
+      ".twinkle-route1-camera-board-r1-1-pre-connection-oblique-20260823",
+      ".twinkle-route1-settled-preview-visible-20260823",
+      ".twinkle-route1-settled-preview-f-shifty-neg008-20260823",
+      ".twinkle-route1-settled-preview-f-flat-top-20260823",
+      ".twinkle-route1-settled-preview-f-topcap-flat-20260823",
+      ".twinkle-route1-settled-preview-f-no-weighted-topcap-20260823",
+      ".twinkle-route1-settled-preview-f-no-normal-map-20260823",
+      ".twinkle-route1-settled-preview-j-soft-layout-20260823",
+      ".twinkle-route1-settled-preview-f-soft-layout-20260823",
+      ".twinkle-route1-triptych-preview-j-fast-reveal-20260823",
+      ".twinkle-route1-triptych-preview-f-fast-reveal-20260823",
+      ".twinkle-route1-triptych-preview-j-front-hero-20260824",
+      ".twinkle-route1-triptych-preview-f-front-hero-20260824",
+      ".twinkle-route1-triptych-preview-j-green-contrast-20260824",
+      ".twinkle-route1-triptych-preview-j-pmt-connection-hero-20260824",
+      ".twinkle-hotspot-candidate-comparison-20260824",
+      ".twinkle-digger-local-window-triptych-20260824",
+      ".twinkle-endoscope-camera-probe-20260824",
+      ".twinkle-internal-visibility-survey-20260824",
+      ".twinkle-collection-box-bottom-tour-20260824",
+      ".twinkle-collection-box-bottom-tour-floor-hidden-20260824",
+      ".twinkle-collection-box-official-open-tour-20260824",
+      ".twinkle-ir-separation-side-context-20260824",
+      ".twinkle-bottom-side-sequential-tour-20260824",
+      ".twinkle-bottom-side-simultaneous-stable-light-20260824"
+    ],
+    "frozenSentinels": [
+      "web-blender-page-coordinated-experiment-v7",
+      "twinkle-route1-motion-sample-r1-sync",
+      ".twinkle-route1-j-optic-detail-sample-r1-1a-failed-contract-rounding-first"
+    ],
+    "deletedSummary": {
+      "directories": 29,
+      "files": 244,
+      "bytes": 118412245,
+      "dedicatedCodeAndTestFiles": 4,
+      "cacheFiles": 5
+    }
+  },
+  "visualRepairCleanupEvidence": {
+    "directories": 3,
+    "files": 42,
+    "bytes": 24950197,
+    "paths": [
+      ".twinkle-shared-light-bracket-20260824",
+      ".twinkle-route1-camera-board-light-fix-staging-20260824",
+      ".twinkle-route1-camera-board-pre-exposure-fix-20260824"
+    ]
+  },
+  "reviewSheet": "stage1-seven-frame-contact-sheet.png",
+  "condenserComparisonSheet": "condenser-old-new-comparison.png",
+  "inspectionReviewSheet": "collection-chamber-inspection-comparison.png",
+  "humanReviewRequired": true,
+  "humanReviewApproved": true,
+  "candidateBlendSaved": false,
+  "productionPageChanged": false,
+  "humanApproval": {
+    "approved": true,
+    "approvedAt": "2026-08-25",
+    "sourceThreadId": "01a0386f-a914-7960-a3c7-f49ab62c9063",
+    "scope": "stage1-formal-asset-replacement-and-closeout-only",
+    "stage2Authorized": false,
+    "deploymentAuthorized": false,
+    "publicationAuthorized": false
+  },
+  "postprocessAudit": {
+    "temporaryFilesRemaining": [],
+    "chamberOutsideMaskChangedPixels": 0,
+    "condenserOutsideMaskChangedPixels": 0
+  },
+  "reviewEvidence": {
+    "sevenFrameContactSheet": {
+      "asset": "stage1-seven-frame-contact-sheet.png",
+      "sha256": "C2F97CDB318612BEB87593A4A3A86FA63F02EB80202B337C764FD807F61F4486"
+    },
+    "condenserComparisonSheet": {
+      "asset": "condenser-old-new-comparison.png",
+      "sha256": "5738DE5132C70006615A2E81619F422EA15137D86F47ECDE99E00B64A87A1778"
+    },
+    "inspectionLightComparisonSheet": {
+      "asset": "collection-chamber-inspection-comparison.png",
+      "sha256": "12217E3AD37E9BB3AE7686F37CD1A492037F790A37AAF312512488812DB12693"
+    }
+  },
+  "nameCompatibilityRefresh": {
+    "mode": "review-metadata-only",
+    "renderedFramesPreserved": true,
+    "blenderInvoked": false
+  }
+}

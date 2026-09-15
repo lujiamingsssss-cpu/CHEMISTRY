@@ -1,0 +1,60 @@
+{
+  "schema": "twinkle-stage5-condenser-homepage-assets-v1",
+  "scope": "current-h2-homepage-condenser-only",
+  "assetRoot": "showcase/homepage/assets/twinkle-condenser-unified-v1",
+  "sourceCandidateManifest": "output/twinkle-stage5-condenser-unified-visual-candidate/candidate-manifest.json",
+  "sourceCandidateManifestSha256": "1C5E00B3D5DF490E72AA4D88BBBCABE0AA1D2D438467A45EF387CB09A3932EF7",
+  "routes": [
+    {
+      "routeId": "dual_channel_condenser_lens_assembly--entry-005--full-quality-candidate",
+      "candidateRouteId": "dual_channel_condenser_lens_assembly--entry-005--unified-visual",
+      "unit": "dual_channel_condenser_lens_assembly",
+      "entryFrame": 5,
+      "durationMs": 2100,
+      "settledHoldMs": 100,
+      "frameCount": 49,
+      "framePattern": "focus/dual_channel_condenser_lens_assembly--entry-005--unified-visual/frame-{index:03d}.png",
+      "treeSha256": "6A0AC57B1C6DBD52A4A80B14F420DED80B5A1843BC23324ED7333442E0AC2337"
+    },
+    {
+      "routeId": "dual_channel_condenser_lens_assembly--entry-000--full-quality-candidate",
+      "candidateRouteId": "dual_channel_condenser_lens_assembly--entry-000--unified-visual",
+      "unit": "dual_channel_condenser_lens_assembly",
+      "entryFrame": 0,
+      "durationMs": 2100,
+      "settledHoldMs": 100,
+      "frameCount": 49,
+      "framePattern": "focus/dual_channel_condenser_lens_assembly--entry-000--unified-visual/frame-{index:03d}.png",
+      "treeSha256": "047BE0E14045DADECDACC99193C675A233CE9F6CA1ECED43EE2B39EEFE380EA8"
+    },
+    {
+      "routeId": "dual_channel_condenser_lens_assembly--entry-092--full-quality-candidate",
+      "candidateRouteId": "dual_channel_condenser_lens_assembly--entry-092--unified-visual",
+      "unit": "dual_channel_condenser_lens_assembly",
+      "entryFrame": 92,
+      "durationMs": 687,
+      "settledHoldMs": 100,
+      "frameCount": 25,
+      "framePattern": "focus/dual_channel_condenser_lens_assembly--entry-092--unified-visual/frame-{index:03d}.png",
+      "treeSha256": "72FA6AE4512DE0977E4A981E6D47839108D2776016123EC3C9904C3F0A50E3EE"
+    }
+  ],
+  "mechanical": {
+    "durationMs": 1000,
+    "frameCount": 25,
+    "framePattern": "mechanical/frame-{index:03d}.png",
+    "treeSha256": "64B2DFAB19F608E7C35EBD7696798A0AEED3E99D00E4F6F83AA083AE0C222C0E"
+  },
+  "detail": {
+    "background": {
+      "asset": "detail/condenser-fixed.png",
+      "sha256": "6657F6F41BEC86034F915FC9B89FFF2F06AC39909B22EF5A06DF00310181622D"
+    },
+    "foreground": {
+      "asset": "detail/mechanical-expanded.png",
+      "sha256": "1F036A8120259EDF5F1030E9CA49EE927B39D4BE5297C728E2C62FC3588CE123"
+    }
+  },
+  "humanApproved": true,
+  "formalIntegrationAuthorized": true
+}

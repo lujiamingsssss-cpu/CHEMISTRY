@@ -1,0 +1,168 @@
+{
+  "schema": "twinkle-stage5-h2-isolated-full-flow-machine-results-v2",
+  "reviewManifestSha256": "F6965D48C261FD4608177D380D75270D18F3D9DA6CF439F3057FB518CC2DCD4D",
+  "reviewPageSha256": "B5E693D91312AB1D1B153418D53F08E9FBBEE07B1E1E897E06CC007B4AA6F9D7",
+  "browserPassed": true,
+  "browserEvidence": "output/playwright/twinkle-stage5-h2-full-flow-review/browser-results.json",
+  "machinePassed": true,
+  "formalIntegrationAuthorized": false,
+  "browserEvidenceSha256": "FD8000AB655F88B743C2CBB80F926C1FD747E7BECFF7B899D5D4DD5E2CC4E026",
+  "routeSelectionRuns": [
+    {
+      "startFrame": 6,
+      "entryFrame": 6,
+      "unit": "dual_channel_collection_optics_chamber",
+      "routeId": "dual_channel_collection_optics_chamber--entry-006--A",
+      "returnedFrame": 6,
+      "handoffFrameGapMs": 5.700000005959737,
+      "reverseHandoffFrameGapMs": 5.900000000001455,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 65,
+      "entryFrame": 65,
+      "unit": "dual_channel_collection_optics_chamber",
+      "routeId": "dual_channel_collection_optics_chamber--entry-065--B",
+      "returnedFrame": 65,
+      "handoffFrameGapMs": 5.800000002978777,
+      "reverseHandoffFrameGapMs": 6,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 87,
+      "entryFrame": 87,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "routeId": "dual_channel_condenser_lens_assembly--entry-087--A",
+      "returnedFrame": 87,
+      "handoffFrameGapMs": 5.700000002980232,
+      "reverseHandoffFrameGapMs": 6.200000000004366,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 8,
+      "entryFrame": 8,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "routeId": "dual_channel_condenser_lens_assembly--entry-008--A",
+      "returnedFrame": 8,
+      "handoffFrameGapMs": 5.700000005963375,
+      "reverseHandoffFrameGapMs": 6.099999999998545,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 74,
+      "entryFrame": 74,
+      "unit": "dual_channel_collection_optics_chamber",
+      "routeId": "dual_channel_collection_optics_chamber--entry-074--full-quality-candidate",
+      "returnedFrame": 74,
+      "handoffFrameGapMs": 5.599999997022678,
+      "reverseHandoffFrameGapMs": 6,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 81,
+      "entryFrame": 81,
+      "unit": "dual_channel_collection_optics_chamber",
+      "routeId": "dual_channel_collection_optics_chamber--entry-081--full-quality-candidate",
+      "returnedFrame": 81,
+      "handoffFrameGapMs": 5.799999997019768,
+      "reverseHandoffFrameGapMs": 6.30000000000291,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 91,
+      "entryFrame": 91,
+      "unit": "dual_channel_collection_optics_chamber",
+      "routeId": "dual_channel_collection_optics_chamber--entry-091--full-quality-candidate",
+      "returnedFrame": 91,
+      "handoffFrameGapMs": 5.600000008940697,
+      "reverseHandoffFrameGapMs": 6.099999999998545,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 5,
+      "entryFrame": 5,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "routeId": "dual_channel_condenser_lens_assembly--entry-005--full-quality-candidate",
+      "returnedFrame": 5,
+      "handoffFrameGapMs": 5.700000005963375,
+      "reverseHandoffFrameGapMs": 6.100000000005821,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 0,
+      "entryFrame": 0,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "routeId": "dual_channel_condenser_lens_assembly--entry-000--full-quality-candidate",
+      "returnedFrame": 0,
+      "handoffFrameGapMs": 5.799999997019768,
+      "reverseHandoffFrameGapMs": 6.19999999999709,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    },
+    {
+      "startFrame": 92,
+      "entryFrame": 92,
+      "unit": "dual_channel_condenser_lens_assembly",
+      "routeId": "dual_channel_condenser_lens_assembly--entry-092--full-quality-candidate",
+      "returnedFrame": 92,
+      "handoffFrameGapMs": 5.6000000029744115,
+      "reverseHandoffFrameGapMs": 6.19999999999709,
+      "forwardPassed": true,
+      "reversePassed": true,
+      "machinePassed": true
+    }
+  ],
+  "approvedSemanticReturnSha256": "963848401080C1735987DD82375DB4B212C08C1410FF208752F7C62D346984C5",
+  "approvedVisualBaselines": {
+    "condenser": "B5403CE933B707389A9CF7FD68880777390CA559A662A88BABA17B236EF31273",
+    "chamber": "24294DE86CB68A4BFA415D0EF8F9D97A9ED14D3BA27191BAB9C88E3F3DDFB4A3"
+  },
+  "hotspotSpeed": {
+    "beforeTarget": 1,
+    "enterDurationMs": 120,
+    "steadyTarget": 0.67,
+    "leaveGraceMs": 100,
+    "recoveryDurationMs": 180,
+    "enterSamples": [
+      1,
+      0.8119387291344142,
+      0.7234620624802067,
+      0.6733552291617088,
+      0.67
+    ],
+    "grace90": 0.677098666664262,
+    "grace90Target": 0.67,
+    "grace90ElapsedMs": 91,
+    "recovered": 1,
+    "rapidTransitionJumps": [
+      0,
+      0
+    ],
+    "focusHoverOverlapTarget": 0.67,
+    "focusHoverOverlapPassed": true,
+    "machinePassed": true
+  },
+  "errorClosure": {
+    "console": [],
+    "page": [],
+    "request": [],
+    "response": []
+  }
+}

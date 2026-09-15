@@ -1,0 +1,325 @@
+{
+  "schema": "twinkle-stage5-rgba-hover-pilot-v1",
+  "frameCount": 5,
+  "frameIndices": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "anglesDegrees": [
+    0.0,
+    3.75,
+    7.5,
+    11.25,
+    15.0
+  ],
+  "playbackSequence": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    3,
+    2,
+    1,
+    0
+  ],
+  "frameIntervalMs": 80,
+  "playbackDurationMs": 720,
+  "reversePlaybackVerified": true,
+  "frame000MatchesReference": true,
+  "frame000Consistency": {
+    "method": "strict-visible-pixel-consistency",
+    "sha256Exact": false,
+    "alphaExact": true,
+    "visibleRgbDifferingPixelCount": 31,
+    "visibleRgbDifferingPixelRatio": 0.0006280134516429642,
+    "visibleRgbMaxChannelDelta": 2,
+    "machinePassed": true
+  },
+  "backgroundComparisonCount": 20,
+  "alphaEvidenceCount": 5,
+  "qualityComparisonCount": 5,
+  "contactShadowIncluded": false,
+  "shadowDecision": "model-only-downgrade-no-original-contact-shadow-layer",
+  "frames": {
+    "frame-000": {
+      "size": [
+        640,
+        450
+      ],
+      "borderAlphaMax": 0,
+      "transparentPixelCount": 238638,
+      "partialAlphaPixelCount": 2273,
+      "opaquePixelCount": 47089,
+      "alphaBoundingBox": [
+        159,
+        80,
+        570,
+        269
+      ],
+      "alphaAreaPixelCount": 49362,
+      "alphaCoverage": 0.17139583,
+      "alphaBoundingBoxNormalized": [
+        0.2484375,
+        0.17777778,
+        0.890625,
+        0.59777778
+      ],
+      "alphaCentroidNormalized": [
+        0.52862861,
+        0.39168632
+      ],
+      "frameIndex": 0,
+      "azimuthDegrees": 0.0,
+      "sha256": "E2C15CEE3E30BE84D79BCA375653118B6DF159C9DBF1C4855F9AFBC62853FAAC",
+      "bytes": 135716,
+      "formalSourcePath": "F:\\半导体材料产品展示\\.worktrees\\twinkle-stage5-integration\\showcase\\homepage\\assets\\twinkle\\c360\\frame-000.png",
+      "formalSourceSha256": "890B71BEA25FA4FAFEC52792633E262104F3D90FCE363E97ED9947104BBFAE1D",
+      "subjectRgbMae": 0.371503,
+      "backgrounds": {
+        "white": "evidence/frame-000/backgrounds/frame-000--white.png",
+        "black": "evidence/frame-000/backgrounds/frame-000--black.png",
+        "brand-cyan": "evidence/frame-000/backgrounds/frame-000--brand-cyan.png",
+        "checkerboard": "evidence/frame-000/backgrounds/frame-000--checkerboard.png"
+      },
+      "alphaEvidence": "evidence/frame-000/alpha.png",
+      "qualityComparison": "evidence/frame-000/original-vs-rgba-white.png"
+    },
+    "frame-001": {
+      "size": [
+        640,
+        450
+      ],
+      "borderAlphaMax": 0,
+      "transparentPixelCount": 239626,
+      "partialAlphaPixelCount": 2236,
+      "opaquePixelCount": 46138,
+      "alphaBoundingBox": [
+        165,
+        79,
+        566,
+        270
+      ],
+      "alphaAreaPixelCount": 48374,
+      "alphaCoverage": 0.16796528,
+      "alphaBoundingBoxNormalized": [
+        0.2578125,
+        0.17555556,
+        0.884375,
+        0.6
+      ],
+      "alphaCentroidNormalized": [
+        0.52858912,
+        0.3934603
+      ],
+      "frameIndex": 1,
+      "azimuthDegrees": 3.75,
+      "sha256": "BB356F37AEE265FF342A58AC24CCD2B1C4B7D429C9CAE8C302C3E13622CB8AF5",
+      "bytes": 133429,
+      "formalSourcePath": "F:\\半导体材料产品展示\\.worktrees\\twinkle-stage5-integration\\showcase\\homepage\\assets\\twinkle\\c360\\frame-001.png",
+      "formalSourceSha256": "B210AB655927ED42295AB33843D02FA0DC9AB46E49CD4E68DE986CF2A5B90872",
+      "subjectRgbMae": 0.368542,
+      "backgrounds": {
+        "white": "evidence/frame-001/backgrounds/frame-001--white.png",
+        "black": "evidence/frame-001/backgrounds/frame-001--black.png",
+        "brand-cyan": "evidence/frame-001/backgrounds/frame-001--brand-cyan.png",
+        "checkerboard": "evidence/frame-001/backgrounds/frame-001--checkerboard.png"
+      },
+      "alphaEvidence": "evidence/frame-001/alpha.png",
+      "qualityComparison": "evidence/frame-001/original-vs-rgba-white.png"
+    },
+    "frame-002": {
+      "size": [
+        640,
+        450
+      ],
+      "borderAlphaMax": 0,
+      "transparentPixelCount": 240718,
+      "partialAlphaPixelCount": 2205,
+      "opaquePixelCount": 45077,
+      "alphaBoundingBox": [
+        172,
+        78,
+        560,
+        271
+      ],
+      "alphaAreaPixelCount": 47282,
+      "alphaCoverage": 0.16417361,
+      "alphaBoundingBoxNormalized": [
+        0.26875,
+        0.17333333,
+        0.875,
+        0.60222222
+      ],
+      "alphaCentroidNormalized": [
+        0.52812418,
+        0.39521353
+      ],
+      "frameIndex": 2,
+      "azimuthDegrees": 7.5,
+      "sha256": "86D8102A4BADEB3032BAD6DC7C1F929D501C30C090E4662F86EF20A57212D0AD",
+      "bytes": 131755,
+      "formalSourcePath": "F:\\半导体材料产品展示\\.worktrees\\twinkle-stage5-integration\\showcase\\homepage\\assets\\twinkle\\c360\\frame-002.png",
+      "formalSourceSha256": "345FB8601D6E31FFFFA09ED748240E42D048A2E949585FD97105D958DEDFC2F9",
+      "subjectRgbMae": 0.372558,
+      "backgrounds": {
+        "white": "evidence/frame-002/backgrounds/frame-002--white.png",
+        "black": "evidence/frame-002/backgrounds/frame-002--black.png",
+        "brand-cyan": "evidence/frame-002/backgrounds/frame-002--brand-cyan.png",
+        "checkerboard": "evidence/frame-002/backgrounds/frame-002--checkerboard.png"
+      },
+      "alphaEvidence": "evidence/frame-002/alpha.png",
+      "qualityComparison": "evidence/frame-002/original-vs-rgba-white.png"
+    },
+    "frame-003": {
+      "size": [
+        640,
+        450
+      ],
+      "borderAlphaMax": 0,
+      "transparentPixelCount": 241953,
+      "partialAlphaPixelCount": 2183,
+      "opaquePixelCount": 43864,
+      "alphaBoundingBox": [
+        179,
+        77,
+        552,
+        271
+      ],
+      "alphaAreaPixelCount": 46047,
+      "alphaCoverage": 0.15988542,
+      "alphaBoundingBoxNormalized": [
+        0.2796875,
+        0.17111111,
+        0.8625,
+        0.60222222
+      ],
+      "alphaCentroidNormalized": [
+        0.52730069,
+        0.39680382
+      ],
+      "frameIndex": 3,
+      "azimuthDegrees": 11.25,
+      "sha256": "67B2B83D2BCEDDF36344A788257516A79F81C7DC850F808ABFEE33B82D83FE07",
+      "bytes": 129640,
+      "formalSourcePath": "F:\\半导体材料产品展示\\.worktrees\\twinkle-stage5-integration\\showcase\\homepage\\assets\\twinkle\\c360\\frame-003.png",
+      "formalSourceSha256": "912ED32DB3DBD72584DCAD96D35BDCA22F0DF48B479F752790E1223D757CFA3A",
+      "subjectRgbMae": 0.380995,
+      "backgrounds": {
+        "white": "evidence/frame-003/backgrounds/frame-003--white.png",
+        "black": "evidence/frame-003/backgrounds/frame-003--black.png",
+        "brand-cyan": "evidence/frame-003/backgrounds/frame-003--brand-cyan.png",
+        "checkerboard": "evidence/frame-003/backgrounds/frame-003--checkerboard.png"
+      },
+      "alphaEvidence": "evidence/frame-003/alpha.png",
+      "qualityComparison": "evidence/frame-003/original-vs-rgba-white.png"
+    },
+    "frame-004": {
+      "size": [
+        640,
+        450
+      ],
+      "borderAlphaMax": 0,
+      "transparentPixelCount": 243348,
+      "partialAlphaPixelCount": 2164,
+      "opaquePixelCount": 42488,
+      "alphaBoundingBox": [
+        186,
+        76,
+        544,
+        272
+      ],
+      "alphaAreaPixelCount": 44652,
+      "alphaCoverage": 0.15504167,
+      "alphaBoundingBoxNormalized": [
+        0.290625,
+        0.16888889,
+        0.85,
+        0.60444444
+      ],
+      "alphaCentroidNormalized": [
+        0.5260759,
+        0.39814481
+      ],
+      "frameIndex": 4,
+      "azimuthDegrees": 15.0,
+      "sha256": "964DD67878D534D09E8A9017C7F96EA2C60D87E493E4D85DCFFBF6339A82C78D",
+      "bytes": 128445,
+      "formalSourcePath": "F:\\半导体材料产品展示\\.worktrees\\twinkle-stage5-integration\\showcase\\homepage\\assets\\twinkle\\c360\\frame-004.png",
+      "formalSourceSha256": "4FE707503D1A98DF1B51761E3AE9367245447BAED0273DB31F36EBAF0A645B7A",
+      "subjectRgbMae": 0.36836,
+      "backgrounds": {
+        "white": "evidence/frame-004/backgrounds/frame-004--white.png",
+        "black": "evidence/frame-004/backgrounds/frame-004--black.png",
+        "brand-cyan": "evidence/frame-004/backgrounds/frame-004--brand-cyan.png",
+        "checkerboard": "evidence/frame-004/backgrounds/frame-004--checkerboard.png"
+      },
+      "alphaEvidence": "evidence/frame-004/alpha.png",
+      "qualityComparison": "evidence/frame-004/original-vs-rgba-white.png"
+    }
+  },
+  "continuity": {
+    "limits": {
+      "alphaCoverageDeltaMax": 0.03,
+      "boundingBoxCoordinateDeltaMax": 0.05,
+      "centroidDistanceMax": 0.03,
+      "alphaMeanAbsoluteDeltaMax": 0.03
+    },
+    "adjacentPairs": [
+      {
+        "from": 0,
+        "to": 1,
+        "alphaCoverageDelta": 0.00343055,
+        "boundingBoxCoordinateMaxDelta": 0.009375,
+        "centroidDistance": 0.00177442,
+        "alphaMeanAbsoluteDelta": 0.01014235,
+        "machinePassed": true
+      },
+      {
+        "from": 1,
+        "to": 2,
+        "alphaCoverageDelta": 0.00379167,
+        "boundingBoxCoordinateMaxDelta": 0.0109375,
+        "centroidDistance": 0.00181383,
+        "alphaMeanAbsoluteDelta": 0.01066253,
+        "machinePassed": true
+      },
+      {
+        "from": 2,
+        "to": 3,
+        "alphaCoverageDelta": 0.00428819,
+        "boundingBoxCoordinateMaxDelta": 0.0125,
+        "centroidDistance": 0.00179085,
+        "alphaMeanAbsoluteDelta": 0.01116136,
+        "machinePassed": true
+      },
+      {
+        "from": 3,
+        "to": 4,
+        "alphaCoverageDelta": 0.00484375,
+        "boundingBoxCoordinateMaxDelta": 0.0125,
+        "centroidDistance": 0.00181614,
+        "alphaMeanAbsoluteDelta": 0.01165257,
+        "machinePassed": true
+      }
+    ],
+    "machinePassed": true
+  },
+  "downloadBytes": {
+    "fiveRgbaFrames": 658985,
+    "initialStaticFrame": 135716,
+    "fourAdditionalHoverFrames": 523269,
+    "preloadedFrameCount": 5
+  },
+  "candidateBlendSha256": "584EBB7F8F5F5CAEB7AF469DBF02A465DE7016D67A9D64539A018E9F6DDD4FD6",
+  "workerAudit": "worker-audit.json",
+  "workerAuditValidated": true,
+  "formalAssetsUnchanged": true,
+  "formalRegistrySha256": "8D32267C20218FA575E34E78415D69EEFA58F76C4CF71CBB7903952E7EFB03C4",
+  "formalAssetInventorySha256": "48C1F2CDEFE9F33517714617CAB21E5C1B74489DDE19A98E6295D20F446770F3",
+  "formalAssetFileCount": 248,
+  "formalAssetTotalBytes": 130156891
+}
