@@ -195,12 +195,15 @@ git status --short
 
 `scripts\dev_preview.bat` 与 `scripts\release_verify.bat` 是**双击入口**，供不想开终端时使用。它们从**自身所在位置**解析仓库根、显式使用 `.venv\Scripts\python.exe`（PATH 上的 `python` 是系统解释器，依赖不全）、透传参数、传播退出码，并在结束时 `pause` 以便阅读输出。二者**不含任何绝对路径**；需要可脚本化调用时直接用对应的 `.py`。
 
-要在桌面加图标，新建一个只含两行的 BAT 指向仓库内脚本即可（`<仓库路径>` 按本机实际填写）：
+要在桌面加图标，在桌面新建 BAT 指向仓库内脚本（`<仓库路径>` 按本机实际填写）。**仓库路径含中文**，因此文件编码必须与 cmd 代码页一致，否则 `call` 会报 `The system cannot find the path specified`：
 
 ```bat
 @echo off
+chcp 65001 >nul
 call "<仓库路径>\scripts\release_verify.bat" %*
 ```
+
+把上面内容**以 UTF-8（无 BOM）保存**；若保存为系统 ANSI 编码（中文 Windows 通常为 GBK/936），则把该行改为 `chcp 936 >nul`。两种组合均已实测：从 Explorer 双击（控制台 936）与从 UTF-8 终端（65001）都能正确解析中文路径。注意 8.3 短名在部分机器上被禁用，**不能靠短路径规避中文**。
 
 桌面包装是机器本地文件，**不入 Git**；换机时按上面方式重建。
 
