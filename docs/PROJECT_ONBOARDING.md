@@ -227,6 +227,8 @@ TWINKLE 交接必须区分以下三层，不能把所有 `output/` 或所有 PNG
 
 严格 validator 必须显式接受 evidence root，先验证 bundle SHA 和 inventory，再验证真实闭包。没有外部 evidence 不能伪装成通过；默认测试可跳过显式外部证据合同，但必须清楚报告跳过原因。
 
+**正式归档位置**：独立**私有**仓库 `lujiamingsssss-cpu/CHEMISTRY-evidence-private` 的 Release `stage5-h2-evidence-6ABE98B5`。附件为单个 ZIP（顶层目录即 bundle SHA），发布后经两次独立回传核验与 receipt 一致。该仓库**必须保持 private**；evidence 不得上传到公开代码仓，也不得创建指向它的公开 tag。归档与复核流程见 `docs/TWINKLE_EVIDENCE_ARCHIVE_RUNBOOK.md`。
+
 ### 5.4 临时实验与诊断产物
 
 Playwright session、trace、日志、失败候选、低清/插值/RGBA/focus pilot、Blender preflight 和可重建中间资产通常属于临时或隔离层。是否能删除不能只看目录名、Git ignore 或“可重建”标签；必须确认绝对路径、归属、内容范围、恢复方式和当前任务授权。
