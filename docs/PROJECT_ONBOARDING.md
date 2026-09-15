@@ -231,6 +231,16 @@ TWINKLE 交接必须区分以下三层，不能把所有 `output/` 或所有 PNG
 
 Playwright session、trace、日志、失败候选、低清/插值/RGBA/focus pilot、Blender preflight 和可重建中间资产通常属于临时或隔离层。是否能删除不能只看目录名、Git ignore 或“可重建”标签；必须确认绝对路径、归属、内容范围、恢复方式和当前任务授权。
 
+### 5.5 机器本地 SHA-pinned 证据链
+
+TWINKLE Stage 5 H2 审核链**刻意绑定本机产物**。这是设计，不是缺陷，也不得“修复”：
+
+- `scripts/build_twinkle_stage5_h2_full_flow_review.py` 的 `EXPECTED_HASHES` 硬 pin 7 个文件的 SHA256，其中 **5 个是未跟踪的本机产物**：`output/twinkle-stage5-formal-model-motion-candidates/work/two-component-asset-contract.json`、同目录 `model-motion-manifest.json`、`output/playwright/twinkle-stage5-lowres-mapping-review.html`、`.superpowers/brainstorm/936-1788488553/content/generated-rail-push-motion-v18.html`、`output/twinkle-stage5-blender-product-film/preview-v2/dip-to-black-loop-v2/dip-to-black-loop-review.mp4`。
+- `scripts/build_twinkle_stage5_a192_full_sequence.py` 的 `_protected_snapshot()` 同样按 sha256 快照两个本机 pilot 测试文件；因此它在 clean checkout 上会抛 `FileNotFoundError`，这是设计使然。
+- 仓库已有守卫：`tests/test_twinkle_stage5_h2_portability.py::test_sha_bound_authorities_are_stored_verbatim_in_git` 只校验 `EXPECTED_HASHES` 中以 `scripts/` 开头的部分，主动排除本机产物；`test_sha_bound_core_authorities_disable_checkout_eol_conversion` 则保证这些文件的字节不被 checkout 行尾转换改写。
+
+**因此这些脚本与 manifest 只能在本机工作树内运行。修改它们会使上述守卫测试失败，并让已归档的 H2 证据包无法逐字节复现。**
+
 ## 6. 关键资源地图
 
 | 资源 | 用途 | 权威性质 |
@@ -296,6 +306,8 @@ Playwright session、trace、日志、失败候选、低清/插值/RGBA/focus pi
 | 数据/索引 | 预检、暂存构建、完整性、切换、失败保持和回滚 |
 | 外部集成 | 受控目标、错误路径、权限和重复调用安全 |
 
+判断“默认 `pytest` 是否与 clean checkout 等价”时，**唯一权威方法是逐文件干净克隆运行**，不得用静态代码扫描替代：正则匹配 `output/`、`showcase/` 会漏掉 `Path(...) / "output" / ...` 这类分段写法与 `.superpowers` 间接路径。干净克隆时可用 `GIT_LFS_SKIP_SMUDGE=1` 作为更严格条件，能同时证明测试不依赖 LFS 二进制资产。
+
 常用基础验证：
 
 ```powershell
@@ -360,7 +372,9 @@ git lfs status
 - 为解决可移植性问题把数百 MB 审核闭包写入普通 Git；
 - 扩大 LFS 为全仓 PNG，或把 LFS pointer 当作已物化资产；
 - 通过降低断言、删除测试、吞异常或无界重试制造表面成功；
-- 用聊天交接代替 `CURRENT_WORK.md`，或用永久文档记录活动任务流水。
+- 用聊天交接代替 `CURRENT_WORK.md`，或用永久文档记录活动任务流水；
+- 用静态正则或目录名判断测试能否在 clean checkout 运行，而不做逐文件干净克隆验证；
+- 试图“修复”机器本地 SHA-pinned 证据链中的脚本或其中看似悬空的引用（会破坏守卫测试并使已归档证据不可复现）。
 
 ## 11. 接管后的第一个安全动作
 
