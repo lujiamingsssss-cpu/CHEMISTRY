@@ -1,4 +1,5 @@
 import importlib.util
+import hashlib
 import json
 from pathlib import Path
 import subprocess
@@ -116,3 +117,32 @@ def test_sha_bound_core_authorities_disable_checkout_eol_conversion():
     assert result.stdout.decode().splitlines() == [
         f"{path}: text: unset" for path in paths
     ]
+
+
+def test_sha_bound_authorities_are_stored_verbatim_in_git():
+    module = _builder()
+    runtime = json.loads(
+        (REPO / "registry/twinkle/stage5-runtime-assets.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    expected = {
+        record["copyPath"]: record["sha256"]
+        for record in runtime["authorities"]
+    }
+    expected.update(
+        {
+            path: digest
+            for path, digest in module.EXPECTED_HASHES.items()
+            if path.startswith("scripts/")
+        }
+    )
+
+    actual = {
+        path: hashlib.sha256(
+            subprocess.check_output(["git", "show", f"HEAD:{path}"], cwd=REPO)
+        ).hexdigest().upper()
+        for path in expected
+    }
+
+    assert actual == expected
