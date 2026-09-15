@@ -23,6 +23,12 @@ MISSING_VENV_MARKER = "Virtual environment interpreter not found"
 
 pytestmark = pytest.mark.skipif(os.name != "nt", reason="batch wrappers are Windows-only")
 
+VENV_PYTHON = REPO / ".venv" / "Scripts" / "python.exe"
+requires_venv = pytest.mark.skipif(
+    not VENV_PYTHON.is_file(),
+    reason="project virtual environment not created; the launcher cannot run without it",
+)
+
 
 def _run_wrapper(bat: Path, *args: str, cwd: Path | None = None) -> subprocess.CompletedProcess[str]:
     # Empty stdin lets the trailing ``pause`` return instead of blocking.
@@ -57,6 +63,7 @@ def test_wrappers_select_the_project_virtual_environment():
         assert "python.exe" in text
 
 
+@requires_venv
 def test_dev_preview_wrapper_prints_targets_and_exits_zero():
     result = _run_wrapper(DEV_PREVIEW_BAT, "--print-only")
 
@@ -64,6 +71,7 @@ def test_dev_preview_wrapper_prints_targets_and_exits_zero():
     assert "/showcase/homepage/index.html" in result.stdout
 
 
+@requires_venv
 def test_release_verify_wrapper_propagates_the_underlying_exit_code():
     direct = subprocess.run(
         [sys.executable, str(REPO / "scripts/release_verify.py")],
@@ -81,6 +89,7 @@ def test_release_verify_wrapper_propagates_the_underlying_exit_code():
     assert wrapped.returncode == direct.returncode
 
 
+@requires_venv
 def test_wrappers_resolve_the_repository_from_any_working_directory(tmp_path):
     result = _run_wrapper(DEV_PREVIEW_BAT, "--print-only", cwd=tmp_path)
 
@@ -99,6 +108,7 @@ def test_missing_virtualenv_is_reported_clearly(tmp_path):
     assert MISSING_VENV_MARKER in result.stdout
 
 
+@requires_venv
 def test_running_a_wrapper_never_changes_the_working_tree():
     before = subprocess.run(
         ["git", "status", "--short"], cwd=str(REPO), check=True, capture_output=True, text=True
