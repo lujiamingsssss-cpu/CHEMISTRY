@@ -7,3 +7,4 @@ showcase/homepage/catalog/ring-gallery-core.mjs -text
 showcase/homepage/catalog/product-items.mjs -text
 showcase/homepage/assets/vendor/** -whitespace
 showcase/homepage/catalog/assets/vendor/** -whitespace
+*.bat text eol=crlf
