@@ -92,3 +92,27 @@ def test_builder_hard_codes_formal_evidence_and_never_falls_back_for_output(tmp_
 
     with pytest.raises(module.EvidenceBundleError, match="not listed"):
         module._resolve(tmp_path, EmptyBundle(), "output/local-only.bin")
+
+
+def test_sha_bound_core_authorities_disable_checkout_eol_conversion():
+    paths = [
+        "registry/twinkle/stage5-source-manifests/stage4-c2.json",
+        "registry/twinkle/stage5-source-manifests/stage4-c360.json",
+        "registry/twinkle/stage5-source-manifests/stage3-r2.json",
+        "registry/twinkle/stage5-condenser-homepage-v1.json",
+        "registry/twinkle/stage5-runtime-assets.json",
+        "scripts/build_twinkle_stage5_fixed_orbit_drag_pilot.py",
+        "scripts/build_twinkle_stage5_a192_full_sequence.py",
+        "scripts/build_twinkle_stage5_entry_count_pilot.py",
+    ]
+    result = subprocess.run(
+        ["git", "check-attr", "text", "--stdin"],
+        cwd=REPO,
+        input=("\n".join(paths) + "\n").encode(),
+        check=True,
+        capture_output=True,
+    )
+
+    assert result.stdout.decode().splitlines() == [
+        f"{path}: text: unset" for path in paths
+    ]
