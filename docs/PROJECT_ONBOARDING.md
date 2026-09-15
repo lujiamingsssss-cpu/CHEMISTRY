@@ -233,6 +233,8 @@ TWINKLE 交接必须区分以下三层，不能把所有 `output/` 或所有 PNG
 
 Playwright session、trace、日志、失败候选、低清/插值/RGBA/focus pilot、Blender preflight 和可重建中间资产通常属于临时或隔离层。是否能删除不能只看目录名、Git ignore 或“可重建”标签；必须确认绝对路径、归属、内容范围、恢复方式和当前任务授权。
 
+**删除前必须先解决长路径枚举**：`output/` 下存在嵌套过深的路径（例如 `output/twinkle-stage5-condenser-unified-visual-candidate/work/formal-integration-backup/`），常规遍历会在深处静默失败。若把 `os.walk` 的 `onerror` 静默化，会得到**看似成功但严重少算**的清单——实测同一目录：普通路径 **33 文件 / 35.1 MB**，使用 `\\?\` 扩展长度前缀后 **156 文件 / 175.8 MB**。**对无法完整枚举的目标执行不可逆删除是不安全操作**；先修正枚举、产出可核对的 manifest，再进入删除流程。
+
 ### 5.5 机器本地 SHA-pinned 证据链
 
 TWINKLE Stage 5 H2 审核链**刻意绑定本机产物**。这是设计，不是缺陷，也不得“修复”：
