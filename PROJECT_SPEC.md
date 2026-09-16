@@ -2,6 +2,11 @@
 
 本文件只记录仓库内既有 Chemical Trade AI Copilot 的长期产品与安全边界，不记录阶段状态、验证流水、Git 状态或下一任务。仓库级工程权威以根目录 `AGENTS.md` 为准；公开展示前台的产品方向以 `docs/adr/0001-public-showcase-product-transition.md` 和 `docs/SHOWCASE_UI_STYLE_GUIDE.md` 为准。
 
+> **已迁出本仓库（2026-09-16）**：化工询盘台已拆分为独立仓库。正式本地副本为 `F:\化工询盘台`，远端为
+> `https://github.com/lujiamingsssss-cpu/INQUIRY`。本文件自即日起**仅作为历史记录与对接参考**保留，
+> 不再驱动本仓库的开发、测试或发布。拆分决定、遗留物处置与未来对接契约见
+> `docs/adr/0002-copilot-repository-split.md`。
+
 ## 1. 产品定位
 
 Chemical Trade AI Copilot 是基于企业批准 TDS/SDS 的私人化工外贸询盘证据工作台。它把中英文询盘拆为技术、合规、商务和物流要求，给出有来源约束的产品判断、证据缺口、追问和可编辑英文回复草稿，但不自动发送。
